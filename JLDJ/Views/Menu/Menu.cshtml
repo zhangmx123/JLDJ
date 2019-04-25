@@ -7,13 +7,15 @@
     <meta charset="utf-8" />
 
     <title>国网辽宁计量中心党建系统</title>
-    <link rel="stylesheet" type="text/css" href="../../JS/jquery-easyui-1.7.0/themes/default/easyui.css">
-    <link rel="stylesheet" type="text/css" href="../../JS/jquery-easyui-1.7.0/themes/icon.css">
-    <link rel="stylesheet" type="text/css" href="../../JS/jquery-easyui-1.7.0/demo/demo.css">
+    <link rel="stylesheet" type="text/css" href="~/JS/jquery-easyui-1.7.0/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="~/JS/jquery-easyui-1.7.0/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="~/JS/jquery-easyui-1.7.0/demo/demo.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/Common.css">
+    <script type="text/javascript" src="~/JS/jquery-easyui-1.7.0/jquery.min.js"></script>
+    <script type="text/javascript" src="~/JS/jquery-easyui-1.7.0/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="~/JS/jquery-easyui-1.7.0/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="~/JS/Common.js"></script>
 
-    <script type="text/javascript" src="../../JS/jquery-easyui-1.7.0/jquery.min.js"></script>
-    <script type="text/javascript" src="../../JS/jquery-easyui-1.7.0/jquery.easyui.min.js"></script>
-    <script type="text/javascript" src="../../JS/jquery-easyui-1.7.0/locale/easyui-lang-zh_CN.js"></script>
 </head>
 <body>
     <div style="margin:00px 0;"></div>
@@ -67,7 +69,7 @@
             function addtab(obj, url) {
                 var addtitle = $(obj).linkbutton("options").text;
                 var exi = $('#tt').tabs('exists', addtitle);
-                var content = '<iframe scrolling="auto" frameborder="0"  src="' + url + '" style="width:100%;height:100%;"></iframe>';
+                var content = '<iframe scrolling="auto" frameborder="no" border="0" marginwidth="0" marginheight="0" scrolling="no" allowtransparency="yes" src="' + url + '" style="width:100%;height:100%;"></iframe>';
                 if (!exi)
                     $('#tt').tabs('add', {
                         title: addtitle,

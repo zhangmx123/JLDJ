@@ -26,5 +26,8 @@ namespace JLDJ.Models
         }
     
         public virtual DbSet<user> users { get; set; }
+        public virtual DbSet<flow> flows { get; set; }
+        public virtual DbSet<flow_Devmem> flow_Devmem { get; set; }
+        public virtual DbSet<person> people { get; set; }
     }
 }

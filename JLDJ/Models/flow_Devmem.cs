@@ -12,12 +12,11 @@ namespace JLDJ.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class user
+    public partial class flow_Devmem
     {
-        public string user_name { get; set; }
-        public string user_pwd { get; set; }
-        public string user_role { get; set; }
-        public string user_dept { get; set; }
-        public string user_rname { get; set; }
+        public int Devmem_id { get; set; }
+        public int Devmem_flowid { get; set; }
+        public string Devmem_aptxt { get; set; }
+        public int Devmem_personid { get; set; }
     }
 }

@@ -53,9 +53,10 @@ namespace JLDJ.Controllers
             result = "{\"total\":3,\"rows\":" + result + "}";
             return result;*/
 
-            if (!user_name.IsEmpty())
+            //if (!string.IsNullOrEmpty(user_name))
+                if (!user_name.IsEmpty())
             {
-                var result = db.users.Where(u => u.user_name == user_name);
+                var result = db.users.Where(u => u.user_name.Contains(user_name));
                 return Json(result, JsonRequestBehavior.AllowGet);
                 
             }
@@ -93,7 +94,10 @@ namespace JLDJ.Controllers
                 user userInfo = new user()
                 {
                     user_name = Username,
-                    user_pwd = Password
+                    user_pwd = Password,
+                    user_rname = Name,
+                    user_dept =Department,
+                    user_role = Role
                 };
                 db.users.Add(userInfo);
                 db.SaveChanges();
@@ -134,7 +138,7 @@ namespace JLDJ.Controllers
         }
 
         [HttpGet]
-        public int upduser(string Username, string Password, string Name, string Role, string Department)
+        public int upduser(string Username, string Name, string Role, string Department)
         {
 
             /*SqlConnection conn = new SqlConnection();
@@ -156,7 +160,11 @@ namespace JLDJ.Controllers
             if (userInfo != null)
             {
                 userInfo.user_name = Username;
-                userInfo.user_pwd = Password;
+               
+                userInfo.user_role = Role;
+                userInfo.user_dept = Department;
+                userInfo.user_rname = Name;
+
                 db.SaveChanges();
 
                 return 1;

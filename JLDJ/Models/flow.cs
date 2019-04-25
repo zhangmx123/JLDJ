@@ -12,12 +12,16 @@ namespace JLDJ.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class user
+    public partial class flow
     {
-        public string user_name { get; set; }
-        public string user_pwd { get; set; }
-        public string user_role { get; set; }
-        public string user_dept { get; set; }
-        public string user_rname { get; set; }
+        public int flow_id { get; set; }
+        public string flow_num { get; set; }
+        public string flow_order { get; set; }
+        public string flow_type { get; set; }
+        public string flow_dept { get; set; }
+        public string flow_founder { get; set; }
+        public string flow_stime { get; set; }
+        public string flow_etime { get; set; }
+        public string flow_state { get; set; }
     }
 }

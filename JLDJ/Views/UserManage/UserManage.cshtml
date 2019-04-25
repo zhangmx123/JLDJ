@@ -7,13 +7,15 @@
     <meta charset="utf-8" />
 
     <title>国网辽宁计量中心党建系统</title>
-    <link rel="stylesheet" type="text/css" href="../../JS/jquery-easyui-1.7.0/themes/default/easyui.css">
-    <link rel="stylesheet" type="text/css" href="../../JS/jquery-easyui-1.7.0/themes/icon.css">
-    <link rel="stylesheet" type="text/css" href="../../JS/jquery-easyui-1.7.0/demo/demo.css">
+    <link rel="stylesheet" type="text/css" href="~/JS/jquery-easyui-1.7.0/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="~/JS/jquery-easyui-1.7.0/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="~/JS/jquery-easyui-1.7.0/demo/demo.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/Common.css">
+    <script type="text/javascript" src="~/JS/jquery-easyui-1.7.0/jquery.min.js"></script>
+    <script type="text/javascript" src="~/JS/jquery-easyui-1.7.0/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="~/JS/jquery-easyui-1.7.0/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="~/JS/Common.js"></script>
 
-    <script type="text/javascript" src="../../JS/jquery-easyui-1.7.0/jquery.min.js"></script>
-    <script type="text/javascript" src="../../JS/jquery-easyui-1.7.0/jquery.easyui.min.js"></script>
-    <script type="text/javascript" src="../../JS/jquery-easyui-1.7.0/locale/easyui-lang-zh_CN.js"></script>
 </head>
 <body>
 
@@ -23,10 +25,10 @@
         <thead>
             <tr>
                 @*<th data-options="field:'ID',width:80">ID</th>*@
-                <th data-options="field:'user_name',width:100">用户名</th>
-                <th data-options="field:'user_rname',width:80,align:'right'">姓名</th>
-                <th data-options="field:'user_role',width:80,align:'right'">角色</th>
-                <th data-options="field:'user_dpt',width:80,align:'right'">部门</th>
+                <th data-options="field:'user_name'">用户名</th>
+                <th data-options="field:'user_rname',align:'right'">姓名</th>
+                <th data-options="field:'user_role',align:'right'">角色</th>
+                <th data-options="field:'user_dept',align:'right'">部门</th>
 
             </tr>
         </thead>
@@ -50,7 +52,7 @@
     </div>
 
 
-    <div id="dlg" class="easyui-dialog" title="新增用户" style="width:400px;height:200px;padding:10px"
+    <div id="dlg" class="easyui-dialog" title="新增用户" style="width:300px;height:400px;padding:10px"
          data-options="modal:true,closed:true,
 
 				buttons: [{
@@ -61,13 +63,32 @@
                 }
 				}]
 			">
-        用户名：<input type="text" id="Username" /></br>
-        密码：<input type="text" id="Password" /></br>
-        姓名：<input type="text" id="Name" /></br>
-        角色：<input type="text" id="Role" /></br>
-        部门：<input type="text" id="Department" /></br>
-    </div>
-    <div id="dlg_" class="easyui-dialog" title="编辑用户" style="width:400px;height:200px;padding:10px"
+        <div style="width:200px;height:100px;padding:10px;margin:auto">
+            <div class="sp1">用户名：</div><input type="text" id="Username" /></br>
+            <div class="sp1">密码：</div><input type="text" id="Password" /></br>
+            <div class="sp1">姓名：</div><input type="text" id="Name" /></br>
+            <div class="sp1">角色：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Role" data-options="panelHeight:150">
+                <option value="4">支部成员</option>
+                <option value="3">支部书记</option>
+                <option value="1">党委书记</option>
+                <option value="2">党委成员</option>
+                <option value="0">系统管理员</option>
+            </select>
+            </br>
+            <div class="sp1">党支部：</div><select class="easyui-combobox" name="state" style="width:150px;"id="Dept" data-options="panelHeight:150">
+                <option value="计量中心党群">中心党委</option>
+                <option value="室内检定党支部">室内检定党支部</option>
+                <option value="现场检验党支部">现场检验党支部</option>
+                <option value="标准量传党支部">标准量传党支部</option>
+                <option value="配送党支部">配送党支部</option>
+                <option value="运营管理党支部">运营管理党支部</option>
+                <option value="综合党支部">综合党支部</option>
+                <option value="技术质检党支部">技术质检党支部</option>
+            </select>
+            </br>
+        </div>
+</div>
+    <div id="dlg_" class="easyui-dialog" title="编辑用户" style="width:400px;height:400px;padding:10px"
          data-options="modal:true,closed:true,
 
 				buttons: [{
@@ -78,10 +99,29 @@
                 }
 				}]
 			">
-        用户名：<input type="text" id="Username_" readonly="readonly" /></br>
-        姓名：<input type="text" id="Name_" /></br>
-        角色：<input type="text" id="Role_" /></br>
-        部门：<input type="text" id="Department_" /></br>
+        <div style="width:200px;height:100px;padding:10px;margin:auto">
+            <div class="sp1">用户名：</div><input type="text" id="Username_" readonly="readonly" /></br>
+            <div class="sp1">姓名：</div><input type="text" id="Name_" /></br>
+            <div class="sp1">角色：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Role_" data-options="panelHeight:150">
+                <option value="支部成员">支部成员</option>
+                <option value="支部书记">支部书记</option>
+                <option value="党委书记">党委书记</option>
+                <option value="党委成员">党委成员</option>
+                <option value="系统管理员">系统管理员</option>
+            </select>
+            </br>
+            <div class="sp1">党支部：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Dept_" data-options="panelHeight:150">
+                <option value="计量中心党群">中心党委</option>
+                <option value="室内检定党支部">室内检定党支部</option>
+                <option value="现场检验党支部">现场检验党支部</option>
+                <option value="标准量传党支部">标准量传党支部</option>
+                <option value="配送党支部">配送党支部</option>
+                <option value="运营管理党支部">运营管理党支部</option>
+                <option value="综合党支部">综合党支部</option>
+                <option value="技术质检党支部">技术质检党支部</option>
+            </select>
+            </br>
+        </div>
     </div>
 
     <script type="text/javascript">
@@ -90,13 +130,21 @@
         var Name;
         var Role;
         var Department;
+
+        $(function () {
+            searchuser();
+        });
+
         function adduser() {
+
             Username = $("#Username").val();
             Password = $("#Password").val();
             Name = $("#Name").val();
-            Role = $("#Role").val();
-            Department = $("#Department").val();
-
+            Role = $("#Role").combobox('getValue');
+            Department = $("#Dept").combobox('getValue');
+            if (Username == "") { alert("请输入用户名"); return; }
+            if (Password == "") { alert("请输入密码"); return; }
+            if (Name == "") { alert("请输入姓名"); return; }
             $.ajax({
                 url: "/UserManage/adduser",
                 type: "get",
@@ -112,16 +160,16 @@
                         alert("新增用户成功！");
                         $('#dlg').dialog('close');
                         $('#dg').datagrid('reload');
-                        $('#Username').val("");
-                        $('#Password').val("");
-                        $('#Name').val("");
-                        $('#Role').val("");
-                        $('#Department').val("");
+                        $("#Username").val("");
+                        $("#Password").val("");
+                        $("#Name").val("");
+                        $("#Role").combobox('setValue', "");
+                        $("#Dept").combobox('setValue', "");
                     }
                     else if (data == 2)
                         alert("用户名已存在！");
                     else
-                        alert("用户名或密码错误！");
+                        alert("新增失败！");
                 },
                 error: function () {
                     alert("请求失败！"); 
@@ -155,15 +203,13 @@
         }
         function update() {
             Username = $('#dg').datagrid('getSelected').user_name;
-            //Password = $('#dg').datagrid('getSelected').user_pwd;
             Name = $('#dg').datagrid('getSelected').user_rname;
             Role = $('#dg').datagrid('getSelected').user_role;
-            Department = $('#dg').datagrid('getSelected').user_dpt;
+            Department = $('#dg').datagrid('getSelected').user_dept;
             $('#Username_').val(Username);
-            $('#Password_').val(Password);
             $('#Name_').val(Name);
-            $('#Role_').val(Role);
-            $('#Department_').val(Department);
+            $('#Role_').combobox('setValue',Role);
+            $('#Dept_').combobox('setValue',Department);
             $('#dlg_').dialog('open');
         }
 
@@ -171,8 +217,10 @@
             Username = $("#Username_").val();
             Password = $("#Password_").val();
             Name = $("#Name_").val();
-            Role = $("#Role_").val();
-            Department = $("#Department_").val();
+            Role = $("#Role_").combobox('getValue');
+            Department = $("#Dept_").combobox('getValue');
+            if (Username == "") { alert("请输入用户名"); return; }
+            if (Name == "") { alert("请输入姓名"); return; }
             $.messager.confirm('确认编辑', "确认编辑用户" + Username + "吗？", function (r) {
                 if (r) {
                     $.ajax({
@@ -180,7 +228,6 @@
                         type: "get",
                         data: {
                             "Username": Username,
-                            "Password": Password,
                             "Name": Name,
                             "Role": Role,
                             "Department": Department
@@ -216,11 +263,24 @@
 
         function searchuser() {
             var username = $("#user_name").textbox('getValue');
-            $("#dg").datagrid({
-                queryParams: {
-                    user_name: username
-                }                
+            $.ajax({
+                url: "/UserManage/GetUser",
+                type: "get",
+                data: {
+                    "user_name": username
+                },
+                success: function (data) {
+                    $('#dg').datagrid({ loadFilter: pagerFilter }).datagrid('loadData', data);
+                },
+                error: function () {
+                    alert("请求失败！");
+                }
             });
+            //$("#dg").datagrid({
+            //    queryParams: {
+            //        user_name: username
+            //    }                
+            //});
         }
 
     </script>

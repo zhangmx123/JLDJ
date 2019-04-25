@@ -5,41 +5,93 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-    <meta charset="utf-8" />
-    <title>登录页</title>
-    <script src="../JS/jquery-easyui-1.7.0/jquery.min.js" type="text/javascript">
+@*<head>
+        <meta charset="utf-8" />
+
+        <title>国网辽宁计量中心党建系统</title>
+        <link rel="stylesheet" type="text/css" href="~/JS/jquery-easyui-1.7.0/themes/default/easyui.css">
+        <link rel="stylesheet" type="text/css" href="~/JS/jquery-easyui-1.7.0/themes/icon.css">
+        <link rel="stylesheet" type="text/css" href="~/JS/jquery-easyui-1.7.0/demo/demo.css">
+        <link rel="stylesheet" type="text/css" href="~/Content/Common.css">
+        <script type="text/javascript" src="~/JS/jquery-easyui-1.7.0/jquery.min.js"></script>
+        <script type="text/javascript" src="~/JS/jquery-easyui-1.7.0/jquery.easyui.min.js"></script>
+        <script type="text/javascript" src="~/JS/jquery-easyui-1.7.0/locale/easyui-lang-zh_CN.js"></script>
+        <script type="text/javascript" src="~/JS/Common.js"></script>
+
+    </head>*@
+@*<body>
+    用户名：<input type="text" id="Username" /></br>
+    密码：<input type="password" id="Password" /></br>
+    <input type="button" value="登录" onclick="Login()">
+    <script type="text/javascript">
+        var Username;
+        var Password;
+        function Login() {
+            Username = $("#Username").val();
+            Password = $("#Password").val();
+            $.ajax({
+                url: "/Login/Checklogin",
+                type: "get",
+                data: {
+                    "Username": Username,
+                    "Password": Password
+                },
+                success: function (data) {
+                    if (data == 1) {
+                        alert("登录成功！");
+                        window.location.href = "../Menu/Menu";
+                    }
+                    else alert("用户名或密码错误！");
+                },
+                error: function () {
+                    alert("登录失败！");
+                }
+            });
+        }
     </script>
+    </body>*@
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <meta http-equiv="Content-Language" content="zh-CN" />
+    <title>国网辽宁计量中心党建系统</title>
+    <script type="text/javascript" src="~/JS/jquery-easyui-1.7.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/LoginCss/Login.css" />
 </head>
 <body>
-用户名：<input type="text" id="Username" /></br>
-密码：<input type="password" id="Password" /></br>
-<input type="button" value="登录" onclick="Login()">
-<script type="text/javascript">
-    var Username;
-    var Password;
-    function Login() {
-        Username = $("#Username").val();
-        Password = $("#Password").val();
-        $.ajax({
-            url: "/Login/Checklogin",
-            type: "get",
-            data: {
-                "Username": Username,
-                "Password": Password
-            },
-            success: function (data) {
-                if (data == 1) {
-                    alert("登录成功！");
-                    window.location.href = "../Menu/Menu";
+    <div id="tit">
+        <h1>国网辽宁计量中心党建系统</h1>
+    </div>
+    <div id="login">
+            <input type="text" required="required" placeholder="用户名" name="u" id="Username"></input>
+            <input type="password" required="required" placeholder="密码" name="p" id="Password"></input>
+            <button class="but" onclick="Login()">登录</button>
+    </div>
+    <script type="text/javascript">
+        var Username;
+        var Password;
+        function Login() {
+            Username = $("#Username").val();
+            Password = $("#Password").val();
+            $.ajax({
+                url: "/Login/Checklogin",
+                type: "get",
+                data: {
+                    "Username": Username,
+                    "Password": Password
+                },
+                success: function (data) {
+                    if (data == 1) {
+                        alert("登录成功！");
+                        window.location.href = "../Menu/Menu";
+                    }
+                    else alert("用户名或密码错误！");
+                },
+                error: function () {
+                    alert("登录失败！");
                 }
-                else alert("用户名或密码错误！");
-            },
-            error: function () {
-                alert("登录失败！");
-            }
-        });
-    }
-</script>
+            });
+        }
+    </script>
 </body>
 </html>
