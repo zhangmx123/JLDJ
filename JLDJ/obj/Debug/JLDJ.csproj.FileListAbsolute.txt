@@ -1,0 +1,276 @@
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\JLDJ.dll.config
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\JLDJ.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\JLDJ.pdb
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\csc.exe
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\csc.exe.config
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\csc.rsp
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\csi.exe
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\csi.exe.config
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\csi.rsp
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\System.AppContext.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\System.Console.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\System.IO.Compression.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\System.Security.Claims.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\System.ValueTuple.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\vbc.exe
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\vbc.exe.config
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\vbc.rsp
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\VBCSCompiler.exe
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\Antlr3.Runtime.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\Newtonsoft.Json.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\System.Web.Helpers.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\System.Web.Mvc.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\System.Web.Optimization.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\System.Web.Razor.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\System.Web.WebPages.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\System.Web.WebPages.Razor.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\WebGrease.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\System.Web.Helpers.xml
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\System.Web.Mvc.xml
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\System.Web.Optimization.xml
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\System.Web.Razor.xml
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\System.Web.WebPages.xml
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\System.Web.WebPages.Razor.xml
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\Newtonsoft.Json.xml
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\Antlr3.Runtime.pdb
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\zh-Hans\System.Web.Helpers.resources.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\zh-Hans\System.Web.Mvc.resources.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\zh-Hans\System.Web.Optimization.resources.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\zh-Hans\System.Web.Razor.resources.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\zh-Hans\System.Web.WebPages.resources.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\obj\Debug\JLDJ.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\JLDJ\JLDJ\obj\Debug\JLDJ.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\JLDJ\JLDJ\obj\Debug\JLDJ.csproj.CopyComplete
+C:\Users\Admin\source\repos\JLDJ\JLDJ\obj\Debug\JLDJ.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\obj\Debug\JLDJ.pdb
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\EntityFramework.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\EntityFramework.SqlServer.dll
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\EntityFramework.xml
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\EntityFramework.SqlServer.xml
+C:\Users\Admin\source\repos\JLDJ\JLDJ\bin\zh-Hans\EntityFramework.resources.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\JLDJ.dll.config
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\JLDJ.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\JLDJ.pdb
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\csc.exe
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\csc.exe.config
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\csc.rsp
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\csi.exe
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\csi.exe.config
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\csi.rsp
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\System.AppContext.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\System.Collections.Immutable.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\System.Console.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\System.IO.Compression.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\System.IO.FileSystem.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\System.IO.Pipes.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\System.Reflection.Metadata.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\System.Security.AccessControl.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\System.Security.Claims.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\System.ValueTuple.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\System.Xml.XPath.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\vbc.exe
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\vbc.exe.config
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\vbc.rsp
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\VBCSCompiler.exe
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\roslyn\VBCSCompiler.exe.config
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\Antlr3.Runtime.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\EntityFramework.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\EntityFramework.SqlServer.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\Microsoft.Web.Infrastructure.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\Newtonsoft.Json.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\System.Web.Helpers.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\System.Web.Mvc.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\System.Web.Optimization.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\System.Web.Razor.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\System.Web.WebPages.Deployment.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\System.Web.WebPages.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\System.Web.WebPages.Razor.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\WebGrease.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\EntityFramework.xml
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\EntityFramework.SqlServer.xml
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\System.Web.Helpers.xml
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\System.Web.Mvc.xml
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\System.Web.Optimization.xml
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\System.Web.Razor.xml
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\System.Web.WebPages.xml
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\System.Web.WebPages.Deployment.xml
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\System.Web.WebPages.Razor.xml
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\Newtonsoft.Json.xml
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\Antlr3.Runtime.pdb
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\zh-Hans\EntityFramework.resources.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\zh-Hans\System.Web.Helpers.resources.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\zh-Hans\System.Web.Mvc.resources.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\zh-Hans\System.Web.Optimization.resources.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\zh-Hans\System.Web.Razor.resources.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\zh-Hans\System.Web.WebPages.resources.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\obj\Debug\JLDJ.csprojAssemblyReference.cache
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\obj\Debug\JLDJ.csproj.CoreCompileInputs.cache
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\obj\Debug\JLDJ.csproj.CopyComplete
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\obj\Debug\JLDJ.dll
+C:\Party Construction System\1\20190423存入\JLDJ\JLDJ\obj\Debug\JLDJ.pdb
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\JLDJ.dll.config
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\JLDJ.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\JLDJ.pdb
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\csc.exe
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\csc.exe.config
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\csc.rsp
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\csi.exe
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\csi.exe.config
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\csi.rsp
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\System.AppContext.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\System.Console.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\System.IO.Compression.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\System.IO.Pipes.AccessControl.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\System.IO.Pipes.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\System.Security.AccessControl.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\System.Security.Claims.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\System.Security.Principal.Windows.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\System.ValueTuple.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\vbc.exe
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\vbc.exe.config
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\vbc.rsp
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\VBCSCompiler.exe
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\Antlr3.Runtime.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\EntityFramework.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\EntityFramework.SqlServer.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\Newtonsoft.Json.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\System.Web.Helpers.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\System.Web.Mvc.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\System.Web.Optimization.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\System.Web.Razor.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\System.Web.WebPages.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\System.Web.WebPages.Razor.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\WebGrease.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\EntityFramework.xml
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\EntityFramework.SqlServer.xml
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\System.Web.Helpers.xml
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\System.Web.Mvc.xml
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\System.Web.Optimization.xml
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\System.Web.Razor.xml
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\System.Web.WebPages.xml
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\System.Web.WebPages.Razor.xml
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\Newtonsoft.Json.xml
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\Antlr3.Runtime.pdb
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\zh-Hans\EntityFramework.resources.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\zh-Hans\System.Web.Helpers.resources.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\zh-Hans\System.Web.Mvc.resources.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\zh-Hans\System.Web.Optimization.resources.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\zh-Hans\System.Web.Razor.resources.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\zh-Hans\System.Web.WebPages.resources.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\obj\Debug\JLDJ.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\obj\Debug\JLDJ.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\obj\Debug\JLDJ.csproj.CopyComplete
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\obj\Debug\JLDJ.dll
+C:\Users\Admin\Desktop\20190425\JLDJ\JLDJ\obj\Debug\JLDJ.pdb

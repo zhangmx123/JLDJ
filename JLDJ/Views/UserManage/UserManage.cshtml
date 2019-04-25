@@ -1,0 +1,229 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <title>国网辽宁计量中心党建系统</title>
+    <link rel="stylesheet" type="text/css" href="../../JS/jquery-easyui-1.7.0/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="../../JS/jquery-easyui-1.7.0/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="../../JS/jquery-easyui-1.7.0/demo/demo.css">
+
+    <script type="text/javascript" src="../../JS/jquery-easyui-1.7.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../../JS/jquery-easyui-1.7.0/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="../../JS/jquery-easyui-1.7.0/locale/easyui-lang-zh_CN.js"></script>
+</head>
+<body>
+
+
+    <table id="dg" class="easyui-datagrid"  style="width:auto;height:320px;padding:10px"
+           data-options="rownumbers:true,singleSelect:true,method:'get',url:'/UserManage/Getuser',toolbar:'#tb',pagination:true">
+        <thead>
+            <tr>
+                @*<th data-options="field:'ID',width:80">ID</th>*@
+                <th data-options="field:'user_name',width:100">用户名</th>
+                <th data-options="field:'user_rname',width:80,align:'right'">姓名</th>
+                <th data-options="field:'user_role',width:80,align:'right'">角色</th>
+                <th data-options="field:'user_dpt',width:80,align:'right'">部门</th>
+
+            </tr>
+        </thead>
+    </table>
+    <div id="tb" style="padding:5px;height:auto">
+        <div style="margin-bottom:5px">
+            <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="$('#dlg').dialog('open')">增加</a>
+            <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="update()">修改</a>
+            <!--<a href="#" class="easyui-linkbutton" iconCls="icon-save" plain="true"></a>
+            <a href="#" class="easyui-linkbutton" iconCls="icon-cut" plain="true"></a>-->
+            <a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="deluser()">删除</a>
+        </div>
+        <div>
+            <input id="user_name" class="easyui-textbox" data-options="prompt:'请输入用户名'" />
+            <a href="#" class="easyui-linkbutton" iconCls="icon-search" onclick="searchuser()">查询</a>
+        </div>
+    </div>
+    <div style="margin:20px 0;">
+        @*<a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#dlg').dialog('open')">Open</a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#dlg').dialog('close')">Close</a>*@
+    </div>
+
+
+    <div id="dlg" class="easyui-dialog" title="新增用户" style="width:400px;height:200px;padding:10px"
+         data-options="modal:true,closed:true,
+
+				buttons: [{
+					text:'提交',
+					iconCls:'icon-ok',
+					handler:function(){
+                        adduser();
+                }
+				}]
+			">
+        用户名：<input type="text" id="Username" /></br>
+        密码：<input type="text" id="Password" /></br>
+        姓名：<input type="text" id="Name" /></br>
+        角色：<input type="text" id="Role" /></br>
+        部门：<input type="text" id="Department" /></br>
+    </div>
+    <div id="dlg_" class="easyui-dialog" title="编辑用户" style="width:400px;height:200px;padding:10px"
+         data-options="modal:true,closed:true,
+
+				buttons: [{
+					text:'提交',
+					iconCls:'icon-ok',
+					handler:function(){
+                        upduser();
+                }
+				}]
+			">
+        用户名：<input type="text" id="Username_" readonly="readonly" /></br>
+        姓名：<input type="text" id="Name_" /></br>
+        角色：<input type="text" id="Role_" /></br>
+        部门：<input type="text" id="Department_" /></br>
+    </div>
+
+    <script type="text/javascript">
+        var Username;
+        var Password;
+        var Name;
+        var Role;
+        var Department;
+        function adduser() {
+            Username = $("#Username").val();
+            Password = $("#Password").val();
+            Name = $("#Name").val();
+            Role = $("#Role").val();
+            Department = $("#Department").val();
+
+            $.ajax({
+                url: "/UserManage/adduser",
+                type: "get",
+                data: {
+                    "Username": Username,
+                    "Password": Password,
+                    "Name": Name,
+                    "Role": Role,
+                    "Department": Department
+                },
+                success: function (data) {
+                    if (data == 1) {
+                        alert("新增用户成功！");
+                        $('#dlg').dialog('close');
+                        $('#dg').datagrid('reload');
+                        $('#Username').val("");
+                        $('#Password').val("");
+                        $('#Name').val("");
+                        $('#Role').val("");
+                        $('#Department').val("");
+                    }
+                    else if (data == 2)
+                        alert("用户名已存在！");
+                    else
+                        alert("用户名或密码错误！");
+                },
+                error: function () {
+                    alert("请求失败！"); 
+                }
+            });
+        }
+        function deluser() {
+            Username = $('#dg').datagrid('getSelected').user_name;
+            $.messager.confirm('确认删除', "确认删除用户" + Username + "吗？", function (r) {
+                if (r) {
+                    $.ajax({
+                        url: "/UserManage/deluser",
+                        type: "get",
+                        data: {
+                            "Username": Username
+                        },
+                        success: function (data) {
+                            if (data > 0) {
+                                alert("删除用户成功！");
+                                $('#dg').datagrid('reload');
+                            }
+                            else alert("删除用户失败！");
+                        },
+                        error: function () {
+                            alert("请求失败！");
+                        }
+                    });
+                }
+            });
+
+        }
+        function update() {
+            Username = $('#dg').datagrid('getSelected').user_name;
+            //Password = $('#dg').datagrid('getSelected').user_pwd;
+            Name = $('#dg').datagrid('getSelected').user_rname;
+            Role = $('#dg').datagrid('getSelected').user_role;
+            Department = $('#dg').datagrid('getSelected').user_dpt;
+            $('#Username_').val(Username);
+            $('#Password_').val(Password);
+            $('#Name_').val(Name);
+            $('#Role_').val(Role);
+            $('#Department_').val(Department);
+            $('#dlg_').dialog('open');
+        }
+
+        function upduser() {
+            Username = $("#Username_").val();
+            Password = $("#Password_").val();
+            Name = $("#Name_").val();
+            Role = $("#Role_").val();
+            Department = $("#Department_").val();
+            $.messager.confirm('确认编辑', "确认编辑用户" + Username + "吗？", function (r) {
+                if (r) {
+                    $.ajax({
+                        url: "/UserManage/upduser",
+                        type: "get",
+                        data: {
+                            "Username": Username,
+                            "Password": Password,
+                            "Name": Name,
+                            "Role": Role,
+                            "Department": Department
+                        },
+                        success: function (data) {
+                            if (data > 0) {
+                                alert("编辑用户成功！");
+                                $('#dlg_').dialog('close');
+                                $('#dg').datagrid('reload');
+                            }
+                            else alert("编辑用户失败！");
+                        },
+                        error: function () {
+                            alert("请求失败！");
+                        }
+                    });
+                }
+            });
+
+        }
+        //function select() {
+        //    var addtitle = $(obj).linkbutton("options").text;
+        //    var exi = $('#tt').tabs('exists', addtitle);
+        //    var content = '<iframe scrolling="auto" frameborder="0"  src="' + url + '" style="width:100%;height:100%;"></iframe>';
+        //    if (!exi)
+        //        $('#tt').tabs('add', {
+        //            title: addtitle,
+        //            content: content,
+        //            closable: true
+        //        });
+        //    else $('#tt').tabs('select', addtitle);
+        //}
+
+        function searchuser() {
+            var username = $("#user_name").textbox('getValue');
+            $("#dg").datagrid({
+                queryParams: {
+                    user_name: username
+                }                
+            });
+        }
+
+    </script>
+</body>
+
+</html>
