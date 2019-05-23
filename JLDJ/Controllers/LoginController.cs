@@ -13,13 +13,21 @@ namespace JLDJ.Controllers
         [HttpGet]
         public int Checklogin(string Username, string Password)
         {
-            DJXTEntities1 db = new DJXTEntities1();
+            DJXTEntities2 db = new DJXTEntities2();
             user userInfo = new user();      
             userInfo = db.users.Find(Username);
             if (userInfo == null || userInfo.user_pwd != Password)
                 return 0;
             else
+            {
+                Session["username"] = userInfo.user_name;
+                Session["userrname"] = userInfo.user_rname;
+                Session["role"] = userInfo.user_role;
+                Session["dept"] = userInfo.user_dept;
+
+
                 return 1;
+            }
         }
   
         public ActionResult Login()

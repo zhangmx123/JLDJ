@@ -1,13 +1,61 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="DJXTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="flow_Devmem">
+    <Key>
+      <PropertyRef Name="Devmem_id" />
+    </Key>
+    <Property Name="Devmem_id" Type="Int32" Nullable="false" />
+    <Property Name="Devmem_flowid" Type="Int32" />
+    <Property Name="Devmem_aptxt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Devmem_personid" Type="Int32" />
+  </EntityType>
+  <EntityType Name="person">
+    <Key>
+      <PropertyRef Name="person_id" />
+    </Key>
+    <Property Name="person_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="person_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="person_sex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="person_birth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="person_CJGZdate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="person_ZGDYdate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="person_YBDYdate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="person_JJFZdate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="person_eduback" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="person_degree" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="person_college" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="person_phonenum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="person_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="person_dept" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
   <EntityType Name="user">
     <Key>
       <PropertyRef Name="user_name" />
     </Key>
     <Property Name="user_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="user_pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="user_pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="user_role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="user_dept" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="user_rname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityContainer Name="DJXTEntities1" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="users" EntityType="Self.user" />
+  <EntityContainer Name="DJXTEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="flow_Devmem" EntityType="Self.flow_Devmem" />
+    <EntitySet Name="person" EntityType="Self.person" />
+    <EntitySet Name="user" EntityType="Self.user" />
+    <EntitySet Name="flow" EntityType="DJXTModel.flow" />
   </EntityContainer>
+  <EntityType Name="flow">
+    <Key>
+      <PropertyRef Name="flow_id" />
+    </Key>
+    <Property Name="flow_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="flow_num" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="flow_order" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="flow_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="flow_dept" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="flow_founder" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="flow_stime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="flow_etime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="flow_state" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

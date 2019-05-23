@@ -27,6 +27,6 @@ namespace JLDJ.Models
         public string person_college { get; set; }
         public string person_phonenum { get; set; }
         public string person_email { get; set; }
-        public string person_address { get; set; }
+        public string person_dept { get; set; }
     }
 }

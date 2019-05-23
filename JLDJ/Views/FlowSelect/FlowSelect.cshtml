@@ -1,9 +1,7 @@
 ﻿@{
     Layout = null;
 }
-
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta charset="utf-8" />
@@ -20,8 +18,139 @@
 
 </head>
 <body>
-    <div>
-    select
+
+
+    <table id="dg" class="easyui-datagrid" style="width:auto;height:350px;padding:10px"
+           data-options="rownumbers:true,toolbar:'#tb',singleSelect:true , pagination:true">
+        <thead>
+            <tr>
+                @*<th data-options="field:'ID',width:80">ID</th>*@
+                <th data-options="field:'flow_num'">流程编号</th>
+                <th data-options="field:'flow_type',align:'right'">流程类型</th>
+                <th data-options="field:'flow_dept',align:'right'">流程所在部门</th>
+                <th data-options="field:'flow_state',align:'right'">流程状态</th>
+                <th data-options="field:'flow_founder',align:'right'">流程所在人</th>
+                <th data-options="field:'flow_stime',align:'right'">流程开始时间</th>
+                <th data-options="field:'flow_etime',align:'right'">流程结束时间</th>
+            </tr>
+        </thead>
+    </table>
+    <div id="tb" style="padding:5px;height:auto">
+        <div style="margin-bottom:5px">
+            <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="$('#dlg').dialog('open')">发起流程</a>
+        </div>
+        <div>
+            <span class="sp1">流程编号：</span><input id="Flow_Num" class="easyui-textbox" value="" data-options="prompt:'请输入流程编号'" />
+                <span class="sp1">请选择党支部：</span><select class="easyui-combobox" value="" name="state" style="width:150px;" id="Flow_Dept" data-options="panelHeight:150,editable:false">
+                    <option value="">请选择</option>
+                    <option value="中心党群">中心党群</option>
+                    <option value="室内检定党支部">室内检定党支部</option>
+                    <option value="现场检验党支部">现场检验党支部</option>
+                    <option value="标准量传党支部">标准量传党支部</option>
+                    <option value="配送党支部">配送党支部</option>
+                    <option value="运营管理党支部">运营管理党支部</option>
+                    <option value="综合党支部">综合党支部</option>
+                    <option value="技术质检党支部">技术质检党支部</option>
+                </select>
+                <span class="sp1">请选择流程类型：</span><select class="easyui-combobox" name="state" style="width:150px;" id="Flow_Type" data-options="panelHeight:150,editable:false">
+                    <option value="">请选择</option>
+                    <option value="发展积极分子">发展积极分子</option>
+                    <option value="发展党员">发展党员</option>
+                    <option value="党员转正">党员转正</option>
+                    <option value="党员评优核查">党员评优核查</option>
+                    <option value="支部换届">支部换届</option>
+                </select>
+                <a href="#" class="easyui-linkbutton" iconCls="icon-search" onclick="searchflow()">查询</a>
+        </div>
     </div>
+    <div style="margin:20px 0;">
+    </div>
+    <div id="dlg" class="easyui-dialog" title="发起流程" style="width:600px;height:200px;padding:10px"
+         data-options="modal:true,closed:true,
+
+				buttons: [{
+					text:'发起流程',
+					iconCls:'icon-ok',
+					handler:function(){
+                        flowstart();
+                }
+				}]
+			">
+        <div style="padding:10px;margin:auto">
+            </br>
+            <span class="sp1">流程类型：</span><select class="easyui-combobox" name="state" style="width:150px;" id="FlowType" data-options="panelHeight:150">
+                <option value="发展积极分子">发展积极分子</option>
+                <option value="发展党员">发展党员</option>
+                <option value="党员转正">党员转正</option>
+                <option value="党员评优核查">党员评优核查</option>
+                <option value="支部换届">支部换届</option>
+            </select>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="sp1">党支部：</span><select class="easyui-combobox" name="state" style="width:150px;" id="FlowDept" data-options="panelHeight:150">
+                <option value="中心党群">中心党群</option>
+                <option value="室内检定党支部">室内检定党支部</option>
+                <option value="现场检验党支部">现场检验党支部</option>
+                <option value="标准量传党支部">标准量传党支部</option>
+                <option value="配送党支部">配送党支部</option>
+                <option value="运营管理党支部">运营管理党支部</option>
+                <option value="综合党支部">综合党支部</option>
+                <option value="技术质检党支部">技术质检党支部</option>
+            </select>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            searchflow();
+        });
+        var flow_num = "";
+        var flow_dept = "";
+        var flow_type = "";
+        function searchflow() {
+            flow_num = $("#Flow_Num").textbox('getValue');
+            flow_dept = $("#Flow_Dept").combobox('getValue');
+            flow_type = $("#Flow_Type").combobox('getValue');      
+            $.ajax({
+                url: "/FlowSelect/GetFlow",
+                type: "get",
+                data: {
+                    "flow_num": flow_num,
+                    "flow_dept": flow_dept,
+                    "flow_type": flow_type
+                },
+                success: function (data) {
+                    $('#dg').datagrid({ loadFilter: pagerFilter }).datagrid('loadData', data);
+                },
+                error: function () {
+                    alert("请求失败！");
+                }
+            });
+
+        }
+        function flowstart() {
+            var FlowType = $("#FlowType").combobox('getValue');
+            var FlowDept = $("#FlowDept").combobox('getValue');
+            $.ajax({
+                url: "/FlowSelect/addflow",
+                type: "get",
+                data: {
+                    "FlowType": FlowType,
+                    "FlowDept": FlowDept,
+                },
+                success: function (data) {
+                    if (data == 1) {
+                        alert("发起流程成功！当前流程在" + FlowDept + "的" + data + "账号下");
+                        $('#dlg').dialog('close');
+                        searchflow();
+                    }
+                    else
+                        alert("发起流程失败！");
+                },
+                error: function () {
+                    alert("请求失败！");
+                }
+            });
+        }
+    </script>
 </body>
+
 </html>

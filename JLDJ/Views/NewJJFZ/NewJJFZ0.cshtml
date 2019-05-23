@@ -1,0 +1,37 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <title>国网辽宁计量中心党建系统</title>
+    <link rel="stylesheet" type="text/css" href="~/JS/jquery-easyui-1.7.0/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="~/JS/jquery-easyui-1.7.0/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="~/JS/jquery-easyui-1.7.0/demo/demo.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/Common.css">
+    <script type="text/javascript" src="~/JS/jquery-easyui-1.7.0/jquery.min.js"></script>
+    <script type="text/javascript" src="~/JS/jquery-easyui-1.7.0/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="~/JS/jquery-easyui-1.7.0/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="~/JS/Common.js"></script>
+
+</head>
+<body>
+    <div>
+        <div class="sp1">积极分子姓名：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Name" /></br>
+        <div class="sp1">毕业院校：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_College" /></br>
+        <div class="sp1">入党申请书附件：</div><a href="#" class="easyui-linkbutton" iconCls="icon-search" onclick="sendapplication()"></a></br>
+        <a href="#" class="easyui-linkbutton" iconCls="icon-search" onclick="sub()">提交</a>
+        @*<div class="sp1">所在支部：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Person_Dept" data-options="panelHeight:150,editable:false">
+                <option value="室内检定党支部">室内检定党支部</option>
+                <option value="现场检验党支部">现场检验党支部</option>
+                <option value="标准量传党支部">标准量传党支部</option>
+                <option value="配送党支部">配送党支部</option>
+                <option value="运营管理党支部">运营管理党支部</option>
+                <option value="综合党支部">综合党支部</option>
+                <option value="技术质检党支部">技术质检党支部</option>
+            </select>*@
+    </div>
+</body>
+</html>

@@ -15,8 +15,8 @@ namespace JLDJ.Models
     public partial class flow_Devmem
     {
         public int Devmem_id { get; set; }
-        public int Devmem_flowid { get; set; }
+        public Nullable<int> Devmem_flowid { get; set; }
         public string Devmem_aptxt { get; set; }
-        public int Devmem_personid { get; set; }
+        public Nullable<int> Devmem_personid { get; set; }
     }
 }

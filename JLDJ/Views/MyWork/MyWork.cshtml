@@ -1,9 +1,7 @@
 ﻿@{
     Layout = null;
 }
-
 <!DOCTYPE html>
-
 <html>
 <head>
     <meta charset="utf-8" />
@@ -20,8 +18,69 @@
 
 </head>
 <body>
-    <div>
-    db
-    </div>
+
+
+    <table id="dg" class="easyui-datagrid" style="width:auto;height:350px;padding:10px"
+           data-options="rownumbers:true,toolbar:'#tb',singleSelect:true , pagination:true">
+        <thead>
+            <tr>
+                <th data-options="field:'flow_num'">流程编号</th>
+                <th data-options="field:'flow_type',align:'right'">流程类型</th>
+                <th data-options="field:'flow_dept',align:'right'">流程所在部门</th>
+                <th data-options="field:'flow_state',align:'right'">流程状态</th>
+                <th data-options="field:'flow_founder',align:'right'">流程所在人</th>
+                <th data-options="field:'flow_stime',align:'right'">流程开始时间</th>
+                <th data-options="field:'flow_etime',align:'right'">流程结束时间</th>
+                <th data-options="field:'flow_order',align:'right',hidden:true">流程顺序号</th>
+                <th data-options="field:'flow_oper',align:'right',formatter:operate_formatter">操作</th>
+            </tr>
+        </thead>
+    </table>
+    <script type="text/javascript">
+        $(function () {
+            searchflow();
+        });
+        function searchflow() {
+            $.ajax({
+                url: "/MyWork/GetWork",
+                type: "get",
+                data: {
+                },
+                success: function (data) {
+                    $('#dg').datagrid({ loadFilter: pagerFilter }).datagrid('loadData', data);
+                },
+                error: function () {
+                    alert("请求失败！");
+                }
+            });
+
+        }
+        function operate_formatter(value, row, index) {
+            return "<a href='#' class='easyui-linkbutton' onclick='openpage(\"" + row.flow_type + "\",\"" + row.flow_order +"\")'>操作</a>";
+        }
+        function openpage(flow_type, flow_order)
+        {
+            alert(flow_type);
+            switch (flow_type)
+            {
+                case "发展积极分子":
+                    {
+                        switch (flow_order) {
+                            case "0":
+                            case "1":
+                            case "2":
+                            case "3":
+                            case "4":
+                            case "5":
+                        }
+                    }
+                case "发展党员":
+                case "党员转正":
+                case "党员评优核查":
+                case "支部换届":
+            }
+        }
+    </script>
 </body>
+
 </html>

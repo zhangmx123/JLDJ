@@ -21,7 +21,7 @@
 
 
     <table id="dg" class="easyui-datagrid"  style="width:auto;height:350px;padding:10px"
-           data-options="rownumbers:true,singleSelect:true,method:'get',url:'/UserManage/Getuser',toolbar:'#tb',pagination:true">
+           data-options="rownumbers:true,toolbar:'#tb',singleSelect:true , pagination:true">
         <thead>
             <tr>
                 @*<th data-options="field:'ID',width:80">ID</th>*@
@@ -64,19 +64,22 @@
 				}]
 			">
         <div style="width:200px;height:100px;padding:10px;margin:auto">
-            <div class="sp1">用户名：</div><input type="text" id="Username" /></br>
-            <div class="sp1">密码：</div><input type="text" id="Password" /></br>
-            <div class="sp1">姓名：</div><input type="text" id="Name" /></br>
-            <div class="sp1">角色：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Role" data-options="panelHeight:150">
-                <option value="4">支部成员</option>
-                <option value="3">支部书记</option>
-                <option value="1">党委书记</option>
-                <option value="2">党委成员</option>
-                <option value="0">系统管理员</option>
-            </select>
+            <div class="sp1">用户名：</div><input class="easyui-textbox" type="text" id="Username" style="width:150px;"/></br>
+            <div class="sp1">密码：</div><input class="easyui-textbox" type="text" id="Password" style="width:150px;"/></br>
+            <div class="sp1">姓名：</div><input class="easyui-textbox" type="text" id="Name" style="width:150px;"/></br>
+            <div class="sp1">角色：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Role" data-options="panelHeight:150,editable:false">
+    <option value="组织委员">组织委员</option>
+    <option value="宣传委员">宣传委员</option>
+    <option value="支部书记">支部书记</option>
+    <option value="党群组织专责">党群组织专责</option>
+    <option value="党群宣传专责">党群宣传专责</option>
+    <option value="党群主任">党群主任</option>
+    <option value="党委委员">党委委员</option>
+    <option value="党委书记">党委书记</option>
+</select>
             </br>
-            <div class="sp1">党支部：</div><select class="easyui-combobox" name="state" style="width:150px;"id="Dept" data-options="panelHeight:150">
-                <option value="计量中心党群">中心党委</option>
+            <div class="sp1">党支部：</div><select class="easyui-combobox" name="state" style="width:150px;"id="Dept" data-options="panelHeight:150,editable:false">
+                <option value="中心党群">中心党群</option>
                 <option value="室内检定党支部">室内检定党支部</option>
                 <option value="现场检验党支部">现场检验党支部</option>
                 <option value="标准量传党支部">标准量传党支部</option>
@@ -100,18 +103,21 @@
 				}]
 			">
         <div style="width:200px;height:100px;padding:10px;margin:auto">
-            <div class="sp1">用户名：</div><input type="text" id="Username_" readonly="readonly" /></br>
-            <div class="sp1">姓名：</div><input type="text" id="Name_" /></br>
-            <div class="sp1">角色：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Role_" data-options="panelHeight:150">
-                <option value="支部成员">支部成员</option>
-                <option value="支部书记">支部书记</option>
-                <option value="党委书记">党委书记</option>
-                <option value="党委成员">党委成员</option>
-                <option value="系统管理员">系统管理员</option>
+            <div class="sp1">用户名：</div><input type="text" class="easyui-textbox" id="Username_" readonly="readonly" style="width:150px;"/></br>
+            <div class="sp1">姓名：</div><input type="text" class="easyui-textbox" id="Name_" style="width:150px;"/></br>
+            <div class="sp1">角色：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Role_" data-options="panelHeight:150,editable:false" >
+    <option value="组织委员">组织委员</option>
+    <option value="宣传委员">宣传委员</option>
+    <option value="支部书记">支部书记</option>
+    <option value="党群组织专责">党群组织专责</option>
+    <option value="党群宣传专责">党群宣传专责</option>
+    <option value="党群主任">党群主任</option>
+    <option value="党委委员">党委委员</option>
+    <option value="党委书记">党委书记</option>
             </select>
             </br>
-            <div class="sp1">党支部：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Dept_" data-options="panelHeight:150">
-                <option value="计量中心党群">中心党委</option>
+            <div class="sp1">党支部：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Dept_" data-options="panelHeight:150,editable:false">
+                <option value="中心党群">中心党群</option>
                 <option value="室内检定党支部">室内检定党支部</option>
                 <option value="现场检验党支部">现场检验党支部</option>
                 <option value="标准量传党支部">标准量传党支部</option>
@@ -137,11 +143,15 @@
 
         function adduser() {
 
-            Username = $("#Username").val();
-            Password = $("#Password").val();
-            Name = $("#Name").val();
+            Username = $("#Username").textbox('getValue');
+            Password = $("#Password").textbox('getValue');
+            Name = $("#Name").textbox('getValue');
             Role = $("#Role").combobox('getValue');
             Department = $("#Dept").combobox('getValue');
+            if (Department == "中心党群" && (Role != "党群组织专责" && Role != "党群宣传专责" && Role != "党群主任" && Role != "党委委员" && Role != "党委书记") )
+            { alert("部门与角色不对应"); return; }
+            if (Department != "中心党群" && (Role != "组织委员" && Role != "宣传委员" && Role != "支部书记"))
+            { alert("部门与角色不对应"); return; }
             if (Username == "") { alert("请输入用户名"); return; }
             if (Password == "") { alert("请输入密码"); return; }
             if (Name == "") { alert("请输入姓名"); return; }
@@ -158,13 +168,14 @@
                 success: function (data) {
                     if (data == 1) {
                         alert("新增用户成功！");
+                        searchuser();
                         $('#dlg').dialog('close');
                         $('#dg').datagrid('reload');
-                        $("#Username").val("");
-                        $("#Password").val("");
-                        $("#Name").val("");
-                        $("#Role").combobox('setValue', "");
-                        $("#Dept").combobox('setValue', "");
+                        $("#Username").textbox('setValue', "");
+                        $("#Password").textbox('setValue', "");
+                        $("#Name").textbox('setValue', "");
+                        $("#Role").combobox('setValue', "组织委员");
+                        $("#Dept").combobox('setValue', "中心党委");
                     }
                     else if (data == 2)
                         alert("用户名已存在！");
@@ -175,6 +186,7 @@
                     alert("请求失败！"); 
                 }
             });
+
         }
         function deluser() {
             Username = $('#dg').datagrid('getSelected').user_name;
@@ -189,6 +201,7 @@
                         success: function (data) {
                             if (data > 0) {
                                 alert("删除用户成功！");
+                                searchuser();
                                 $('#dg').datagrid('reload');
                             }
                             else alert("删除用户失败！");
@@ -199,26 +212,27 @@
                     });
                 }
             });
-
+            searchuser();
         }
         function update() {
             Username = $('#dg').datagrid('getSelected').user_name;
             Name = $('#dg').datagrid('getSelected').user_rname;
             Role = $('#dg').datagrid('getSelected').user_role;
             Department = $('#dg').datagrid('getSelected').user_dept;
-            $('#Username_').val(Username);
-            $('#Name_').val(Name);
+            $('#Username_').textbox('setValue', Username);
+            $('#Name_').textbox('setValue', Name);
             $('#Role_').combobox('setValue',Role);
             $('#Dept_').combobox('setValue',Department);
             $('#dlg_').dialog('open');
         }
 
         function upduser() {
-            Username = $("#Username_").val();
-            Password = $("#Password_").val();
-            Name = $("#Name_").val();
+            Username = $("#Username_").textbox('getValue');
+            Name = $("#Name_").textbox('getValue');
             Role = $("#Role_").combobox('getValue');
             Department = $("#Dept_").combobox('getValue');
+            if (Department == "中心党群" && (Role != "党群组织专责" && Role != "党群宣传专责" && Role != "党群主任" && Role != "党委委员" && Role != "党委书记")) { alert("部门与角色不对应"); return; }
+            if (Department != "中心党群" && (Role != "组织委员" && Role != "宣传委员" && Role != "支部书记")) { alert("部门与角色不对应"); return; }
             if (Username == "") { alert("请输入用户名"); return; }
             if (Name == "") { alert("请输入姓名"); return; }
             $.messager.confirm('确认编辑', "确认编辑用户" + Username + "吗？", function (r) {
@@ -235,6 +249,7 @@
                         success: function (data) {
                             if (data > 0) {
                                 alert("编辑用户成功！");
+                                searchuser();
                                 $('#dlg_').dialog('close');
                                 $('#dg').datagrid('reload');
                             }
@@ -246,20 +261,8 @@
                     });
                 }
             });
-
         }
-        //function select() {
-        //    var addtitle = $(obj).linkbutton("options").text;
-        //    var exi = $('#tt').tabs('exists', addtitle);
-        //    var content = '<iframe scrolling="auto" frameborder="0"  src="' + url + '" style="width:100%;height:100%;"></iframe>';
-        //    if (!exi)
-        //        $('#tt').tabs('add', {
-        //            title: addtitle,
-        //            content: content,
-        //            closable: true
-        //        });
-        //    else $('#tt').tabs('select', addtitle);
-        //}
+
 
         function searchuser() {
             var username = $("#user_name").textbox('getValue');
@@ -276,11 +279,7 @@
                     alert("请求失败！");
                 }
             });
-            //$("#dg").datagrid({
-            //    queryParams: {
-            //        user_name: username
-            //    }                
-            //});
+
         }
 
     </script>

@@ -1,34 +1,4 @@
-﻿function pagerFilter(data) {
-    if (typeof data.length == 'number' && typeof data.splice == 'function') {    // 判断数据是否是数组
-        data = {
-            total: data.length,
-            rows: data
-        }
-    }
-    var dg = $(this);
-    var opts = dg.datagrid('options');
-    var pager = dg.datagrid('getPager');
-    pager.pagination({
-        onSelectPage: function (pageNum, pageSize) {
-            opts.pageNumber = pageNum;
-            opts.pageSize = pageSize;
-            pager.pagination('refresh', {
-                pageNumber: pageNum,
-                pageSize: pageSize
-            });
-            dg.datagrid('loadData', data);
-        }
-    });
-    if (!data.originalRows) {
-        data.originalRows = (data.rows);
-    }
-    var start = (opts.pageNumber - 1) * parseInt(opts.pageSize);
-    var end = start + parseInt(opts.pageSize);
-    data.rows = (data.originalRows.slice(start, end));
-    return data;
-}
-
-//获取浏览器页面可见高度和宽度
+﻿//获取浏览器页面可见高度和宽度
 var _PageHeight = document.documentElement.clientHeight,
     _PageWidth = document.documentElement.clientWidth;
 //计算loading框距离顶部和左部的距离（loading框的宽度为215px，高度为61px）

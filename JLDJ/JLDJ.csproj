@@ -134,15 +134,24 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\FlowSelectController.cs" />
     <Compile Include="Controllers\FlowStartController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\MyWorkController.cs" />
+    <Compile Include="Controllers\NewJJFZController.cs" />
     <Compile Include="Controllers\PersonManageController.cs" />
     <Compile Include="Controllers\UserManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\flow.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\flow_Devmem.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -159,6 +168,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\person.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\user.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -169,10 +181,12 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Common.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="JS\Common.js" />
     <Content Include="JS\jquery-easyui-1.7.0\changelog.txt" />
     <Content Include="JS\jquery-easyui-1.7.0\demo-mobile\accordion\basic.html" />
     <Content Include="JS\jquery-easyui-1.7.0\demo-mobile\accordion\header.html" />
@@ -1040,6 +1054,8 @@
     <Content Include="JS\jquery-easyui-1.7.0\themes\mobile.css" />
     <Content Include="JS\jquery-easyui-1.7.0\themes\react.css" />
     <Content Include="JS\jquery-easyui-1.7.0\themes\vue.css" />
+    <Content Include="JS\JS1.js" />
+    <Content Include="LoginCss\Login.css" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -1083,6 +1099,7 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="NewJJFZ0.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -1094,7 +1111,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -1113,9 +1132,16 @@
     <Content Include="Views\FlowStart\FlowStart.cshtml" />
     <Content Include="Views\FlowSelect\FlowSelect.cshtml" />
     <Content Include="Views\MyWork\MyWork.cshtml" />
+    <Content Include="Views\NewJJFZ\NewJJFZ0.cshtml" />
+    <Content Include="Views\NewJJFZ\NewJJFZ1.cshtml" />
+    <Content Include="Views\NewJJFZ\NewJJFZ5.cshtml" />
+    <Content Include="Views\NewJJFZ\NewJJFZ4.cshtml" />
+    <Content Include="Views\NewJJFZ\NewJJFZ2.cshtml" />
+    <Content Include="Views\NewJJFZ\NewJJFZ3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

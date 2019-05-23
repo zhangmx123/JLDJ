@@ -17,11 +17,325 @@
     <script type="text/javascript" src="~/JS/jquery-easyui-1.7.0/jquery.easyui.min.js"></script>
     <script type="text/javascript" src="~/JS/jquery-easyui-1.7.0/locale/easyui-lang-zh_CN.js"></script>
     <script type="text/javascript" src="~/JS/Common.js"></script>
+    @*<script type="text/javascript" src="~/JS/JS1.js"></script>*@
 
 </head>
 <body>
-    <div>
-    
+
+
+    <table id="dg" class="easyui-datagrid" style="width:auto;height:350px;padding:10px"
+           data-options="rownumbers:true,toolbar:'#tb',singleSelect:true ,pagination:true">
+        <thead>
+            <tr>
+                @*<th data-options="field:'ID',width:80">ID</th>*@
+                <th data-options="field:'person_id'">员工编号</th>
+                <th data-options="field:'person_name',align:'right'">姓名</th>
+                <th data-options="field:'person_sex',align:'right'">性别</th>
+                <th data-options="field:'person_phonenum',align:'right'">电话号码</th>
+                <th data-options="field:'person_email',align:'right'">电子邮箱</th>
+                <th data-options="field:'person_ZGDYdate',align:'right'">入党时间</th>
+
+
+            </tr>
+        </thead>
+    </table>
+    <div id="tb" style="padding:5px;height:auto">
+        <div style="margin-bottom:5px">
+            <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="$('#dlg').dialog('open')">增加</a>
+            <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="update()">修改</a>
+            <!--<a href="#" class="easyui-linkbutton" iconCls="icon-save" plain="true"></a>
+            <a href="#" class="easyui-linkbutton" iconCls="icon-cut" plain="true"></a>-->
+            <a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="deluser()">删除</a>
+        </div>
+        <div>
+            <input id="person_name" class="easyui-textbox" data-options="prompt:'请输入姓名'" />
+            <a href="#" class="easyui-linkbutton" iconCls="icon-search" onclick="searchperson()">查询</a>
+        </div>
     </div>
+    <div style="margin:20px 0;">
+        @*<a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#dlg').dialog('open')">Open</a>
+            <a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#dlg').dialog('close')">Close</a>*@
+    </div>
+
+
+    <div id="dlg" class="easyui-dialog" title="新增人员" style="width:800px;height:300px;padding:10px"
+         data-options="modal:true,closed:true,
+
+				buttons: [{
+					text:'提交',
+					iconCls:'icon-ok',
+					handler:function(){
+                        addperson();
+                }
+				}]
+			">
+        <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+            <div class="sp1">员工姓名：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Name" /></br>
+            <div class="sp1">毕业院校：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_College" /></br>
+            <div class="sp1">所在支部：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Person_Dept" data-options="panelHeight:150,editable:false">
+                <option value="室内检定党支部">室内检定党支部</option>
+                <option value="现场检验党支部">现场检验党支部</option>
+                <option value="标准量传党支部">标准量传党支部</option>
+                <option value="配送党支部">配送党支部</option>
+                <option value="运营管理党支部">运营管理党支部</option>
+                <option value="综合党支部">综合党支部</option>
+                <option value="技术质检党支部">技术质检党支部</option>
+            </select></br>
+            <div class="sp1">员工学历：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Person_Eduback" data-options="panelHeight:150",editable:false>
+                <option value="大学专科">大学专科</option>
+                <option value="大学本科">大学本科</option>
+                <option value="硕士研究生">硕士研究生</option>
+                <option value="博士研究生">博士研究生</option>
+            </select></br>
+
+
+        </div>
+        <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+            <div class="sp1">电话号码：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Phonenum" /></br>
+            <div class="sp1">内网邮箱：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Email" /></br>
+            <div class="sp1">员工性别：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Person_Sex" data-options="panelHeight:150,editable:false">
+    <option value="男">男</option>
+    <option value="女">女</option>
+
+</select></br>
+            <div class="sp1">员工学位：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Person_Degree" data-options="panelHeight:150,editable:false">
+    <option value="学士学位">学士学位</option>
+    <option value="硕士学位">硕士学位</option>
+    <option value="博士学位">博士学位</option>
+    <option value="无">无</option>
+</select></br>
+
+        </div>
+        <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+            <div class="sp1">出生日期：</div><input type="text" id="Person_Birth" class="easyui-datebox" data-options="value:'Today',editable:false"/></br>
+            <div class="sp1">工作日期：</div><input type="text" id="Person_CJGZdate"class="easyui-datebox" data-options="value:'Today',editable:false"/></br>
+            <div class="sp1">入党日期：</div><input type="text" id="Person_YBDYdate" class="easyui-datebox" data-options="value:'Today',editable:false"/></br>
+            <div class="sp1">转正日期：</div><input type="text" id="Person_ZGDYdate" class="easyui-datebox" data-options="value:'Today',editable:false"/></br>
+        </div>
+    </div>
+    <div id="dlg_" class="easyui-dialog" title="编辑人员" style="width:400px;height:400px;padding:10px"
+         data-options="modal:true,closed:true,
+
+				buttons: [{
+					text:'提交',
+					iconCls:'icon-ok',
+					handler:function(){
+                        upduser();
+                }
+				}]
+			">
+        <div style="width:200px;height:100px;padding:10px;margin:auto">
+            <div class="sp1">用户名：</div><input type="text" id="Username_" readonly="readonly" /></br>
+            <div class="sp1">姓名：</div><input type="text" id="Name_" /></br>
+            <div class="sp1">角色：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Role_" data-options="panelHeight:150">
+                <option value="支部成员">支部成员</option>
+                <option value="支部书记">支部书记</option>
+                <option value="党委书记">党委书记</option>
+                <option value="党委成员">党委成员</option>
+                <option value="系统管理员">系统管理员</option>
+            </select>
+            </br>
+            <div class="sp1">党支部：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Dept_" data-options="panelHeight:150">
+                <option value="中心党群">中心党群</option>
+                <option value="室内检定党支部">室内检定党支部</option>
+                <option value="现场检验党支部">现场检验党支部</option>
+                <option value="标准量传党支部">标准量传党支部</option>
+                <option value="配送党支部">配送党支部</option>
+                <option value="运营管理党支部">运营管理党支部</option>
+                <option value="综合党支部">综合党支部</option>
+                <option value="技术质检党支部">技术质检党支部</option>
+            </select>
+            </br>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var Person_Name;
+        var Person_Sex;
+        var Person_Birth;
+        var Person_CJGZdate;
+        var Person_ZGDYdate;
+        var Person_YBDYdate;
+        var Person_Eduback;
+        var Person_Degree;
+        var Person_College;
+        var Person_Phonenum;
+        var Person_Email;
+        var Person_Dept;
+        $(function () {
+            searchperson();
+        });
+        function addperson() {
+            Person_Name = $("#Person_Name").textbox('getValue');
+            Person_College = $("#Person_College").textbox('getValue');
+            Person_Phonenum = $("#Person_Phonenum").textbox('getValue');
+            Person_Email = $("#Person_Email").textbox('getValue');
+            Person_Sex = $("#Person_Sex").combobox('getValue');
+            Person_Birth = $("#Person_Birth").datebox('getValue');
+            Person_CJGZdate = $("#Person_CJGZdate").datebox('getValue');
+            Person_ZGDYdate = $("#Person_ZGDYdate").datebox('getValue');
+            Person_YBDYdate = $("#Person_YBDYdate").datebox('getValue');
+            Person_Eduback = $("#Person_Eduback").combobox('getValue');
+            Person_Degree = $("#Person_Degree").combobox('getValue');
+            Person_Dept = $("#Person_Dept").combobox('getValue');        
+            if (Person_Name == "") { alert("请输入员工姓名"); return; }
+            if (Person_Phonenum == "") { alert("请输入电话号码"); return; }
+            if (Person_Eduback == "") { alert("请输入员工学历"); return; }
+            if (Person_College == "") { alert("请输入毕业院校"); return; }
+            $.ajax({
+                url: "/PersonManage/addperson",
+                type: "get",
+                data: {
+                    "Person_Name": Person_Name,
+                    "Person_Sex": Person_Sex,
+                    "Person_Birth": Person_Birth,
+                    "Person_CJGZdate": Person_CJGZdate,
+                    "Person_ZGDYdate": Person_ZGDYdate,
+                    "Person_YBDYdate": Person_YBDYdate,
+                    "Person_Eduback": Person_Eduback,
+                    "Person_Degree": Person_Degree,
+                    "Person_College": Person_College,
+                    "Person_Phonenum": Person_Phonenum,
+                    "Person_Email": Person_Email,
+                    "Person_Dept": Person_Dept
+                },
+                success: function (data) {
+                    if (data == 1) {
+                        alert("新增员工成功！");
+                        searchperson();
+                        $('#dlg').dialog('close');
+                        //$('#dg').datagrid('reload');
+                        searchperson();
+                        $("#Person_Name").textbox('setValue',"");
+                        $("#Person_College").textbox('setValue', "");
+                        $("#Person_Phonenum").textbox('setValue', "");
+                        $("#Person_Email").textbox('setValue', "");
+                        $("#Person_Sex").combobox('setValue', "男");
+                        $("#Person_Birth").datebox('setValue', "");
+                        $("#Person_CJGZdate").datebox('setValue', "");
+                        $("#Person_ZGDYdate").datebox('setValue', "");
+                        $("#Person_YBDYdate").datebox('setValue', "");
+                        $("#Person_Eduback").combobox('setValue', "大学专科");
+                        $("#Person_Degree").combobox('setValue', "学士学位");
+                        $("#Person_Dept").combobox('setValue', "室内检定党支部");
+                    }
+                    //else if (data == 2)
+                    //    alert("用户名已存在！");
+                    else
+                        alert("新增失败！");
+                },
+                error: function () {
+                    alert("请求失败！");
+                }
+            });
+        }
+        function deluser() {
+            Username = $('#dg').datagrid('getSelected').user_name;
+            $.messager.confirm('确认删除', "确认删除用户" + Username + "吗？", function (r) {
+                if (r) {
+                    $.ajax({
+                        url: "/UserManage/deluser",
+                        type: "get",
+                        data: {
+                            "Username": Username
+                        },
+                        success: function (data) {
+                            if (data > 0) {
+                                alert("删除用户成功！");
+                                $('#dg').datagrid('reload');
+                            }
+                            else alert("删除用户失败！");
+                        },
+                        error: function () {
+                            alert("请求失败！");
+                        }
+                    });
+                }
+            });
+
+        }
+        function update() {
+            Username = $('#dg').datagrid('getSelected').user_name;
+            Name = $('#dg').datagrid('getSelected').user_rname;
+            Role = $('#dg').datagrid('getSelected').user_role;
+            Department = $('#dg').datagrid('getSelected').user_dept;
+            $('#Username_').val(Username);
+            $('#Name_').val(Name);
+            $('#Role_').combobox('setValue', Role);
+            $('#Dept_').combobox('setValue', Department);
+            $('#dlg_').dialog('open');
+        }
+
+        function upduser() {
+            Username = $("#Username_").val();
+            Password = $("#Password_").val();
+            Name = $("#Name_").val();
+            Role = $("#Role_").combobox('getValue');
+            Department = $("#Dept_").combobox('getValue');
+            if (Username == "") { alert("请输入用户名"); return; }
+            if (Name == "") { alert("请输入姓名"); return; }
+            $.messager.confirm('确认编辑', "确认编辑用户" + Username + "吗？", function (r) {
+                if (r) {
+                    $.ajax({
+                        url: "/UserManage/upduser",
+                        type: "get",
+                        data: {
+                            "Username": Username,
+                            "Name": Name,
+                            "Role": Role,
+                            "Department": Department
+                        },
+                        success: function (data) {
+                            if (data > 0) {
+                                alert("编辑用户成功！");
+                                $('#dlg_').dialog('close');
+                                $('#dg').datagrid('reload');
+                            }
+                            else alert("编辑用户失败！");
+                        },
+                        error: function () {
+                            alert("请求失败！");
+                        }
+                    });
+                }
+            });
+
+        }
+        //function select() {
+        //    var addtitle = $(obj).linkbutton("options").text;
+        //    var exi = $('#tt').tabs('exists', addtitle);
+        //    var content = '<iframe scrolling="auto" frameborder="0"  src="' + url + '" style="width:100%;height:100%;"></iframe>';
+        //    if (!exi)
+        //        $('#tt').tabs('add', {
+        //            title: addtitle,
+        //            content: content,
+        //            closable: true
+        //        });
+        //    else $('#tt').tabs('select', addtitle);
+        //}
+
+        function searchperson() {
+            var personname = $("#person_name").textbox('getValue');
+            $.ajax({
+                url: "/PersonManage/GetPerson",
+                type: "get",
+                data: {
+                    "person_name": personname
+                },
+                success: function (data) {
+                    $('#dg').datagrid({ loadFilter: pagerFilter }).datagrid('loadData', data);
+                },
+                error: function () {
+                    alert("请求失败！");
+                }
+            });
+            //$("#dg").datagrid({
+            //    queryParams: {
+            //        user_name: username
+            //    }
+            //});
+        }
+
+    </script>
 </body>
 </html>

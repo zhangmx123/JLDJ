@@ -1,30 +1,42 @@
 ﻿@{
     Layout = null;
 }
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
 
     <title>国网辽宁计量中心党建信息系统</title>
-    <link rel="stylesheet" type="text/css" href="~/JS/jquery-easyui-1.7.0/themes/default/easyui.css">
-    <link rel="stylesheet" type="text/css" href="~/JS/jquery-easyui-1.7.0/themes/icon.css">
-    <link rel="stylesheet" type="text/css" href="~/JS/jquery-easyui-1.7.0/demo/demo.css">
-    <link rel="stylesheet" type="text/css" href="~/Content/Common.css">
+    <link rel="stylesheet" type="text/css" href="~/JS/jquery-easyui-1.7.0/themes/default/easyui.css" />
+    <link rel="stylesheet" type="text/css" href="~/JS/jquery-easyui-1.7.0/themes/icon.css" />
+    <link rel="stylesheet" type="text/css" href="~/JS/jquery-easyui-1.7.0/demo/demo.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/Common.css" />
     <script type="text/javascript" src="~/JS/jquery-easyui-1.7.0/jquery.min.js"></script>
     <script type="text/javascript" src="~/JS/jquery-easyui-1.7.0/jquery.easyui.min.js"></script>
     <script type="text/javascript" src="~/JS/jquery-easyui-1.7.0/locale/easyui-lang-zh_CN.js"></script>
     <script type="text/javascript" src="~/JS/Common.js"></script>
-
 </head>
 <body>
     <div style="margin:00px 0;"></div>
     <div class="easyui-layout" style="width:auto;height:570px;">
-        <div data-options="region:'north'" style="height:80px;background-color: #006569;" ><h1 style="color:#fff;text-align:center">国网辽宁计量中心党建信息系统</h1></div>
+        <div data-options="region:'north'" style="height:100px;background-color: #006569;">
+            <h1 style="color:#fff;text-align:center">国网辽宁计量中心党建信息系统</h1>
+            @*<span style="width:600px;float:left">
+                    <p style="color:#fff;text-align:left" id="welcome"></p>
+                </span>
+                <span style="width:600px;float:right;text-align:right">
+                    <a style="color:#fff" onclick="logout()">注销</a>
+                </span>*@
+            <div>
+                <span style="color:#fff;text-align:left;margin-left: 10px" id="welcome"></span>
+                <span style="float: right;color: #fff;margin-right: 10px;cursor: pointer;" onclick="logout()">注销</span>
+            </div>
+        </div>
+
         <div data-options="region:'south',split:true" style="height:60px;background-color: #006569;color:#fff;"></br><center>技术支持：38193</center></div>
 
         <div data-options="region:'west',split:true" title="收起导航" style="width:100px;height:auto;">
-            <div class="easyui-accordion" data-options="fit:true,border:false">
+            <div class="easyui-accordion" data-options="fit:true,border:false" id="aa">
                 <div title="系统管理" style="padding:10px;">
                     <a href="javascript:void(0)" class="easyui-linkbutton" onclick="addtab(this,'../UserManage/UserManage')">用户管理</a>
                 </div>
@@ -32,28 +44,65 @@
                     <a href="javascript:void(0)" class="easyui-linkbutton" onclick="addtab(this,'../PersonManage/PersonManage')">人员管理</a>
                 </div>
                 <div title="业务管理" data-options="selected:true" style="padding:10px">
-                    <a id="db" href="javascript:void(0)" class="easyui-linkbutton" onclick="addtab(this,'../MyWork/MyWork')">我的待办</a>
-
-                    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="addtab(this,'../FlowSelect/FlowSelect')">流程查询</a>
-
-                    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="addtab(this,'../FlowStart/FlowStart')">流程发起</a>
+                    <div style="margin-bottom:7px"><a id="db" href="javascript:void(0)" class="easyui-linkbutton" onclick="addtab(this,'../MyWork/MyWork')">我的待办</a></div>
+                    <div style="margin-bottom:7px"><a href="javascript:void(0)" class="easyui-linkbutton" onclick="addtab(this,'../FlowSelect/FlowSelect')">流程管理</a></div>
+                    @*<div style="margin-bottom:7px"><a href="javascript:void(0)" class="easyui-linkbutton" onclick="addtab(this,'../FlowStart/FlowStart')">流程发起</a></div>*@
 
                 </div>
             </div>
         </div>
-        <div data-options="region:'center'" style="height:100%;" >
-            <div class="easyui-tabs" id="tt" data-options="fit:true,border:false,plain:true" style="height:100%;">
+        <div data-options="region:'center'" style="height:100%;">
+            <div class="easyui-tabs" id="tt" data-options="fit:true,border:false,plain:true" style="overflow:auto;height:99.5%;">
 
             </div>
         </div>
         <script type="text/javascript">
+
             $(function () {
-                $("#db").click();
+                addtab($("#db"), '../MyWork/MyWork');
+                var username = "";
+                var dept = "";
+                var role = "";
+                $.ajax({
+                    url: "/Menu/Menuget",
+                    type: "get",
+
+                    success: function (data) {
+                        username = data["username"];
+                        dept = data["dept"];
+                        role = data["role"];
+                        $('#welcome').html("欢迎您，" + username + "，您当前的权限为：" + dept + role);
+                        if (role == "组织委员" || role == "宣传委员") {
+                            $('#aa').accordion("remove", "系统管理");
+                            $('#aa').accordion("remove", "信息管理");
+
+                        }
+                        if (role == "支部书记") {
+                            $('#aa').accordion("remove", "系统管理");
+                        }
+                        if (role == "党群组织专责" || role == "党群宣传专责") {
+                            $('#aa').accordion("remove", "系统管理");
+                        }
+                        if (role == "党群主任") {
+                            $('#aa').accordion("remove", "系统管理");
+                        }
+                        if (role == "党委委员") {
+                            $('#aa').accordion("remove", "系统管理");
+                        }
+                        if (role == "党委书记") {
+                            $('#aa').accordion("remove", "系统管理");
+                        }
+                        //alert(username + dept + role);
+                    },
+                    error: function () {
+                        alert("请求失败！");
+                    }
+                });
             });
             function addtab(obj, url) {
                 var addtitle = $(obj).linkbutton("options").text;
                 var exi = $('#tt').tabs('exists', addtitle);
-                var content = '<iframe scrolling="no" frameborder="0"  marginwidth="0" marginheight="0" allowtransparency="yes" src="' + url + '" style="width:100%;height:100%;"></iframe>';
+                var content = '<iframe scrolling="yes" frameborder="0"  marginwidth="0" marginheight="0" allowtransparency="yes" src="' + url + '" style="width:100%;height:100%;"></iframe>';
                 if (!exi)
                     $('#tt').tabs('add', {
                         title: addtitle,
@@ -62,13 +111,30 @@
                     });
                 else $('#tt').tabs('select', addtitle);
             }
-                    //function removePanel() {
-                    //    var tab = $('#tt').tabs('getSelected');
-                    //    if (tab) {
-                    //        var index = $('#tt').tabs('getTabIndex', tab);
-                    //        $('#tt').tabs('close', index);
-                    //    }
-                    //}
+            function logout() {
+                $.ajax({
+                    url: "/Menu/Menulogout",
+                    type: "get",
+
+                    success: function (data) {
+                        if (data == 1) {
+                            alert("注销成功");
+                            window.location.href = "../Login/Login";
+                        }
+                    },
+                    error: function () {
+                        alert("请求失败！");
+                    }
+                });
+            }
+                                            //function removePanel() {
+                                            //    var tab = $('#tt').tabs('getSelected');
+                                            //    if (tab) {
+                                            //        var index = $('#tt').tabs('getTabIndex', tab);
+                                            //        $('#tt').tabs('close', index);
+                                            //    }
+                                            //}
         </script>
+    </div>
 </body>
 </html>

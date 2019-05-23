@@ -4,11 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="bf62e5e9cc8c4c46be303e8a200b60e7" Name="Diagram1">
-        <EntityTypeShape EntityType="DJXTModel.user" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DJXTModel.flow" Width="1.5" PointX="3.75" PointY="0.75" />
-        <EntityTypeShape EntityType="DJXTModel.flow_Devmem" Width="1.5" PointX="0.75" PointY="3.75" />
-        <EntityTypeShape EntityType="DJXTModel.person" Width="1.5" PointX="2.75" PointY="4.75" />
+      <Diagram DiagramId="959d8edfc6874bbdaa9b5b085dbc75cf" Name="Diagram1">
+        <EntityTypeShape EntityType="DJXTModel.flow_Devmem" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DJXTModel.person" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DJXTModel.users" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DJXTModel.flow" Width="1.5" PointX="5.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

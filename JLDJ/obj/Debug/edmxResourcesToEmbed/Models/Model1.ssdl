@@ -1,13 +1,61 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="DJXTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="flow">
+    <Key>
+      <PropertyRef Name="flow_id" />
+    </Key>
+    <Property Name="flow_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="flow_num" Type="nvarchar" MaxLength="50" />
+    <Property Name="flow_order" Type="nvarchar" MaxLength="50" />
+    <Property Name="flow_type" Type="nvarchar" MaxLength="50" />
+    <Property Name="flow_dept" Type="nvarchar" MaxLength="50" />
+    <Property Name="flow_founder" Type="nvarchar" MaxLength="50" />
+    <Property Name="flow_stime" Type="nvarchar" MaxLength="50" />
+    <Property Name="flow_etime" Type="nvarchar" MaxLength="50" />
+    <Property Name="flow_state" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="flow_Devmem">
+    <Key>
+      <PropertyRef Name="Devmem_id" />
+    </Key>
+    <Property Name="Devmem_id" Type="int" Nullable="false" />
+    <Property Name="Devmem_flowid" Type="int" />
+    <Property Name="Devmem_aptxt" Type="nvarchar" MaxLength="50" />
+    <Property Name="Devmem_personid" Type="int" />
+  </EntityType>
+  <EntityType Name="person">
+    <Key>
+      <PropertyRef Name="person_id" />
+    </Key>
+    <Property Name="person_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="person_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="person_sex" Type="nvarchar" MaxLength="50" />
+    <Property Name="person_birth" Type="nvarchar" MaxLength="50" />
+    <Property Name="person_CJGZdate" Type="nvarchar" MaxLength="50" />
+    <Property Name="person_ZGDYdate" Type="nvarchar" MaxLength="50" />
+    <Property Name="person_YBDYdate" Type="nvarchar" MaxLength="50" />
+    <Property Name="person_JJFZdate" Type="nvarchar" MaxLength="50" />
+    <Property Name="person_eduback" Type="nvarchar" MaxLength="50" />
+    <Property Name="person_degree" Type="nvarchar" MaxLength="50" />
+    <Property Name="person_college" Type="nvarchar" MaxLength="50" />
+    <Property Name="person_phonenum" Type="nvarchar" MaxLength="50" />
+    <Property Name="person_email" Type="nvarchar" MaxLength="50" />
+    <Property Name="person_dept" Type="nvarchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="user">
     <Key>
       <PropertyRef Name="user_name" />
     </Key>
     <Property Name="user_name" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="user_pwd" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="user_pwd" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_role" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_dept" Type="nvarchar" MaxLength="50" />
+    <Property Name="user_rname" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityContainer Name="DJXTModelStoreContainer">
+    <EntitySet Name="flow" EntityType="Self.flow" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="flow_Devmem" EntityType="Self.flow_Devmem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="person" EntityType="Self.person" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

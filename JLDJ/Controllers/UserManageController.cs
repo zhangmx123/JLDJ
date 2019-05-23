@@ -13,10 +13,10 @@ using System.Web.WebPages;
 
 namespace JLDJ.Controllers
 {
-    public class UserManageController : Controller
+    public class UserManageController : DefaultController
     {
         // GET: UserManage
-        private DJXTEntities1 db = new DJXTEntities1();
+        private DJXTEntities2 db = new DJXTEntities2();
         public ActionResult Index()
         {
             return View();
@@ -28,30 +28,7 @@ namespace JLDJ.Controllers
         [HttpGet]
         public JsonResult GetUser(string user_name)
         {
-            /*String result = "";
-            using (SqlConnection conn = new SqlConnection("Server=127.0.0.1;DataBase=JLDJXT;User ID=sa;Password=123456"))
-            {
-                conn.Open();
-                SqlCommand comm = new SqlCommand();
-                comm.CommandType = System.Data.CommandType.Text;
-                comm.CommandText = "select * from [User]";
-                if (!String.IsNullOrEmpty(user_name))
-                {
-                    comm.CommandText = "select * from [User] where Username like '%" + user_name + "%'";
-                }
-                comm.Connection = conn;
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                adapter.SelectCommand = comm;
-                DataSet ds = new DataSet();
-                adapter.Fill(ds);
-                adapter.Dispose();
-                comm.Dispose();
-                DataTable dt = ds.Tables[0];
-                result = JsonConvert.SerializeObject(dt);
 
-            }
-            result = "{\"total\":3,\"rows\":" + result + "}";
-            return result;*/
 
             //if (!string.IsNullOrEmpty(user_name))
                 if (!user_name.IsEmpty())
