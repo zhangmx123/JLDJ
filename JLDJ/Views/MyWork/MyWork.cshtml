@@ -36,51 +36,222 @@
             </tr>
         </thead>
     </table>
-    <script type="text/javascript">
-        $(function () {
-            searchflow();
-        });
-        function searchflow() {
-            $.ajax({
-                url: "/MyWork/GetWork",
-                type: "get",
-                data: {
-                },
-                success: function (data) {
-                    $('#dg').datagrid({ loadFilter: pagerFilter }).datagrid('loadData', data);
-                },
-                error: function () {
-                    alert("请求失败！");
-                }
-            });
 
-        }
-        function operate_formatter(value, row, index) {
-            return "<a href='#' class='easyui-linkbutton' onclick='openpage(\"" + row.flow_type + "\",\"" + row.flow_order +"\")'>操作</a>";
-        }
-        function openpage(flow_type, flow_order)
-        {
-            alert(flow_type);
-            switch (flow_type)
-            {
-                case "发展积极分子":
-                    {
-                        switch (flow_order) {
-                            case "0":
-                            case "1":
-                            case "2":
-                            case "3":
-                            case "4":
-                            case "5":
-                        }
+    <div id="dlg_newJJFZ_0" class="easyui-dialog" title="发展积极分子流程_第一步_填写申请提报审批" style="width:800px;height:350px;padding:10px"
+         data-options="modal:true,closed:true,
+
+				buttons: [{
+					text:'提交',
+					iconCls:'icon-ok',
+					handler:function(){
+                        operate_newJJFZ_00();
+                }
+				}]
+			">
+        <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+            <div class="sp1">人员姓名：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Name" /></br>
+        </div>
+        <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+            <div class="sp1">所在支部：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Person_Dept" data-options="panelHeight:150,editable:false">
+                <option value="室内检定党支部">室内检定党支部</option>
+                <option value="现场检验党支部">现场检验党支部</option>
+                <option value="标准量传党支部">标准量传党支部</option>
+                <option value="配送党支部">配送党支部</option>
+                <option value="运营管理党支部">运营管理党支部</option>
+                <option value="综合党支部">综合党支部</option>
+                <option value="技术质检党支部">技术质检党支部</option>
+            </select></br>
+        </div>
+        <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+            <div class="sp1">入党申请书：</div><input class="easyui-filebox" id="Person_Application" style="width:200px;" name="newJJFZ" data-options="prompt:'请上传入党申请书',buttonText:'上传'"></br>
+        </div>
+    </div>
+    <div id="dlg_newJJFZ_1" class="easyui-dialog" title="发展积极分子流程_第二步_支部书记审批申请" style="width:800px;height:350px;padding:10px"
+         data-options="modal:true,closed:true,
+
+
+				buttons: [{
+					text:'提交',
+					iconCls:'icon-ok',
+					handler:function(){
+                        operate_newJJFZ_10();
+                }
+				}]
+			">
+        <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+            <div class="sp1">人员姓名：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Name0" /></br>
+        </div>
+        <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+            <div class="sp1">所在支部：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Person_Dept0" data-options="panelHeight:150,editable:false">
+                <option value="室内检定党支部">室内检定党支部</option>
+                <option value="现场检验党支部">现场检验党支部</option>
+                <option value="标准量传党支部">标准量传党支部</option>
+                <option value="配送党支部">配送党支部</option>
+                <option value="运营管理党支部">运营管理党支部</option>
+                <option value="综合党支部">综合党支部</option>
+                <option value="技术质检党支部">技术质检党支部</option>
+            </select></br>
+            <div class="sp1">审批意见：</div><select class="easyui-combobox" style="width:150px;" id="Opinion" data-options="panelHeight:150,editable:false">
+                <option value="通过">通过</option>
+                <option value="不通过">不通过</option>
+            </select>
+        </div>
+        <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+            <div class="sp1">入党申请书：</div><input class="easyui-filebox" id="Person_Application0" style="width:200px;" name="newJJFZ" data-options="prompt:'请上传入党申请书',buttonText:'上传'"></br>
+        </div>
+    </div>
+    <div id="dlg_newJJFZ_2" class="easyui-dialog" title="发展积极分子流程_第三步_补充积极分子信息并归档" style="width:800px;height:350px;padding:10px"
+         data-options="modal:true,closed:true,
+
+
+				buttons: [{
+					text:'提交',
+					iconCls:'icon-ok',
+					handler:function(){
+                        operate_newJJFZ_20();
+                }
+				}]
+			">
+
+    </div>
+        @***************************************************************************************************************@
+        <script type="text/javascript">
+            var row_;
+            $(function () {
+                searchflow();
+            });
+            function searchflow() {
+                $.ajax({
+                    url: "/MyWork/GetWork",
+                    type: "get",
+                    data: {
+                    },
+                    success: function (data) {
+                        $('#dg').datagrid({ loadFilter: pagerFilter }).datagrid('loadData', data);
+                    },
+                    error: function () {
+                        alert("请求失败！");
                     }
-                case "发展党员":
-                case "党员转正":
-                case "党员评优核查":
-                case "支部换届":
+                });
+
             }
-        }
-    </script>
+            function operate_formatter(value, row, index) {
+                row_ = row;
+                return "<a href='#' class='easyui-linkbutton' onclick='openpage(\"" + row.flow_type + "\",\"" + row.flow_order + "\")'>操作</a>";
+            }
+            function openpage(flow_type, flow_order) {
+                alert("进入"+flow_type+"流程！");
+                switch (flow_type) {
+                    case "发展积极分子":
+                        {
+                            switch (flow_order) {
+                                case "0": { operate_newJJFZ_0(); break; }
+                                case "1": { operate_newJJFZ_1(); break; }
+                                case "2": { operate_newJJFZ_2(); break; }
+                                case "3": { operate_newJJFZ_3(); break; }
+                                case "4": { operate_newJJFZ_4(); break; }
+                                case "5": { operate_newJJFZ_5(); }
+                                default: break;
+                            }
+                            break;
+                        }
+                    case "发展党员":
+                    case "党员转正":
+                    case "党员评优核查":
+                    case "支部换届":
+                    default: break;
+
+                }
+            }
+            function operate_newJJFZ_0() {
+                $('#dlg_newJJFZ_0').dialog('open');
+            }
+            function operate_newJJFZ_00()                                            //ZMX，该函数表示：发展积极分子的第一步
+            {
+                var Person_Name = $("#Person_Name").textbox('getValue');
+                var Person_Dept = $("#Person_Dept").combobox('getValue');
+                var Person_Application = $("#Person_Application").filebox('getValue');
+                if (Person_Name == "") { alert("请输入人员姓名"); return; }
+                $.ajax({
+                    url: "/MyWork/newJJFZ_0",                                      //ZMX，MyWork控制器下的函数名为newJJFZ_0，类型为string
+                    type: "get",
+                    data: {
+                        "Person_Name": Person_Name,
+                        "Person_Dept": Person_Dept,
+                        "Person_Application": Person_Application,                  //ZMX，将以上数据传输至后台存入flow_Devemem，其中最后一项是入党申请书路径
+                    },
+                    success: function (data) {
+                        if (data) {
+                            alert("操作成功！流程的下一步需要" + data + "处理！");     //ZMX，需要返回一个string给data，内容形如"配送党支部的支部书记王强"
+                            $('#dlg').dialog('close');
+                            searchflow();
+                            $("#Person_Name").textbox('setValue', "");
+                            $("#Person_Dept").combobox('setValue', "室内检定党支部");
+                            $("#Person_Dept").filebox('setValue', "");
+
+                        }
+                        else
+                            alert("操作失败！");
+                    },
+                    error: function () {
+                        alert("请求失败！");
+                    }
+                });
+            }
+            function operate_newJJFZ_1() {                                         //ZMX，该函数表示：发展积极分子的第二步中的调取流程前的信息
+                $('#dlg_newJJFZ_1').dialog('open');
+                var flow_type = row_.flow_type;
+                var flow_order = row_.flow_order;
+                var flow_num = row_.flow_num;
+                $.ajax({
+                    url: "/MyWork/newJJFZ_1",                                      //ZMX，MyWork控制器下的函数名为newJJFZ_1，类型为JsonResult，返回键值对，用法见Menu控制器
+                    type: "get",
+                    data: {
+                        "flow_num": flow_num,                                      //ZMX，将流程编号传输至后台查询入党第一步中上传的信息，以键值对形式返回
+                    },
+                    success: function (data) {
+                        if (data) {
+                            $("#Person_Name0").textbox('setValue', data["Person_Name0"]);     //ZMX，后台返回的键应为Person_Name0，Person_Dept0，Person_Application0
+                            $("#Person_Dept0").combobox('setValue', data["Person_Dept0"]);
+                            $("#Person_Application0").filebox('setValue', data["Person_Application0"]);
+                        }
+                        else
+                            alert("流程数据调取失败！");
+                    },
+                    error: function () {
+                        alert("请求失败！");
+                    }
+                });
+            }
+            function operate_newJJFZ_10()                                            //ZMX，该函数表示：发展积极分子的第二步中的提交审批意见
+            {
+                var Opinion = $("#Opinion").combobox('getValue');
+                $.ajax({
+                    url: "/MyWork/newJJFZ_10",                                      //ZMX，MyWork控制器下的函数名为newJJFZ_10，类型为string
+                    type: "get",
+                    data: {
+                        "Opinion": Opinion,                                      //ZMX，将流程编号传输至后台查询入党第一步中上传的信息，以键值对形式返回
+                    },
+                    success: function (data) {
+                        if (data) {
+                            alert("操作成功！流程的下一步需要" + data + "处理！");     //ZMX，需要返回一个string给data，内容形如"配送党支部的支部书记王强"
+                            $('#dlg').dialog('close');
+                            searchflow();
+                            $("#Opinion").combobox('setValue', "通过");
+                        }
+                        else
+                            alert("操作失败！");
+                    },
+                    error: function () {
+                        alert("请求失败！");
+                    }
+                });
+            }
+            function operate_newJJFZ_2() {
+                $('#dlg_newJJFZ_2').dialog('open');
+
+            }
+        </script>
 </body>
 
 </html>

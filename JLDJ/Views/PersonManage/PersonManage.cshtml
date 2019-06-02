@@ -30,12 +30,17 @@
                 @*<th data-options="field:'ID',width:80">ID</th>*@
                 <th data-options="field:'person_id'">员工编号</th>
                 <th data-options="field:'person_name',align:'right'">姓名</th>
+                <th data-options="field:'person_dept',align:'right'">部门</th>
                 <th data-options="field:'person_sex',align:'right'">性别</th>
                 <th data-options="field:'person_phonenum',align:'right'">电话号码</th>
                 <th data-options="field:'person_email',align:'right'">电子邮箱</th>
-                <th data-options="field:'person_ZGDYdate',align:'right'">入党时间</th>
-
-
+                <th data-options="field:'person_eduback',align:'right'">学历</th>
+                <th data-options="field:'person_degree',align:'right'">学位</th>
+                <th data-options="field:'person_college',align:'right'">毕业院校</th>
+                <th data-options="field:'person_birth',align:'right'">生日</th>
+                <th data-options="field:'person_ZGDYdate',align:'right'">转正日期</th>
+                <th data-options="field:'person_CJGZdate',align:'right'">工作日期</th>
+                <th data-options="field:'person_YBDYdate',align:'right'">入党日期</th>
             </tr>
         </thead>
     </table>
@@ -45,7 +50,7 @@
             <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="update()">修改</a>
             <!--<a href="#" class="easyui-linkbutton" iconCls="icon-save" plain="true"></a>
             <a href="#" class="easyui-linkbutton" iconCls="icon-cut" plain="true"></a>-->
-            <a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="deluser()">删除</a>
+            <a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="delperson()">删除</a>
         </div>
         <div>
             <input id="person_name" class="easyui-textbox" data-options="prompt:'请输入姓名'" />
@@ -81,7 +86,7 @@
                 <option value="综合党支部">综合党支部</option>
                 <option value="技术质检党支部">技术质检党支部</option>
             </select></br>
-            <div class="sp1">员工学历：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Person_Eduback" data-options="panelHeight:150",editable:false>
+            <div class="sp1">员工学历：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Person_Eduback" data-options="panelHeight:150" ,editable:false>
                 <option value="大学专科">大学专科</option>
                 <option value="大学本科">大学本科</option>
                 <option value="硕士研究生">硕士研究生</option>
@@ -94,62 +99,86 @@
             <div class="sp1">电话号码：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Phonenum" /></br>
             <div class="sp1">内网邮箱：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Email" /></br>
             <div class="sp1">员工性别：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Person_Sex" data-options="panelHeight:150,editable:false">
-    <option value="男">男</option>
-    <option value="女">女</option>
+                <option value="男">男</option>
+                <option value="女">女</option>
 
-</select></br>
+            </select></br>
             <div class="sp1">员工学位：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Person_Degree" data-options="panelHeight:150,editable:false">
-    <option value="学士学位">学士学位</option>
-    <option value="硕士学位">硕士学位</option>
-    <option value="博士学位">博士学位</option>
-    <option value="无">无</option>
-</select></br>
+                <option value="学士学位">学士学位</option>
+                <option value="硕士学位">硕士学位</option>
+                <option value="博士学位">博士学位</option>
+                <option value="无">无</option>
+            </select></br>
 
         </div>
         <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
-            <div class="sp1">出生日期：</div><input type="text" id="Person_Birth" class="easyui-datebox" data-options="value:'Today',editable:false"/></br>
-            <div class="sp1">工作日期：</div><input type="text" id="Person_CJGZdate"class="easyui-datebox" data-options="value:'Today',editable:false"/></br>
-            <div class="sp1">入党日期：</div><input type="text" id="Person_YBDYdate" class="easyui-datebox" data-options="value:'Today',editable:false"/></br>
-            <div class="sp1">转正日期：</div><input type="text" id="Person_ZGDYdate" class="easyui-datebox" data-options="value:'Today',editable:false"/></br>
+            <div class="sp1">出生日期：</div><input type="text" id="Person_Birth" class="easyui-datebox" data-options="value:'Today',editable:false" /></br>
+            <div class="sp1">工作日期：</div><input type="text" id="Person_CJGZdate" class="easyui-datebox" data-options="value:'Today',editable:false" /></br>
+            <div class="sp1">入党日期：</div><input type="text" id="Person_YBDYdate" class="easyui-datebox" data-options="value:'Today',editable:false" /></br>
+            <div class="sp1">转正日期：</div><input type="text" id="Person_ZGDYdate" class="easyui-datebox" data-options="value:'Today',editable:false" /></br>
         </div>
     </div>
-    <div id="dlg_" class="easyui-dialog" title="编辑人员" style="width:400px;height:400px;padding:10px"
+    <div id="dlg_" class="easyui-dialog" title="编辑人员" style="width:800px;height:300px;padding:10px"
          data-options="modal:true,closed:true,
 
 				buttons: [{
 					text:'提交',
 					iconCls:'icon-ok',
 					handler:function(){
-                        upduser();
+                        updperson();
                 }
 				}]
 			">
-        <div style="width:200px;height:100px;padding:10px;margin:auto">
-            <div class="sp1">用户名：</div><input type="text" id="Username_" readonly="readonly" /></br>
-            <div class="sp1">姓名：</div><input type="text" id="Name_" /></br>
-            <div class="sp1">角色：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Role_" data-options="panelHeight:150">
-                <option value="支部成员">支部成员</option>
-                <option value="支部书记">支部书记</option>
-                <option value="党委书记">党委书记</option>
-                <option value="党委成员">党委成员</option>
-                <option value="系统管理员">系统管理员</option>
-            </select>
-            </br>
-            <div class="sp1">党支部：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Dept_" data-options="panelHeight:150">
-                <option value="中心党群">中心党群</option>
-                <option value="室内检定党支部">室内检定党支部</option>
-                <option value="现场检验党支部">现场检验党支部</option>
-                <option value="标准量传党支部">标准量传党支部</option>
-                <option value="配送党支部">配送党支部</option>
-                <option value="运营管理党支部">运营管理党支部</option>
-                <option value="综合党支部">综合党支部</option>
-                <option value="技术质检党支部">技术质检党支部</option>
-            </select>
-            </br>
-        </div>
+        <form id="ff" method="post">
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">员工姓名：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Name_" /></br>
+                <div class="sp1">毕业院校：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_College_" /></br>
+                <div class="sp1">所在支部：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Person_Dept_" data-options="panelHeight:150,editable:false">
+                    <option value="室内检定党支部">室内检定党支部</option>
+                    <option value="现场检验党支部">现场检验党支部</option>
+                    <option value="标准量传党支部">标准量传党支部</option>
+                    <option value="配送党支部">配送党支部</option>
+                    <option value="运营管理党支部">运营管理党支部</option>
+                    <option value="综合党支部">综合党支部</option>
+                    <option value="技术质检党支部">技术质检党支部</option>
+                </select></br>
+                <div class="sp1">员工学历：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Person_Eduback_" data-options="panelHeight:150" ,editable:false>
+                    <option value="大学专科">大学专科</option>
+                    <option value="大学本科">大学本科</option>
+                    <option value="硕士研究生">硕士研究生</option>
+                    <option value="博士研究生">博士研究生</option>
+                </select></br>
+
+
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">电话号码：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Phonenum_" /></br>
+                <div class="sp1">内网邮箱：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Email_" /></br>
+                <div class="sp1">员工性别：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Person_Sex_" data-options="panelHeight:150,editable:false">
+                    <option value="男">男</option>
+                    <option value="女">女</option>
+
+                </select></br>
+                <div class="sp1">员工学位：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Person_Degree_" data-options="panelHeight:150,editable:false">
+                    <option value="学士学位">学士学位</option>
+                    <option value="硕士学位">硕士学位</option>
+                    <option value="博士学位">博士学位</option>
+                    <option value="无">无</option>
+                </select></br>
+
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">出生日期：</div><input type="text" id="Person_Birth_" class="easyui-datebox" data-options="value:'Today',editable:false" /></br>
+                <div class="sp1">工作日期：</div><input type="text" id="Person_CJGZdate_" class="easyui-datebox" data-options="value:'Today',editable:false" /></br>
+                <div class="sp1">入党日期：</div><input type="text" id="Person_YBDYdate_" class="easyui-datebox" data-options="value:'Today',editable:false" /></br>
+                <div class="sp1">转正日期：</div><input type="text" id="Person_ZGDYdate_" class="easyui-datebox" data-options="value:'Today',editable:false" /></br>
+            </div>
+        </form>
     </div>
 
+
     <script type="text/javascript">
+        var Person_Id;
         var Person_Name;
         var Person_Sex;
         var Person_Birth;
@@ -164,6 +193,23 @@
         var Person_Dept;
         $(function () {
             searchperson();
+            //var username = "";
+            //var dept = "";
+            //var role = "";
+            //$.ajax({
+            //    url: "/Menu/Menuget",
+            //    type: "get",
+
+            //    success: function (data) {
+            //        username = data["username"];
+            //        dept = data["dept"];
+            //        role = data["role"];
+            //        alert(username + dept + role);
+            //    },
+            //    error: function () {
+            //        alert("请求失败！");
+            //    }
+            //});
         });
         function addperson() {
             Person_Name = $("#Person_Name").textbox('getValue');
@@ -177,7 +223,7 @@
             Person_YBDYdate = $("#Person_YBDYdate").datebox('getValue');
             Person_Eduback = $("#Person_Eduback").combobox('getValue');
             Person_Degree = $("#Person_Degree").combobox('getValue');
-            Person_Dept = $("#Person_Dept").combobox('getValue');        
+            Person_Dept = $("#Person_Dept").combobox('getValue');
             if (Person_Name == "") { alert("请输入员工姓名"); return; }
             if (Person_Phonenum == "") { alert("请输入电话号码"); return; }
             if (Person_Eduback == "") { alert("请输入员工学历"); return; }
@@ -206,15 +252,15 @@
                         $('#dlg').dialog('close');
                         //$('#dg').datagrid('reload');
                         searchperson();
-                        $("#Person_Name").textbox('setValue',"");
+                        $("#Person_Name").textbox('setValue', "");
                         $("#Person_College").textbox('setValue', "");
                         $("#Person_Phonenum").textbox('setValue', "");
                         $("#Person_Email").textbox('setValue', "");
                         $("#Person_Sex").combobox('setValue', "男");
-                        $("#Person_Birth").datebox('setValue', "");
-                        $("#Person_CJGZdate").datebox('setValue', "");
-                        $("#Person_ZGDYdate").datebox('setValue', "");
-                        $("#Person_YBDYdate").datebox('setValue', "");
+                        //$("#Person_Birth").datebox('setValue', "");
+                        //$("#Person_CJGZdate").datebox('setValue', "");
+                        //$("#Person_ZGDYdate").datebox('setValue', "");
+                        //$("#Person_YBDYdate").datebox('setValue', "");
                         $("#Person_Eduback").combobox('setValue', "大学专科");
                         $("#Person_Degree").combobox('setValue', "学士学位");
                         $("#Person_Dept").combobox('setValue', "室内检定党支部");
@@ -229,22 +275,30 @@
                 }
             });
         }
-        function deluser() {
-            Username = $('#dg').datagrid('getSelected').user_name;
-            $.messager.confirm('确认删除', "确认删除用户" + Username + "吗？", function (r) {
+        function delperson() {
+            var row = $("#dg").datagrid('getSelected');
+            if (row == null) {
+                alert("请选择一行人员信息！")
+                return;
+            }
+            Person_Id = $('#dg').datagrid('getSelected').person_id;
+            Person_Name = $('#dg').datagrid('getSelected').person_name;
+            $.messager.confirm('确认删除', "确认删除人员" + Person_Name + "吗？", function (r) {
                 if (r) {
                     $.ajax({
-                        url: "/UserManage/deluser",
+                        url: "/PersonManage/delperson",
                         type: "get",
                         data: {
-                            "Username": Username
+                            "Person_Id": Person_Id
                         },
                         success: function (data) {
                             if (data > 0) {
-                                alert("删除用户成功！");
+                                alert("删除人员成功！");
                                 $('#dg').datagrid('reload');
+                                $("#person_name").textbox('setValue', null);
+                                searchperson();
                             }
-                            else alert("删除用户失败！");
+                            else alert("删除人员失败！");
                         },
                         error: function () {
                             alert("请求失败！");
@@ -255,43 +309,88 @@
 
         }
         function update() {
-            Username = $('#dg').datagrid('getSelected').user_name;
-            Name = $('#dg').datagrid('getSelected').user_rname;
-            Role = $('#dg').datagrid('getSelected').user_role;
-            Department = $('#dg').datagrid('getSelected').user_dept;
-            $('#Username_').val(Username);
-            $('#Name_').val(Name);
-            $('#Role_').combobox('setValue', Role);
-            $('#Dept_').combobox('setValue', Department);
+            var row = $("#dg").datagrid('getSelected');
+            if (row == null) {
+                alert("请选择一行人员信息！")
+                return;
+            }
+            Person_Id = $('#dg').datagrid('getSelected').person_id;
+            Person_Name = $('#dg').datagrid('getSelected').person_name;
+            Person_College = $('#dg').datagrid('getSelected').person_college;
+            Person_Phonenum =  $('#dg').datagrid('getSelected').person_phonenum;
+            Person_Email = $('#dg').datagrid('getSelected').person_email;
+            Person_Sex = $('#dg').datagrid('getSelected').person_sex;
+            Person_Birth = $('#dg').datagrid('getSelected').person_birth;
+            Person_CJGZdate = $('#dg').datagrid('getSelected').person_CJGZdate;
+            Person_ZGDYdate = $('#dg').datagrid('getSelected').person_ZGDYdate;
+            Person_YBDYdate = $('#dg').datagrid('getSelected').person_YBDYdate;
+            Person_Eduback = $('#dg').datagrid('getSelected').person_eduback;
+            Person_Degree = $('#dg').datagrid('getSelected').person_degree;
+            Person_Dept = $('#dg').datagrid('getSelected').person_dept;
+            /***************************************************************************/
+            $("#Person_Name_").textbox('setValue', Person_Name);
+            $("#Person_College_").textbox('setValue', Person_College);
+            $("#Person_Phonenum_").textbox('setValue', Person_Phonenum);
+            $("#Person_Email_").textbox('setValue', Person_Email);
+            $("#Person_Sex_").combobox('setValue', Person_Sex);
+            $("#Person_Birth_").datebox('setValue', Person_Birth);
+            $("#Person_CJGZdate_").datebox('setValue', Person_CJGZdate);
+            $("#Person_ZGDYdate_").datebox('setValue', Person_ZGDYdate);
+            $("#Person_YBDYdate_").datebox('setValue', Person_YBDYdate);
+            $("#Person_Eduback_").combobox('setValue', Person_Eduback);
+            $("#Person_Degree_").combobox('setValue', Person_Degree);
+            $("#Person_Dept_").combobox('setValue', Person_Dept);
+            //var row = $("#dg").datagrid('getSelected');
+            //$('#ff').form('load', row);
             $('#dlg_').dialog('open');
         }
 
-        function upduser() {
-            Username = $("#Username_").val();
-            Password = $("#Password_").val();
-            Name = $("#Name_").val();
-            Role = $("#Role_").combobox('getValue');
-            Department = $("#Dept_").combobox('getValue');
-            if (Username == "") { alert("请输入用户名"); return; }
-            if (Name == "") { alert("请输入姓名"); return; }
-            $.messager.confirm('确认编辑', "确认编辑用户" + Username + "吗？", function (r) {
+        function updperson() {
+            Person_Name = $("#Person_Name_").textbox('getValue');
+            Person_College = $("#Person_College_").textbox('getValue');
+            Person_Phonenum = $("#Person_Phonenum_").textbox('getValue');
+            Person_Email = $("#Person_Email_").textbox('getValue');
+            Person_Sex = $("#Person_Sex_").combobox('getValue');
+            Person_Birth = $("#Person_Birth_").datebox('getValue');
+            Person_CJGZdate = $("#Person_CJGZdate_").datebox('getValue');
+            Person_ZGDYdate = $("#Person_ZGDYdate_").datebox('getValue');
+            Person_YBDYdate = $("#Person_YBDYdate_").datebox('getValue');
+            Person_Eduback = $("#Person_Eduback_").combobox('getValue');
+            Person_Degree = $("#Person_Degree_").combobox('getValue');
+            Person_Dept = $("#Person_Dept_").combobox('getValue');
+            if (Person_Name == "") { alert("请输入员工姓名"); return; }
+            if (Person_Phonenum == "") { alert("请输入电话号码"); return; }
+            if (Person_Eduback == "") { alert("请输入员工学历"); return; }
+            if (Person_College == "") { alert("请输入毕业院校"); return; }
+            $.messager.confirm('确认编辑', "确认编辑人员" + Person_Name + "吗？", function (r) {
                 if (r) {
                     $.ajax({
-                        url: "/UserManage/upduser",
+                        url: "/PersonManage/updperson",
                         type: "get",
                         data: {
-                            "Username": Username,
-                            "Name": Name,
-                            "Role": Role,
-                            "Department": Department
+                            "Person_Id": Person_Id,
+                            "Person_Name": Person_Name,
+                            "Person_Sex": Person_Sex,
+                            "Person_Birth": Person_Birth,
+                            "Person_CJGZdate": Person_CJGZdate,
+                            "Person_ZGDYdate": Person_ZGDYdate,
+                            "Person_YBDYdate": Person_YBDYdate,
+                            "Person_Eduback": Person_Eduback,
+                            "Person_Degree": Person_Degree,
+                            "Person_College": Person_College,
+                            "Person_Phonenum": Person_Phonenum,
+                            "Person_Email": Person_Email,
+                            "Person_Dept": Person_Dept
                         },
                         success: function (data) {
                             if (data > 0) {
-                                alert("编辑用户成功！");
+                                alert("编辑人员成功！");
                                 $('#dlg_').dialog('close');
                                 $('#dg').datagrid('reload');
+                                $("#person_name").textbox('setValue', null);
+                                searchperson();
                             }
-                            else alert("编辑用户失败！");
+                            else alert("编辑人员失败！");
                         },
                         error: function () {
                             alert("请求失败！");
@@ -301,18 +400,6 @@
             });
 
         }
-        //function select() {
-        //    var addtitle = $(obj).linkbutton("options").text;
-        //    var exi = $('#tt').tabs('exists', addtitle);
-        //    var content = '<iframe scrolling="auto" frameborder="0"  src="' + url + '" style="width:100%;height:100%;"></iframe>';
-        //    if (!exi)
-        //        $('#tt').tabs('add', {
-        //            title: addtitle,
-        //            content: content,
-        //            closable: true
-        //        });
-        //    else $('#tt').tabs('select', addtitle);
-        //}
 
         function searchperson() {
             var personname = $("#person_name").textbox('getValue');

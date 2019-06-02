@@ -137,7 +137,6 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\FlowSelectController.cs" />
-    <Compile Include="Controllers\FlowStartController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\MyWorkController.cs" />
@@ -1099,7 +1098,6 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
-    <Content Include="NewJJFZ0.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -1129,15 +1127,8 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\PersonManage\PersonManage.cshtml" />
-    <Content Include="Views\FlowStart\FlowStart.cshtml" />
     <Content Include="Views\FlowSelect\FlowSelect.cshtml" />
     <Content Include="Views\MyWork\MyWork.cshtml" />
-    <Content Include="Views\NewJJFZ\NewJJFZ0.cshtml" />
-    <Content Include="Views\NewJJFZ\NewJJFZ1.cshtml" />
-    <Content Include="Views\NewJJFZ\NewJJFZ5.cshtml" />
-    <Content Include="Views\NewJJFZ\NewJJFZ4.cshtml" />
-    <Content Include="Views\NewJJFZ\NewJJFZ2.cshtml" />
-    <Content Include="Views\NewJJFZ\NewJJFZ3.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
