@@ -99,9 +99,25 @@
         </div>
     </div>
     <script type="text/javascript">
+        var username = "";
+        var dept = "";
+        var role = "";
         $(function () {
             searchflow();
+            $.ajax({
+                url: "/FlowSelect/Sessionget",
+                type: "get",
+                success: function (data) {
+                    username = data["username"];
+                    dept = data["dept"];
+                    role = data["role"];
+                },
+                error: function () {
+                    alert("请求失败！");
+                }
+            });
         });
+
         var flow_num = "";
         var flow_dept = "";
         var flow_type = "";
@@ -129,6 +145,7 @@
         function flowstart() {
             var FlowType = $("#FlowType").combobox('getValue');
             var FlowDept = $("#FlowDept").combobox('getValue');
+            if (dept != FlowDept) { alert("部门选择不正确！"); return;}
             $.ajax({
                 url: "/FlowSelect/addflow",
                 type: "get",

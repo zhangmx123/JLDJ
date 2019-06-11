@@ -32,5 +32,17 @@ namespace JLDJ.Controllers
             return Json(result, JsonRequestBehavior.AllowGet);
 
         }
+        [HttpGet]
+        public JsonResult Sessionget()
+        {
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+            string username = Session["username"].ToString();
+            string dept = Session["dept"].ToString();
+            string role = Session["role"].ToString();
+            dic.Add("username", username);
+            dic.Add("dept", dept);
+            dic.Add("role", role);
+            return Json(dic, JsonRequestBehavior.AllowGet);
+        }
     }
 }
