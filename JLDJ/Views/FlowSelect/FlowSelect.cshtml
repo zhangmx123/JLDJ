@@ -108,7 +108,7 @@
         function searchflow() {
             flow_num = $("#Flow_Num").textbox('getValue');
             flow_dept = $("#Flow_Dept").combobox('getValue');
-            flow_type = $("#Flow_Type").combobox('getValue');      
+            flow_type = $("#Flow_Type").combobox('getValue');    
             $.ajax({
                 url: "/FlowSelect/GetFlow",
                 type: "get",

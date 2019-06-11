@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="flow_id" />
           </Key>
-          <Property Name="flow_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="flow_id" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="flow_num" Type="nvarchar" MaxLength="50" />
           <Property Name="flow_order" Type="nvarchar" MaxLength="50" />
           <Property Name="flow_type" Type="nvarchar" MaxLength="50" />
@@ -27,6 +27,11 @@
           <Property Name="Devmem_flowid" Type="int" />
           <Property Name="Devmem_aptxt" Type="nvarchar" MaxLength="50" />
           <Property Name="Devmem_personid" Type="int" />
+          <Property Name="Devmem_pname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Devmem_pdept" Type="nvarchar" MaxLength="50" />
+          <Property Name="Devmem_pbsinftxt" Type="nvarchar" MaxLength="50" />
+          <Property Name="Devmem_rctxt" Type="nvarchar" MaxLength="50" />
+          <Property Name="Devmem_broptxt" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="person">
           <Key>
@@ -46,6 +51,7 @@
           <Property Name="person_phonenum" Type="nvarchar" MaxLength="50" />
           <Property Name="person_email" Type="nvarchar" MaxLength="50" />
           <Property Name="person_dept" Type="nvarchar" MaxLength="50" />
+          <Property Name="person_plstatus" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="user">
           <Key>
@@ -75,6 +81,11 @@
           <Property Name="Devmem_flowid" Type="Int32" />
           <Property Name="Devmem_aptxt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Devmem_personid" Type="Int32" />
+          <Property Name="Devmem_pname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Devmem_pdept" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Devmem_pbsinftxt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Devmem_rctxt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Devmem_broptxt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="person">
           <Key>
@@ -94,6 +105,7 @@
           <Property Name="person_phonenum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="person_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="person_dept" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="person_plstatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="user">
           <Key>
@@ -105,7 +117,7 @@
           <Property Name="user_dept" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="user_rname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityContainer Name="DJXTEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="flow_Devmem" EntityType="Self.flow_Devmem" />
           <EntitySet Name="person" EntityType="Self.person" />
           <EntitySet Name="user" EntityType="Self.user" />
@@ -115,7 +127,7 @@
           <Key>
             <PropertyRef Name="flow_id" />
           </Key>
-          <Property Name="flow_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="flow_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="flow_num" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="flow_order" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="flow_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -130,7 +142,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DJXTModelStoreContainer" CdmEntityContainer="DJXTEntities2">
+        <EntityContainerMapping StorageEntityContainer="DJXTModelStoreContainer" CdmEntityContainer="Entities">
           <EntitySetMapping Name="flow_Devmem">
             <EntityTypeMapping TypeName="DJXTModel.flow_Devmem">
               <MappingFragment StoreEntitySet="flow_Devmem">
@@ -138,6 +150,11 @@
                 <ScalarProperty Name="Devmem_flowid" ColumnName="Devmem_flowid" />
                 <ScalarProperty Name="Devmem_aptxt" ColumnName="Devmem_aptxt" />
                 <ScalarProperty Name="Devmem_personid" ColumnName="Devmem_personid" />
+                <ScalarProperty Name="Devmem_pname" ColumnName="Devmem_pname" />
+                <ScalarProperty Name="Devmem_pdept" ColumnName="Devmem_pdept" />
+                <ScalarProperty Name="Devmem_pbsinftxt" ColumnName="Devmem_pbsinftxt" />
+                <ScalarProperty Name="Devmem_rctxt" ColumnName="Devmem_rctxt" />
+                <ScalarProperty Name="Devmem_broptxt" ColumnName="Devmem_broptxt" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -158,6 +175,7 @@
                 <ScalarProperty Name="person_phonenum" ColumnName="person_phonenum" />
                 <ScalarProperty Name="person_email" ColumnName="person_email" />
                 <ScalarProperty Name="person_dept" ColumnName="person_dept" />
+                <ScalarProperty Name="person_plstatus" ColumnName="person_plstatus" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -13,9 +13,9 @@ namespace JLDJ.Controllers
         [HttpGet]
         public int Checklogin(string Username, string Password)
         {
-            DJXTEntities2 db = new DJXTEntities2();
+            Entities db = new Entities();
             user userInfo = new user();      
-            userInfo = db.users.Find(Username);
+            userInfo = db.user.Find(Username);
             if (userInfo == null || userInfo.user_pwd != Password)
                 return 0;
             else

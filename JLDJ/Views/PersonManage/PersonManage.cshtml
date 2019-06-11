@@ -224,8 +224,9 @@
             Person_Eduback = $("#Person_Eduback").combobox('getValue');
             Person_Degree = $("#Person_Degree").combobox('getValue');
             Person_Dept = $("#Person_Dept").combobox('getValue');
-            if (Person_Name == "") { alert("请输入员工姓名"); return; }
+            if (Person_Name == "") { alert("请输入员工姓名"); return; } 
             if (Person_Phonenum == "") { alert("请输入电话号码"); return; }
+            if (Person_Email == "") { alert("请输入内网邮箱"); return; }
             if (Person_Eduback == "") { alert("请输入员工学历"); return; }
             if (Person_College == "") { alert("请输入毕业院校"); return; }
             $.ajax({
@@ -360,6 +361,7 @@
             Person_Dept = $("#Person_Dept_").combobox('getValue');
             if (Person_Name == "") { alert("请输入员工姓名"); return; }
             if (Person_Phonenum == "") { alert("请输入电话号码"); return; }
+            if (Person_Email == "") { alert("请输入内网邮箱"); return; }
             if (Person_Eduback == "") { alert("请输入员工学历"); return; }
             if (Person_College == "") { alert("请输入毕业院校"); return; }
             $.messager.confirm('确认编辑', "确认编辑人员" + Person_Name + "吗？", function (r) {

@@ -8,6 +8,11 @@
     <Property Name="Devmem_flowid" Type="Int32" />
     <Property Name="Devmem_aptxt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Devmem_personid" Type="Int32" />
+    <Property Name="Devmem_pname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Devmem_pdept" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Devmem_pbsinftxt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Devmem_rctxt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Devmem_broptxt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="person">
     <Key>
@@ -27,6 +32,7 @@
     <Property Name="person_phonenum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="person_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="person_dept" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="person_plstatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="user">
     <Key>
@@ -38,7 +44,7 @@
     <Property Name="user_dept" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="user_rname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityContainer Name="DJXTEntities2" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="flow_Devmem" EntityType="Self.flow_Devmem" />
     <EntitySet Name="person" EntityType="Self.person" />
     <EntitySet Name="user" EntityType="Self.user" />
@@ -48,7 +54,7 @@
     <Key>
       <PropertyRef Name="flow_id" />
     </Key>
-    <Property Name="flow_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="flow_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="flow_num" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="flow_order" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="flow_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />

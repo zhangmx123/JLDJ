@@ -13,10 +13,10 @@ namespace JLDJ.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DJXTEntities2 : DbContext
+    public partial class Entities : DbContext
     {
-        public DJXTEntities2()
-            : base("name=DJXTEntities2")
+        public Entities()
+            : base("name=Entities")
         {
         }
     
@@ -25,9 +25,9 @@ namespace JLDJ.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<flow_Devmem> flows_Devmem { get; set; }
-        public virtual DbSet<person> people { get; set; }
-        public virtual DbSet<user> users { get; set; }
-        public virtual DbSet<flow> flows { get; set; }
+        public virtual DbSet<flow_Devmem> flow_Devmem { get; set; }
+        public virtual DbSet<person> person { get; set; }
+        public virtual DbSet<user> user { get; set; }
+        public virtual DbSet<flow> flow { get; set; }
     }
 }

@@ -18,5 +18,10 @@ namespace JLDJ.Models
         public Nullable<int> Devmem_flowid { get; set; }
         public string Devmem_aptxt { get; set; }
         public Nullable<int> Devmem_personid { get; set; }
+        public string Devmem_pname { get; set; }
+        public string Devmem_pdept { get; set; }
+        public string Devmem_pbsinftxt { get; set; }
+        public string Devmem_rctxt { get; set; }
+        public string Devmem_broptxt { get; set; }
     }
 }

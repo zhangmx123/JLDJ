@@ -140,7 +140,6 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\MyWorkController.cs" />
-    <Compile Include="Controllers\NewJJFZController.cs" />
     <Compile Include="Controllers\PersonManageController.cs" />
     <Compile Include="Controllers\UserManageController.cs" />
     <Compile Include="Global.asax.cs">

@@ -16,7 +16,7 @@ namespace JLDJ.Controllers
     public class PersonManageController : Controller
     {
         // GET: PersonManage
-        private DJXTEntities2 db = new DJXTEntities2();
+        private Entities db = new Entities();
         //[HttpGet]
         //public JsonResult Sessionget()
         //{
@@ -41,13 +41,13 @@ namespace JLDJ.Controllers
         {
             if (!person_name.IsEmpty())
             {
-                var result = db.people.Where(u => u.person_name.Contains(person_name));
+                var result = db.person.Where(u => u.person_name.Contains(person_name));
                 return Json(result, JsonRequestBehavior.AllowGet);
 
             }
             else
             {
-                var result = from b in db.people select b;
+                var result = from b in db.person select b;
                 var re1 = Json(result, JsonRequestBehavior.AllowGet).ToString();
                 return Json(result, JsonRequestBehavior.AllowGet);
             }
@@ -75,7 +75,7 @@ namespace JLDJ.Controllers
             };
             //try
             //{
-                db.people.Add(personInfo);
+                db.person.Add(personInfo);
                 db.SaveChanges();
             //}
             //catch (Exception ex) {
@@ -86,10 +86,10 @@ namespace JLDJ.Controllers
         [HttpGet]
         public int delperson(string Person_Id)
             {
-                person personInfo = db.people.Find(Convert.ToInt32(Person_Id));
+                person personInfo = db.person.Find(Convert.ToInt32(Person_Id));
                 if (personInfo != null)
                 {
-                    db.people.Remove(personInfo);
+                    db.person.Remove(personInfo);
                     db.SaveChanges();
                     return 1;
                 }
@@ -104,7 +104,7 @@ namespace JLDJ.Controllers
             string Person_YBDYdate, string Person_Eduback, string Person_Degree, string Person_College, string Person_Phonenum,
             string Person_Dept, string Person_Email)
         {
-            person personInfo = db.people.Find(Convert.ToInt32(Person_Id));
+            person personInfo = db.person.Find(Convert.ToInt32(Person_Id));
             if (personInfo != null)
             {
                 personInfo.person_name = Person_Name;

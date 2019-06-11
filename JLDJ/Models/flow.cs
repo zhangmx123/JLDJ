@@ -14,7 +14,7 @@ namespace JLDJ.Models
     
     public partial class flow
     {
-        public int flow_id { get; set; }
+        public string flow_id { get; set; }
         public string flow_num { get; set; }
         public string flow_order { get; set; }
         public string flow_type { get; set; }

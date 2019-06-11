@@ -4,7 +4,7 @@
     <Key>
       <PropertyRef Name="flow_id" />
     </Key>
-    <Property Name="flow_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="flow_id" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="flow_num" Type="nvarchar" MaxLength="50" />
     <Property Name="flow_order" Type="nvarchar" MaxLength="50" />
     <Property Name="flow_type" Type="nvarchar" MaxLength="50" />
@@ -22,6 +22,11 @@
     <Property Name="Devmem_flowid" Type="int" />
     <Property Name="Devmem_aptxt" Type="nvarchar" MaxLength="50" />
     <Property Name="Devmem_personid" Type="int" />
+    <Property Name="Devmem_pname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Devmem_pdept" Type="nvarchar" MaxLength="50" />
+    <Property Name="Devmem_pbsinftxt" Type="nvarchar" MaxLength="50" />
+    <Property Name="Devmem_rctxt" Type="nvarchar" MaxLength="50" />
+    <Property Name="Devmem_broptxt" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="person">
     <Key>
@@ -41,6 +46,7 @@
     <Property Name="person_phonenum" Type="nvarchar" MaxLength="50" />
     <Property Name="person_email" Type="nvarchar" MaxLength="50" />
     <Property Name="person_dept" Type="nvarchar" MaxLength="50" />
+    <Property Name="person_plstatus" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="user">
     <Key>

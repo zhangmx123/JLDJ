@@ -28,5 +28,6 @@ namespace JLDJ.Models
         public string person_phonenum { get; set; }
         public string person_email { get; set; }
         public string person_dept { get; set; }
+        public string person_plstatus { get; set; }
     }
 }

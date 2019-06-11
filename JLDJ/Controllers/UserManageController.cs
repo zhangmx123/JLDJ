@@ -16,7 +16,7 @@ namespace JLDJ.Controllers
     public class UserManageController : DefaultController
     {
         // GET: UserManage
-        private DJXTEntities2 db = new DJXTEntities2();
+        private Entities db = new Entities();
         public ActionResult Index()
         {
             return View();
@@ -33,13 +33,13 @@ namespace JLDJ.Controllers
             //if (!string.IsNullOrEmpty(user_name))
                 if (!user_name.IsEmpty())
             {
-                var result = db.users.Where(u => u.user_name.Contains(user_name));
+                var result = db.user.Where(u => u.user_name.Contains(user_name));
                 return Json(result, JsonRequestBehavior.AllowGet);
                 
             }
             else
             {
-                var result =  from b in db.users select b;
+                var result =  from b in db.user select b;
                 var re1 = Json(result, JsonRequestBehavior.AllowGet).ToString();
                 return Json(result, JsonRequestBehavior.AllowGet);
             }           
@@ -61,7 +61,7 @@ namespace JLDJ.Controllers
             int result = cmd.ExecuteNonQuery();
 
             conn.Close();*/
-            user isnewuUser = db.users.Find(Username);
+            user isnewuUser = db.user.Find(Username);
             if (isnewuUser != null)
             {
                 return 0;        
@@ -76,7 +76,7 @@ namespace JLDJ.Controllers
                     user_dept =Department,
                     user_role = Role
                 };
-                db.users.Add(userInfo);
+                db.user.Add(userInfo);
                 db.SaveChanges();
                 return 1;
             }            
@@ -100,10 +100,10 @@ namespace JLDJ.Controllers
             conn.Close();
             return result;*/
 
-            user userInfo = db.users.Find(Username);
+            user userInfo = db.user.Find(Username);
             if (userInfo != null)
             {
-                db.users.Remove(userInfo);
+                db.user.Remove(userInfo);
                 db.SaveChanges();
                 return 1;
             }
@@ -133,7 +133,7 @@ namespace JLDJ.Controllers
             conn.Close();
             return result;*/
 
-            user userInfo = db.users.Find(Username);
+            user userInfo = db.user.Find(Username);
             if (userInfo != null)
             {
                 userInfo.user_name = Username;

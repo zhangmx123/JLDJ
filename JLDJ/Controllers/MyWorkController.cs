@@ -23,12 +23,12 @@ namespace JLDJ.Controllers
         {
             return View();
         }
-        private DJXTEntities2 db = new DJXTEntities2();
+        private Entities db = new Entities();
         [HttpGet]
         public JsonResult GetWork()
         {
             string username = Session["userrname"].ToString();
-            var result = db.flows.Where(f => f.flow_founder.Contains(username));
+            var result = db.flow.Where(f => f.flow_founder.Contains(username));
             return Json(result, JsonRequestBehavior.AllowGet);
 
         }
