@@ -25,10 +25,10 @@
         <thead>
             <tr>
                 @*<th data-options="field:'ID',width:80">ID</th>*@
-                <th data-options="field:'user_name'">用户名</th>
-                <th data-options="field:'user_rname',align:'right'">姓名</th>
-                <th data-options="field:'user_role',align:'right'">角色</th>
-                <th data-options="field:'user_dept',align:'right'">部门</th>
+                <th data-options="field:'user_name'" align="center">用户名</th>
+                <th data-options="field:'user_rname',align:'right'" align="center">姓名</th>
+                <th data-options="field:'user_role',align:'right'" align="center">角色</th>
+                <th data-options="field:'user_dept',align:'right'" align="center">部门</th>
 
             </tr>
         </thead>
@@ -38,13 +38,12 @@
             <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="$('#dlg').dialog('open')">增加</a>
             <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="update()">修改</a>
             <!--<a href="#" class="easyui-linkbutton" iconCls="icon-save" plain="true"></a>
-            <a href="#" class="easyui-linkbutton" iconCls="icon-cut" plain="true"></a>-->
+    <a href="#" class="easyui-linkbutton" iconCls="icon-cut" plain="true"></a>-->
             <a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="deluser()">删除</a>
-        </div>
-        <div>
             <input id="user_name" class="easyui-textbox" data-options="prompt:'请输入用户名'" />
             <a href="#" class="easyui-linkbutton" iconCls="icon-search" onclick="searchuser()">查询</a>
         </div>
+
     </div>
     <div style="margin:20px 0;">
         @*<a href="javascript:void(0)" class="easyui-linkbutton" onclick="$('#dlg').dialog('open')">Open</a>
@@ -148,6 +147,8 @@
             Name = $("#Name").textbox('getValue');
             Role = $("#Role").combobox('getValue');
             Department = $("#Dept").combobox('getValue');
+            if (/.*[\u4e00-\u9fa5]+.*$/.test(Username) || /.*[\u4e00-\u9fa5]+.*$/.test(Password))
+            { alert("用户名或密码中不能含有汉字！"); return; }
             if (Department == "中心党群" && (Role != "党群组织专责" && Role != "党群宣传专责" && Role != "党群主任" && Role != "党委委员" && Role != "党委书记") )
             { alert("部门与角色不对应"); return; }
             if (Department != "中心党群" && (Role != "组织委员" && Role != "宣传委员" && Role != "支部书记"))
@@ -241,6 +242,7 @@
             Name = $("#Name_").textbox('getValue');
             Role = $("#Role_").combobox('getValue');
             Department = $("#Dept_").combobox('getValue');
+            if (/.*[\u4e00-\u9fa5]+.*$/.test(Username) || /.*[\u4e00-\u9fa5]+.*$/.test(Password)) { alert("用户名或密码中不能含有汉字！"); return; }
             if (Department == "中心党群" && (Role != "党群组织专责" && Role != "党群宣传专责" && Role != "党群主任" && Role != "党委委员" && Role != "党委书记")) { alert("部门与角色不对应"); return; }
             if (Department != "中心党群" && (Role != "组织委员" && Role != "宣传委员" && Role != "支部书记")) { alert("部门与角色不对应"); return; }
             if (Username == "") { alert("请输入用户名"); return; }

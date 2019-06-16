@@ -7,24 +7,28 @@
     <Schema Namespace="DJXTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="flow">
           <Key>
-            <PropertyRef Name="flow_id" />
+            <PropertyRef Name="flow_num" />
           </Key>
-          <Property Name="flow_id" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="flow_num" Type="nvarchar" MaxLength="50" />
-          <Property Name="flow_order" Type="nvarchar" MaxLength="50" />
+          <Property Name="flow_num" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="flow_order" Type="int" />
           <Property Name="flow_type" Type="nvarchar" MaxLength="50" />
           <Property Name="flow_dept" Type="nvarchar" MaxLength="50" />
           <Property Name="flow_founder" Type="nvarchar" MaxLength="50" />
           <Property Name="flow_stime" Type="nvarchar" MaxLength="50" />
           <Property Name="flow_etime" Type="nvarchar" MaxLength="50" />
           <Property Name="flow_state" Type="nvarchar" MaxLength="50" />
+          <Property Name="flow_brexcon" Type="nvarchar" MaxLength="50" />
+          <Property Name="flow_brexop" Type="nvarchar" MaxLength="1000" />
+          <Property Name="flow_pmexcon" Type="nvarchar" MaxLength="50" />
+          <Property Name="flow_pmexop" Type="nvarchar" MaxLength="1000" />
+          <Property Name="flow_pcexcon" Type="nvarchar" MaxLength="50" />
+          <Property Name="flow_pcexop" Type="nvarchar" MaxLength="1000" />
         </EntityType>
         <EntityType Name="flow_Devmem">
           <Key>
-            <PropertyRef Name="Devmem_id" />
+            <PropertyRef Name="Devmem_flowid" />
           </Key>
-          <Property Name="Devmem_id" Type="int" Nullable="false" />
-          <Property Name="Devmem_flowid" Type="int" />
+          <Property Name="Devmem_flowid" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Devmem_aptxt" Type="nvarchar" MaxLength="50" />
           <Property Name="Devmem_personid" Type="int" />
           <Property Name="Devmem_pname" Type="nvarchar" MaxLength="50" />
@@ -32,6 +36,24 @@
           <Property Name="Devmem_pbsinftxt" Type="nvarchar" MaxLength="50" />
           <Property Name="Devmem_rctxt" Type="nvarchar" MaxLength="50" />
           <Property Name="Devmem_broptxt" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="flow_DevYB">
+          <Key>
+            <PropertyRef Name="DevYB_flowid" />
+          </Key>
+          <Property Name="DevYB_flowid" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DevYB_personid" Type="int" />
+          <Property Name="DevYB_pname" Type="nvarchar" MaxLength="50" />
+          <Property Name="DevYB_introid1" Type="int" />
+          <Property Name="DevYB_introname1" Type="nvarchar" MaxLength="50" />
+          <Property Name="DevYB_introid2" Type="int" />
+          <Property Name="DevYB_introname2" Type="nvarchar" MaxLength="50" />
+          <Property Name="DevYB_pdept" Type="nvarchar" MaxLength="50" />
+          <Property Name="DevYB_PWtxt" Type="nvarchar" MaxLength="50" />
+          <Property Name="DevYB_ZStxt" Type="nvarchar" MaxLength="50" />
+          <Property Name="DevYB_DOptxt" Type="nvarchar" MaxLength="50" />
+          <Property Name="DevYB_DWOptxt" Type="nvarchar" MaxLength="50" />
+          <Property Name="DevYB_Trprtxt" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="person">
           <Key>
@@ -66,6 +88,7 @@
         <EntityContainer Name="DJXTModelStoreContainer">
           <EntitySet Name="flow" EntityType="Self.flow" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="flow_Devmem" EntityType="Self.flow_Devmem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="flow_DevYB" EntityType="Self.flow_DevYB" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="person" EntityType="Self.person" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -73,12 +96,37 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DJXTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="flow" EntityType="DJXTModel.flow" />
+          <EntitySet Name="flow_Devmem" EntityType="DJXTModel.flow_Devmem" />
+          <EntitySet Name="flow_DevYB" EntityType="DJXTModel.flow_DevYB" />
+          <EntitySet Name="person" EntityType="DJXTModel.person" />
+          <EntitySet Name="user" EntityType="DJXTModel.user" />
+        </EntityContainer>
+        <EntityType Name="flow">
+          <Key>
+            <PropertyRef Name="flow_num" />
+          </Key>
+          <Property Name="flow_num" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="flow_order" Type="Int32" />
+          <Property Name="flow_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="flow_dept" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="flow_founder" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="flow_stime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="flow_etime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="flow_state" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="flow_brexcon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="flow_brexop" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="flow_pmexcon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="flow_pmexop" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="flow_pcexcon" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="flow_pcexop" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="flow_Devmem">
           <Key>
-            <PropertyRef Name="Devmem_id" />
+            <PropertyRef Name="Devmem_flowid" />
           </Key>
-          <Property Name="Devmem_id" Type="Int32" Nullable="false" />
-          <Property Name="Devmem_flowid" Type="Int32" />
+          <Property Name="Devmem_flowid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Devmem_aptxt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Devmem_personid" Type="Int32" />
           <Property Name="Devmem_pname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -86,6 +134,24 @@
           <Property Name="Devmem_pbsinftxt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Devmem_rctxt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Devmem_broptxt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="flow_DevYB">
+          <Key>
+            <PropertyRef Name="DevYB_flowid" />
+          </Key>
+          <Property Name="DevYB_flowid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DevYB_personid" Type="Int32" />
+          <Property Name="DevYB_pname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DevYB_introid1" Type="Int32" />
+          <Property Name="DevYB_introname1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DevYB_introid2" Type="Int32" />
+          <Property Name="DevYB_introname2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DevYB_pdept" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DevYB_PWtxt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DevYB_ZStxt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DevYB_DOptxt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DevYB_DWOptxt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DevYB_Trprtxt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="person">
           <Key>
@@ -111,31 +177,11 @@
           <Key>
             <PropertyRef Name="user_name" />
           </Key>
-          <Property Name="user_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="user_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="user_pwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="user_role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="user_dept" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="user_rname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="flow_Devmem" EntityType="Self.flow_Devmem" />
-          <EntitySet Name="person" EntityType="Self.person" />
-          <EntitySet Name="user" EntityType="Self.user" />
-          <EntitySet Name="flow" EntityType="DJXTModel.flow" />
-        </EntityContainer>
-        <EntityType Name="flow">
-          <Key>
-            <PropertyRef Name="flow_id" />
-          </Key>
-          <Property Name="flow_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="flow_num" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="flow_order" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="flow_type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="flow_dept" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="flow_founder" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="flow_stime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="flow_etime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="flow_state" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -143,56 +189,15 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="DJXTModelStoreContainer" CdmEntityContainer="Entities">
-          <EntitySetMapping Name="flow_Devmem">
-            <EntityTypeMapping TypeName="DJXTModel.flow_Devmem">
-              <MappingFragment StoreEntitySet="flow_Devmem">
-                <ScalarProperty Name="Devmem_id" ColumnName="Devmem_id" />
-                <ScalarProperty Name="Devmem_flowid" ColumnName="Devmem_flowid" />
-                <ScalarProperty Name="Devmem_aptxt" ColumnName="Devmem_aptxt" />
-                <ScalarProperty Name="Devmem_personid" ColumnName="Devmem_personid" />
-                <ScalarProperty Name="Devmem_pname" ColumnName="Devmem_pname" />
-                <ScalarProperty Name="Devmem_pdept" ColumnName="Devmem_pdept" />
-                <ScalarProperty Name="Devmem_pbsinftxt" ColumnName="Devmem_pbsinftxt" />
-                <ScalarProperty Name="Devmem_rctxt" ColumnName="Devmem_rctxt" />
-                <ScalarProperty Name="Devmem_broptxt" ColumnName="Devmem_broptxt" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="person">
-            <EntityTypeMapping TypeName="DJXTModel.person">
-              <MappingFragment StoreEntitySet="person">
-                <ScalarProperty Name="person_id" ColumnName="person_id" />
-                <ScalarProperty Name="person_name" ColumnName="person_name" />
-                <ScalarProperty Name="person_sex" ColumnName="person_sex" />
-                <ScalarProperty Name="person_birth" ColumnName="person_birth" />
-                <ScalarProperty Name="person_CJGZdate" ColumnName="person_CJGZdate" />
-                <ScalarProperty Name="person_ZGDYdate" ColumnName="person_ZGDYdate" />
-                <ScalarProperty Name="person_YBDYdate" ColumnName="person_YBDYdate" />
-                <ScalarProperty Name="person_JJFZdate" ColumnName="person_JJFZdate" />
-                <ScalarProperty Name="person_eduback" ColumnName="person_eduback" />
-                <ScalarProperty Name="person_degree" ColumnName="person_degree" />
-                <ScalarProperty Name="person_college" ColumnName="person_college" />
-                <ScalarProperty Name="person_phonenum" ColumnName="person_phonenum" />
-                <ScalarProperty Name="person_email" ColumnName="person_email" />
-                <ScalarProperty Name="person_dept" ColumnName="person_dept" />
-                <ScalarProperty Name="person_plstatus" ColumnName="person_plstatus" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="user">
-            <EntityTypeMapping TypeName="DJXTModel.user">
-              <MappingFragment StoreEntitySet="user">
-                <ScalarProperty Name="user_name" ColumnName="user_name" />
-                <ScalarProperty Name="user_pwd" ColumnName="user_pwd" />
-                <ScalarProperty Name="user_role" ColumnName="user_role" />
-                <ScalarProperty Name="user_dept" ColumnName="user_dept" />
-                <ScalarProperty Name="user_rname" ColumnName="user_rname" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="flow">
             <EntityTypeMapping TypeName="DJXTModel.flow">
               <MappingFragment StoreEntitySet="flow">
+                <ScalarProperty Name="flow_pcexop" ColumnName="flow_pcexop" />
+                <ScalarProperty Name="flow_pcexcon" ColumnName="flow_pcexcon" />
+                <ScalarProperty Name="flow_pmexop" ColumnName="flow_pmexop" />
+                <ScalarProperty Name="flow_pmexcon" ColumnName="flow_pmexcon" />
+                <ScalarProperty Name="flow_brexop" ColumnName="flow_brexop" />
+                <ScalarProperty Name="flow_brexcon" ColumnName="flow_brexcon" />
                 <ScalarProperty Name="flow_state" ColumnName="flow_state" />
                 <ScalarProperty Name="flow_etime" ColumnName="flow_etime" />
                 <ScalarProperty Name="flow_stime" ColumnName="flow_stime" />
@@ -201,7 +206,71 @@
                 <ScalarProperty Name="flow_type" ColumnName="flow_type" />
                 <ScalarProperty Name="flow_order" ColumnName="flow_order" />
                 <ScalarProperty Name="flow_num" ColumnName="flow_num" />
-                <ScalarProperty Name="flow_id" ColumnName="flow_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="flow_Devmem">
+            <EntityTypeMapping TypeName="DJXTModel.flow_Devmem">
+              <MappingFragment StoreEntitySet="flow_Devmem">
+                <ScalarProperty Name="Devmem_broptxt" ColumnName="Devmem_broptxt" />
+                <ScalarProperty Name="Devmem_rctxt" ColumnName="Devmem_rctxt" />
+                <ScalarProperty Name="Devmem_pbsinftxt" ColumnName="Devmem_pbsinftxt" />
+                <ScalarProperty Name="Devmem_pdept" ColumnName="Devmem_pdept" />
+                <ScalarProperty Name="Devmem_pname" ColumnName="Devmem_pname" />
+                <ScalarProperty Name="Devmem_personid" ColumnName="Devmem_personid" />
+                <ScalarProperty Name="Devmem_aptxt" ColumnName="Devmem_aptxt" />
+                <ScalarProperty Name="Devmem_flowid" ColumnName="Devmem_flowid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="flow_DevYB">
+            <EntityTypeMapping TypeName="DJXTModel.flow_DevYB">
+              <MappingFragment StoreEntitySet="flow_DevYB">
+                <ScalarProperty Name="DevYB_Trprtxt" ColumnName="DevYB_Trprtxt" />
+                <ScalarProperty Name="DevYB_DWOptxt" ColumnName="DevYB_DWOptxt" />
+                <ScalarProperty Name="DevYB_DOptxt" ColumnName="DevYB_DOptxt" />
+                <ScalarProperty Name="DevYB_ZStxt" ColumnName="DevYB_ZStxt" />
+                <ScalarProperty Name="DevYB_PWtxt" ColumnName="DevYB_PWtxt" />
+                <ScalarProperty Name="DevYB_pdept" ColumnName="DevYB_pdept" />
+                <ScalarProperty Name="DevYB_introname2" ColumnName="DevYB_introname2" />
+                <ScalarProperty Name="DevYB_introid2" ColumnName="DevYB_introid2" />
+                <ScalarProperty Name="DevYB_introname1" ColumnName="DevYB_introname1" />
+                <ScalarProperty Name="DevYB_introid1" ColumnName="DevYB_introid1" />
+                <ScalarProperty Name="DevYB_pname" ColumnName="DevYB_pname" />
+                <ScalarProperty Name="DevYB_personid" ColumnName="DevYB_personid" />
+                <ScalarProperty Name="DevYB_flowid" ColumnName="DevYB_flowid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="person">
+            <EntityTypeMapping TypeName="DJXTModel.person">
+              <MappingFragment StoreEntitySet="person">
+                <ScalarProperty Name="person_plstatus" ColumnName="person_plstatus" />
+                <ScalarProperty Name="person_dept" ColumnName="person_dept" />
+                <ScalarProperty Name="person_email" ColumnName="person_email" />
+                <ScalarProperty Name="person_phonenum" ColumnName="person_phonenum" />
+                <ScalarProperty Name="person_college" ColumnName="person_college" />
+                <ScalarProperty Name="person_degree" ColumnName="person_degree" />
+                <ScalarProperty Name="person_eduback" ColumnName="person_eduback" />
+                <ScalarProperty Name="person_JJFZdate" ColumnName="person_JJFZdate" />
+                <ScalarProperty Name="person_YBDYdate" ColumnName="person_YBDYdate" />
+                <ScalarProperty Name="person_ZGDYdate" ColumnName="person_ZGDYdate" />
+                <ScalarProperty Name="person_CJGZdate" ColumnName="person_CJGZdate" />
+                <ScalarProperty Name="person_birth" ColumnName="person_birth" />
+                <ScalarProperty Name="person_sex" ColumnName="person_sex" />
+                <ScalarProperty Name="person_name" ColumnName="person_name" />
+                <ScalarProperty Name="person_id" ColumnName="person_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user">
+            <EntityTypeMapping TypeName="DJXTModel.user">
+              <MappingFragment StoreEntitySet="user">
+                <ScalarProperty Name="user_rname" ColumnName="user_rname" />
+                <ScalarProperty Name="user_dept" ColumnName="user_dept" />
+                <ScalarProperty Name="user_role" ColumnName="user_role" />
+                <ScalarProperty Name="user_pwd" ColumnName="user_pwd" />
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

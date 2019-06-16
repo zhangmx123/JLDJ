@@ -2,24 +2,28 @@
 <Schema Namespace="DJXTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="flow">
     <Key>
-      <PropertyRef Name="flow_id" />
+      <PropertyRef Name="flow_num" />
     </Key>
-    <Property Name="flow_id" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="flow_num" Type="nvarchar" MaxLength="50" />
-    <Property Name="flow_order" Type="nvarchar" MaxLength="50" />
+    <Property Name="flow_num" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="flow_order" Type="int" />
     <Property Name="flow_type" Type="nvarchar" MaxLength="50" />
     <Property Name="flow_dept" Type="nvarchar" MaxLength="50" />
     <Property Name="flow_founder" Type="nvarchar" MaxLength="50" />
     <Property Name="flow_stime" Type="nvarchar" MaxLength="50" />
     <Property Name="flow_etime" Type="nvarchar" MaxLength="50" />
     <Property Name="flow_state" Type="nvarchar" MaxLength="50" />
+    <Property Name="flow_brexcon" Type="nvarchar" MaxLength="50" />
+    <Property Name="flow_brexop" Type="nvarchar" MaxLength="1000" />
+    <Property Name="flow_pmexcon" Type="nvarchar" MaxLength="50" />
+    <Property Name="flow_pmexop" Type="nvarchar" MaxLength="1000" />
+    <Property Name="flow_pcexcon" Type="nvarchar" MaxLength="50" />
+    <Property Name="flow_pcexop" Type="nvarchar" MaxLength="1000" />
   </EntityType>
   <EntityType Name="flow_Devmem">
     <Key>
-      <PropertyRef Name="Devmem_id" />
+      <PropertyRef Name="Devmem_flowid" />
     </Key>
-    <Property Name="Devmem_id" Type="int" Nullable="false" />
-    <Property Name="Devmem_flowid" Type="int" />
+    <Property Name="Devmem_flowid" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Devmem_aptxt" Type="nvarchar" MaxLength="50" />
     <Property Name="Devmem_personid" Type="int" />
     <Property Name="Devmem_pname" Type="nvarchar" MaxLength="50" />
@@ -27,6 +31,24 @@
     <Property Name="Devmem_pbsinftxt" Type="nvarchar" MaxLength="50" />
     <Property Name="Devmem_rctxt" Type="nvarchar" MaxLength="50" />
     <Property Name="Devmem_broptxt" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="flow_DevYB">
+    <Key>
+      <PropertyRef Name="DevYB_flowid" />
+    </Key>
+    <Property Name="DevYB_flowid" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DevYB_personid" Type="int" />
+    <Property Name="DevYB_pname" Type="nvarchar" MaxLength="50" />
+    <Property Name="DevYB_introid1" Type="int" />
+    <Property Name="DevYB_introname1" Type="nvarchar" MaxLength="50" />
+    <Property Name="DevYB_introid2" Type="int" />
+    <Property Name="DevYB_introname2" Type="nvarchar" MaxLength="50" />
+    <Property Name="DevYB_pdept" Type="nvarchar" MaxLength="50" />
+    <Property Name="DevYB_PWtxt" Type="nvarchar" MaxLength="50" />
+    <Property Name="DevYB_ZStxt" Type="nvarchar" MaxLength="50" />
+    <Property Name="DevYB_DOptxt" Type="nvarchar" MaxLength="50" />
+    <Property Name="DevYB_DWOptxt" Type="nvarchar" MaxLength="50" />
+    <Property Name="DevYB_Trprtxt" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="person">
     <Key>
@@ -61,6 +83,7 @@
   <EntityContainer Name="DJXTModelStoreContainer">
     <EntitySet Name="flow" EntityType="Self.flow" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="flow_Devmem" EntityType="Self.flow_Devmem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="flow_DevYB" EntityType="Self.flow_DevYB" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="person" EntityType="Self.person" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
   </EntityContainer>

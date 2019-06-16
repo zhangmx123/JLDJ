@@ -25,9 +25,10 @@ namespace JLDJ.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<flow> flow { get; set; }
         public virtual DbSet<flow_Devmem> flow_Devmem { get; set; }
+        public virtual DbSet<flow_DevYB> flow_DevYB { get; set; }
         public virtual DbSet<person> person { get; set; }
         public virtual DbSet<user> user { get; set; }
-        public virtual DbSet<flow> flow { get; set; }
     }
 }

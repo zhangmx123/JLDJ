@@ -25,42 +25,41 @@
         <thead>
             <tr>
                 @*<th data-options="field:'ID',width:80">ID</th>*@
-                <th data-options="field:'flow_num'">流程编号</th>
-                <th data-options="field:'flow_type',align:'right'">流程类型</th>
-                <th data-options="field:'flow_dept',align:'right'">流程所在部门</th>
-                <th data-options="field:'flow_state',align:'right'">流程状态</th>
-                <th data-options="field:'flow_founder',align:'right'">流程所在人</th>
-                <th data-options="field:'flow_stime',align:'right'">流程开始时间</th>
-                <th data-options="field:'flow_etime',align:'right'">流程结束时间</th>
+                <th data-options="field:'flow_num'" align="center">流程编号</th>
+                <th data-options="field:'flow_type',align:'right'" align="center">流程类型</th>
+                <th data-options="field:'flow_dept',align:'right'" align="center">流程所在部门</th>
+                <th data-options="field:'flow_state',align:'right'" align="center">流程状态</th>
+                <th data-options="field:'flow_founder',align:'right'" align="center">流程所在人</th>
+                <th data-options="field:'flow_stime',align:'right'" align="center">流程开始时间</th>
+                <th data-options="field:'flow_etime',align:'right'" align="center">流程结束时间</th>
             </tr>
         </thead>
     </table>
     <div id="tb" style="padding:5px;height:auto">
-        <div style="margin-bottom:5px">
-            <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="$('#dlg').dialog('open')">发起流程</a>
-        </div>
+
         <div>
+            <a href="#" class="easyui-linkbutton" iconCls="icon-add"  onclick="$('#dlg').dialog('open')">发起流程</a>
             <span class="sp1">流程编号：</span><input id="Flow_Num" class="easyui-textbox" value="" data-options="prompt:'请输入流程编号'" />
-                <span class="sp1">请选择党支部：</span><select class="easyui-combobox" value="" name="state" style="width:150px;" id="Flow_Dept" data-options="panelHeight:150,editable:false">
-                    <option value="">请选择</option>
-                    <option value="中心党群">中心党群</option>
-                    <option value="室内检定党支部">室内检定党支部</option>
-                    <option value="现场检验党支部">现场检验党支部</option>
-                    <option value="标准量传党支部">标准量传党支部</option>
-                    <option value="配送党支部">配送党支部</option>
-                    <option value="运营管理党支部">运营管理党支部</option>
-                    <option value="综合党支部">综合党支部</option>
-                    <option value="技术质检党支部">技术质检党支部</option>
-                </select>
-                <span class="sp1">请选择流程类型：</span><select class="easyui-combobox" name="state" style="width:150px;" id="Flow_Type" data-options="panelHeight:150,editable:false">
-                    <option value="">请选择</option>
-                    <option value="发展积极分子">发展积极分子</option>
-                    <option value="发展党员">发展党员</option>
-                    <option value="党员转正">党员转正</option>
-                    <option value="党员评优核查">党员评优核查</option>
-                    <option value="支部换届">支部换届</option>
-                </select>
-                <a href="#" class="easyui-linkbutton" iconCls="icon-search" onclick="searchflow()">查询</a>
+            <span class="sp1">请选择党支部：</span><select class="easyui-combobox" value="" name="state" style="width:150px;" id="Flow_Dept" data-options="panelHeight:150,editable:false">
+                <option value="">请选择</option>
+                <option value="中心党群">中心党群</option>
+                <option value="室内检定党支部">室内检定党支部</option>
+                <option value="现场检验党支部">现场检验党支部</option>
+                <option value="标准量传党支部">标准量传党支部</option>
+                <option value="配送党支部">配送党支部</option>
+                <option value="运营管理党支部">运营管理党支部</option>
+                <option value="综合党支部">综合党支部</option>
+                <option value="技术质检党支部">技术质检党支部</option>
+            </select>
+            <span class="sp1">请选择流程类型：</span><select class="easyui-combobox" name="state" style="width:150px;" id="Flow_Type" data-options="panelHeight:150,editable:false">
+                <option value="">请选择</option>
+                <option value="发展积极分子">发展积极分子</option>
+                <option value="发展党员">发展党员</option>
+                <option value="党员转正">党员转正</option>
+                <option value="党员评优核查">党员评优核查</option>
+                <option value="支部换届">支部换届</option>
+            </select>
+            <a href="#" class="easyui-linkbutton" iconCls="icon-search" onclick="searchflow()">查询</a>
         </div>
     </div>
     <div style="margin:20px 0;">
@@ -77,7 +76,6 @@
 				}]
 			">
         <div style="padding:10px;margin:auto">
-            </br>
             <span class="sp1">流程类型：</span><select class="easyui-combobox" name="state" style="width:150px;" id="FlowType" data-options="panelHeight:150">
                 <option value="发展积极分子">发展积极分子</option>
                 <option value="发展党员">发展党员</option>
@@ -154,7 +152,7 @@
                     "FlowDept": FlowDept,
                 },
                 success: function (data) {
-                    if (data == 1) {
+                    if (data) {
                         alert("发起流程成功！当前流程在" + FlowDept + "的" + data + "账号下");
                         $('#dlg').dialog('close');
                         searchflow();

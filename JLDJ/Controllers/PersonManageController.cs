@@ -72,6 +72,7 @@ namespace JLDJ.Controllers
                 person_phonenum = Person_Phonenum,
                 person_dept = Person_Dept,
                 person_email = Person_Email,
+                person_plstatus = "中共党员"
             };
             //try
             //{

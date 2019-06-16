@@ -5,10 +5,11 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="3944fb2c420f47abaafd92d8a86b3b0d" Name="Diagram1">
-        <EntityTypeShape EntityType="DJXTModel.flow_Devmem" Width="1.5" PointX="2.25" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DJXTModel.person" Width="1.5" PointX="4" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DJXTModel.user" Width="1.5" PointX="0.5" PointY="0.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DJXTModel.flow" Width="1.5" PointX="5.75" PointY="0.5" />
+        <EntityTypeShape EntityType="DJXTModel.flow" Width="1.5" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="DJXTModel.flow_Devmem" Width="1.5" PointX="2.5" PointY="0.5" />
+        <EntityTypeShape EntityType="DJXTModel.flow_DevYB" Width="1.5" PointX="4.5" PointY="0.5" />
+        <EntityTypeShape EntityType="DJXTModel.person" Width="1.5" PointX="6.5" PointY="0.5" />
+        <EntityTypeShape EntityType="DJXTModel.user" Width="1.5" PointX="8.375" PointY="0.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

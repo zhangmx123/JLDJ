@@ -11,6 +11,7 @@
     <meta http-equiv="Content-Language" content="zh-CN" />
     <title>国网辽宁计量中心党建信息系统</title>
     <script type="text/javascript" src="~/JS/jquery-easyui-1.7.0/jquery.min.js"></script>
+    <script type="text/javascript" src="~/JS/ajaxfileupload.js"></script>
     <link rel="stylesheet" type="text/css" href="~/LoginCss/Login.css" />
 </head>
 <body>
@@ -18,9 +19,11 @@
         <h1>国网辽宁计量中心党建信息系统</h1>
     </div>
     <div id="login">
-            <input type="text" required="required" placeholder="用户名" name="u" id="Username"></input>
-            <input type="password" required="required" placeholder="密码" name="p" id="Password"></input>
-            <button class="but" onclick="Login()">登录</button>
+        <input type="text" required="required" placeholder="用户名" name="u" id="Username"></input>
+        <input type="password" required="required" placeholder="密码" name="p" id="Password"></input>
+        <button class="but" onclick="Login()">登录</button>
+
+        @*<input type="file" id="file1" name="file1" /><button class="but" onclick="Login1()">上传</button>*@
     </div>
     <script type="text/javascript">
         var Username;
@@ -46,6 +49,35 @@
                     alert("登录失败！");
                 }
             });
+        }
+
+        function Login1() {
+            var re = ajaxFileUpload('/MyWork/FileUpload', { "Id": "123", "name": "me" }, "file1");
+            alert(re);
+        }
+
+        function ajaxFileUpload(requrl,params, fileid) {
+            var result = "";
+            $.ajaxFileUpload({
+                url: requrl, //用于文件上传的服务器端请求地址
+                type: 'post',
+                data: params, //此参数非常严谨，写错一个引号都不行
+                secureuri: false, //一般设置为false
+                fileElementId: fileid, //文件上传空间的id属性  <input type="file" id="file" name="file" />
+                dataType: 'json', //返回值类型 一般设置为json
+                async: false,
+                success: function (data, status)  //服务器成功响应处理函数
+                {
+                    result = data["name"];
+                    //由于ajaxFileUpload把原来的file元素替换成新的file元素，所以之前绑定的change事件就失效了，需要重新绑定一下
+                    //bindFileChange();
+                },
+                error: function (data, status, e)//服务器响应失败处理函数
+                {
+                    alert(e);
+                }
+            });
+            return result;
         }
     </script>
 </body>

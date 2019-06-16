@@ -28,19 +28,20 @@
         <thead>
             <tr>
                 @*<th data-options="field:'ID',width:80">ID</th>*@
-                <th data-options="field:'person_id'">员工编号</th>
-                <th data-options="field:'person_name',align:'right'">姓名</th>
-                <th data-options="field:'person_dept',align:'right'">部门</th>
-                <th data-options="field:'person_sex',align:'right'">性别</th>
-                <th data-options="field:'person_phonenum',align:'right'">电话号码</th>
-                <th data-options="field:'person_email',align:'right'">电子邮箱</th>
-                <th data-options="field:'person_eduback',align:'right'">学历</th>
-                <th data-options="field:'person_degree',align:'right'">学位</th>
-                <th data-options="field:'person_college',align:'right'">毕业院校</th>
-                <th data-options="field:'person_birth',align:'right'">生日</th>
-                <th data-options="field:'person_ZGDYdate',align:'right'">转正日期</th>
-                <th data-options="field:'person_CJGZdate',align:'right'">工作日期</th>
-                <th data-options="field:'person_YBDYdate',align:'right'">入党日期</th>
+                <th data-options="field:'person_id'" align="center">员工编号</th>
+                <th data-options="field:'person_name',align:'right'" align="center">姓名</th>
+                <th data-options="field:'person_dept',align:'right'" align="center">部门</th>
+                <th data-options="field:'person_plstatus',align:'right'" align="center">政治面貌</th>
+                <th data-options="field:'person_sex',align:'right'" align="center">性别</th>
+                <th data-options="field:'person_phonenum',align:'right'" align="center">电话号码</th>
+                <th data-options="field:'person_email',align:'right'" align="center">电子邮箱</th>
+                <th data-options="field:'person_eduback',align:'right'" align="center">学历</th>
+                <th data-options="field:'person_degree',align:'right'" align="center">学位</th>
+                <th data-options="field:'person_college',align:'right'" align="center">毕业院校</th>
+                <th data-options="field:'person_birth',align:'right'" align="center">生日</th>
+                <th data-options="field:'person_ZGDYdate',align:'right'" align="center">转正日期</th>
+                <th data-options="field:'person_CJGZdate',align:'right'" align="center">工作日期</th>
+                <th data-options="field:'person_YBDYdate',align:'right'" align="center">入党日期</th>
             </tr>
         </thead>
     </table>
@@ -92,8 +93,8 @@
 
         </div>
         <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
-            <div class="sp1">电话号码：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Phonenum" /></br>
-            <div class="sp1">内网邮箱：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Email" /></br>
+            <div class="sp1">手机号码：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Phonenum" /></br>
+            <div class="sp1">电子邮箱：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Email" /></br>
             <div class="sp1">员工性别：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Person_Sex" data-options="panelHeight:150,editable:false">
                 <option value="男">男</option>
                 <option value="女">女</option>
@@ -148,8 +149,8 @@
 
             </div>
             <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
-                <div class="sp1">电话号码：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Phonenum_" /></br>
-                <div class="sp1">内网邮箱：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Email_" /></br>
+                <div class="sp1">手机号码：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Phonenum_" /></br>
+                <div class="sp1">电子邮箱：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Email_" /></br>
                 <div class="sp1">员工性别：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Person_Sex_" data-options="panelHeight:150,editable:false">
                     <option value="男">男</option>
                     <option value="女">女</option>
@@ -221,10 +222,13 @@
             Person_Degree = $("#Person_Degree").combobox('getValue');
             Person_Dept = $("#Person_Dept").combobox('getValue');
             if (Person_Name == "") { alert("请输入员工姓名"); return; } 
-            if (Person_Phonenum == "") { alert("请输入电话号码"); return; }
-            if (Person_Email == "") { alert("请输入内网邮箱"); return; }
-            if (Person_Eduback == "") { alert("请输入员工学历"); return; }
+            if (Person_Phonenum == "") { alert("请输入手机号码"); return; }
+            if (Person_Email == "") { alert("请输入电子邮箱"); return; }
             if (Person_College == "") { alert("请输入毕业院校"); return; }
+            if (/[^\u4e00-\u9fa5]/.test(Person_Name)) { alert("员工姓名必须完全由汉字组成！"); return; }
+            if (/[^\u4e00-\u9fa5]/.test(Person_College)) { alert("毕业院校必须完全由汉字组成！"); return; }
+            if (!(Person_Phonenum.length == 11 && /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(14[0-9]{1})|)+\d{8})$/.test(Person_Phonenum))) { alert("电话号码输入异常！"); return; }
+            if (/^\w+([-+.]\w+)*@@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(Person_Email) == false) { alert("电子邮箱输入异常！"); return; }
             $.ajax({
                 url: "/PersonManage/addperson",
                 type: "get",
@@ -356,10 +360,13 @@
             Person_Degree = $("#Person_Degree_").combobox('getValue');
             Person_Dept = $("#Person_Dept_").combobox('getValue');
             if (Person_Name == "") { alert("请输入员工姓名"); return; }
-            if (Person_Phonenum == "") { alert("请输入电话号码"); return; }
-            if (Person_Email == "") { alert("请输入内网邮箱"); return; }
-            if (Person_Eduback == "") { alert("请输入员工学历"); return; }
+            if (Person_Phonenum == "") { alert("请输入手机号码"); return; }
+            if (Person_Email == "") { alert("请输入电子邮箱"); return; }
             if (Person_College == "") { alert("请输入毕业院校"); return; }
+            if (/[^\u4e00-\u9fa5]/.test(Person_Name)) { alert("员工姓名必须完全由汉字组成！"); return; }
+            if (/[^\u4e00-\u9fa5]/.test(Person_College)) { alert("毕业院校必须完全由汉字组成！"); return; }
+            if (!(Person_Phonenum.length == 11 && /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(14[0-9]{1})|)+\d{8})$/.test(Person_Phonenum))) { alert("电话号码输入异常！"); return; }
+            if (/^\w+([-+.]\w+)*@@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(Person_Email) == false) { alert("电子邮箱输入异常！"); return; }
             $.messager.confirm('确认编辑', "确认编辑人员" + Person_Name + "吗？", function (r) {
                 if (r) {
                     $.ajax({

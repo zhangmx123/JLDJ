@@ -15,7 +15,7 @@
     <script type="text/javascript" src="~/JS/jquery-easyui-1.7.0/jquery.easyui.min.js"></script>
     <script type="text/javascript" src="~/JS/jquery-easyui-1.7.0/locale/easyui-lang-zh_CN.js"></script>
     <script type="text/javascript" src="~/JS/Common.js"></script>
-
+    <script type="text/javascript" src="~/JS/ajaxfileupload.js"></script>
 </head>
 <body>
 
@@ -24,15 +24,15 @@
            data-options="rownumbers:true,toolbar:'#tb',singleSelect:true , pagination:true">
         <thead>
             <tr>
-                <th data-options="field:'flow_num'">流程编号</th>
-                <th data-options="field:'flow_type',align:'right'">流程类型</th>
-                <th data-options="field:'flow_dept',align:'right'">流程所在部门</th>
-                <th data-options="field:'flow_state',align:'right'">流程状态</th>
-                <th data-options="field:'flow_founder',align:'right'">流程所在人</th>
-                <th data-options="field:'flow_stime',align:'right'">流程开始时间</th>
-                <th data-options="field:'flow_etime',align:'right'">流程结束时间</th>
-                <th data-options="field:'flow_order',align:'right',hidden:true">流程顺序号</th>
-                <th data-options="field:'flow_oper',align:'right',formatter:operate_formatter">操作</th>
+                <th data-options="field:'flow_num'" align="center">流程编号</th>
+                <th data-options="field:'flow_type',align:'right'" align="center">流程类型</th>
+                <th data-options="field:'flow_dept',align:'right'" align="center">流程所在部门</th>
+                <th data-options="field:'flow_state',align:'right'" align="center">流程状态</th>
+                <th data-options="field:'flow_founder',align:'right'" align="center">流程所在人</th>
+                <th data-options="field:'flow_stime',align:'right'" align="center">流程开始时间</th>
+                <th data-options="field:'flow_etime',align:'right'" align="center">流程结束时间</th>
+                <th data-options="field:'flow_order',align:'right',hidden:true" align="center">流程顺序号</th>
+                <th data-options="field:'flow_oper',align:'right',formatter:operate_formatter" align="center">操作</th>
             </tr>
         </thead>
     </table>
@@ -63,7 +63,7 @@
             </select></br>
         </div>
         <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
-            <div class="sp1">入党申请书：</div><input class="easyui-filebox" id="Person_Application" style="width:200px;" name="newJJFZ" data-options="prompt:'请上传入党申请书',buttonText:'上传'"></br>
+            <div class="sp1">入党申请书：</div><input type="file" id="Person_Application" style="width:200px;" name="Person_Application" data-options="prompt:'请上传入党申请书',buttonText:'上传'">
         </div>
     </div> 
     <div id="dlg_newJJFZ_1" class="easyui-dialog" title="发展积极分子流程_第二步_支部书记审批申请" style="width:800px;height:350px;padding:10px"
@@ -94,7 +94,7 @@
 
             </div>
             <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
-                <div class="sp1">入党申请书：</div><a href="##" id="Person_Application0" style="width:200px;" name="newJJFZ">入党申请书附件</a>
+                <div class="sp1">入党申请书：</div><a href="##" id="Person_Application0" target="_blank" style="width:200px;" name="newJJFZ">入党申请书附件</a>
             </div>
         </div>
         <div>
@@ -148,8 +148,8 @@
 
         </div>
         <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
-            <div class="sp1">电话号码：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Phonenum1" /></br>
-            <div class="sp1">内网邮箱：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Email1" /></br>
+            <div class="sp1">手机号码：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Phonenum1" /></br>
+            <div class="sp1">电子邮箱：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Email1" /></br>
             <div class="sp1">员工性别：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Person_Sex1" data-options="panelHeight:150,editable:false">
                 <option value="男">男</option>
                 <option value="女">女</option>
@@ -183,17 +183,17 @@
 			">
         <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
             <div class="sp1">积极分子员工编号：</div><input type="text" style="width:200px;" class="easyui-textbox" id="Person_Id2" name="newYBDY" /></br>
-            <div class="sp1">入党志愿书：</div><input class="easyui-filebox" id="Person_Willing2" style="width:200px;" name="newYBDY" data-options="prompt:'请上传入党志愿书',buttonText:'上传'"></br>
-            <div class="sp1">政审结论：</div><input class="easyui-filebox" id="Person_ZSJL2" style="width:200px;" name="newYBDY" data-options="prompt:'请上传政审结论',buttonText:'上传'"></br>
+            <div class="sp1">入党志愿书：</div><input type="file" id="Person_Willing2" style="width:200px;" name="Person_Willing2" data-options="prompt:'请上传入党志愿书',buttonText:'上传'"></br>
+            <div class="sp1">政审结论：</div><input type="file" id="Person_ZSJL2" style="width:200px;" name="Person_ZSJL2" data-options="prompt:'请上传政审结论',buttonText:'上传'"></br>
         </div>
         <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
             <div class="sp1">入党介绍人1员工编号：</div><input type="text" style="width:200px;" class="easyui-textbox" id="Person_IntroducerA2" name="newYBDY" /></br>
-            <div class="sp1">支部意见：</div><input class="easyui-filebox" id="Person_DeptOpi2" style="width:200px;" name="newYBDY" data-options="prompt:'请上传支部意见',buttonText:'上传'"></br>
-            <div class="sp1">集中培训证明材料：</div><input class="easyui-filebox" id="Person_Train2" style="width:200px;" name="newYBDY" data-options="prompt:'请上传集中培训证明材料',buttonText:'上传'"></br>
+            <div class="sp1">支部意见：</div><input type="file" id="Person_DeptOpi2" style="width:200px;" name="Person_DeptOpi2" data-options="prompt:'请上传支部意见',buttonText:'上传'"></br>
+            <div class="sp1">集中培训证明材料：</div><input type="file" id="Person_Train2" style="width:200px;" name="Person_Train2" data-options="prompt:'请上传集中培训证明材料',buttonText:'上传'"></br>
         </div>
         <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
             <div class="sp1">入党介绍人2员工编号：</div><input type="text" style="width:200px;" class="easyui-textbox" id="Person_IntroducerB2" name="newYBDY" /></br>
-            <div class="sp1">党委意见：</div><input class="easyui-filebox" id="Person_DWOpi2" style="width:200px;" name="newYBDY" data-options="prompt:'请上传党委意见',buttonText:'上传'"></br>
+            <div class="sp1">党委意见：</div><input type="file" id="Person_DWOpi2" style="width:200px;" name="Person_DWOpi2" data-options="prompt:'请上传党委意见',buttonText:'上传'"></br>
             <div class="sp1">所在支部：</div><select class="easyui-combobox" name="newYBDY" style="width:200px;" id="Person_Dept2" data-options="panelHeight:150,editable:false">
                 <option value="室内检定党支部">室内检定党支部</option>
                 <option value="现场检验党支部">现场检验党支部</option>
@@ -219,17 +219,17 @@
         <div style="height: 150px;width: 759px;">
             <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
                 <div class="sp1">积极分子姓名：</div><input type="text" style="width:200px;" class="easyui-textbox" id="Person_Name3" name="newYBDY" readonly="readonly" />
-                <div class="sp1">入党志愿书：</div><a href="##" id="Person_Willing3" style="width:200px;" name="newJJFZ">入党志愿书附件</a>
-                <div class="sp1">政审结论：</div><a href="##" id="Person_ZSJL3" style="width:200px;" name="newJJFZ">政审结论附件</a>
+                <div class="sp1">入党志愿书：</div><a href="##" target="_blank"  id="Person_Willing3" style="width:200px;" name="newJJFZ">入党志愿书附件</a>
+                <div class="sp1">政审结论：</div><a href="##" target="_blank" id="Person_ZSJL3" style="width:200px;" name="newJJFZ">政审结论附件</a>
             </div>
             <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
                 <div class="sp1">入党介绍人1姓名：</div><input type="text" style="width:200px;" class="easyui-textbox" id="Person_IntroducerA3" name="newYBDY" readonly="readonly" /></br>
-                <div class="sp1">支部意见：</div><a href="##" id="Person_DeptOpi3" style="width:200px;" name="newJJFZ">支部意见附件</a>
-                <div class="sp1">集中培训证明材料：</div><a href="##" id="Person_Train3" style="width:200px;" name="newJJFZ">集中培训证明材料附件</a>
+                <div class="sp1">支部意见：</div><a href="##" target="_blank" id="Person_DeptOpi3" style="width:200px;" name="newJJFZ">支部意见附件</a>
+                <div class="sp1">集中培训证明材料：</div><a href="##" target="_blank" id="Person_Train3" style="width:200px;" name="newJJFZ">集中培训证明材料附件</a>
             </div>
             <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
                 <div class="sp1">入党介绍人2姓名：</div><input type="text" style="width:200px;" class="easyui-textbox" id="Person_IntroducerB3" name="newYBDY" readonly="readonly" /></br>
-                <div class="sp1">党委意见：</div><a href="##" id="Person_DWOpi3" style="width:200px;" name="newJJFZ">党委意见附件</a>
+                <div class="sp1">党委意见：</div><a href="##" target="_blank" id="Person_DWOpi3" style="width:200px;" name="newJJFZ">党委意见附件</a>
                 <div class="sp1">所在支部：</div><select class="easyui-combobox" name="newYBDY" style="width:200px;" id="Person_Dept3" readonly="readonly" data-options="panelHeight:150,editable:false">
                     <option value="室内检定党支部">室内检定党支部</option>
                     <option value="现场检验党支部">现场检验党支部</option>
@@ -245,7 +245,7 @@
             <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
 
                 <div class="sp1">审核结论：</div><select class="easyui-combobox" style="width:200px;" id="Conclusion3" data-options="panelHeight:150,editable:false">
-                    <option value="通过">通过</option>
+                    <option value="通过" selected>通过</option>
                     <option value="不通过">不通过</option>
                 </select>
             </div>
@@ -271,17 +271,17 @@
         <div style="height: 150px;width: 759px;">
             <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
                 <div class="sp1">积极分子姓名：</div><input type="text" style="width:200px;" class="easyui-textbox" id="Person_Name4" name="newYBDY" readonly="readonly" />
-                <div class="sp1">入党志愿书：</div><a href="##" id="Person_Willing4" style="width:200px;" name="newJJFZ">入党志愿书附件</a>
-                <div class="sp1">政审结论：</div><a href="##" id="Person_ZSJL4" style="width:200px;" name="newJJFZ">政审结论附件</a>
+                <div class="sp1">入党志愿书：</div><a href="##" target="_blank" id="Person_Willing4" style="width:200px;" name="newJJFZ">入党志愿书附件</a>
+                <div class="sp1">政审结论：</div><a href="##" target="_blank"id="Person_ZSJL4" style="width:200px;" name="newJJFZ">政审结论附件</a>
             </div>
             <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
                 <div class="sp1">入党介绍人1姓名：</div><input type="text" style="width:200px;" class="easyui-textbox" id="Person_IntroducerA4" name="newYBDY" readonly="readonly" /></br>
-                <div class="sp1">支部意见：</div><a href="##" id="Person_DeptOpi4" style="width:200px;" name="newJJFZ">支部意见附件</a>
-                <div class="sp1">集中培训证明材料：</div><a href="##" id="Person_Train4" style="width:200px;" name="newJJFZ">集中培训证明材料附件</a>
+                <div class="sp1">支部意见：</div><a href="##" target="_blank"id="Person_DeptOpi4" style="width:200px;" name="newJJFZ">支部意见附件</a>
+                <div class="sp1">集中培训证明材料：</div><a href="##" target="_blank"id="Person_Train4" style="width:200px;" name="newJJFZ">集中培训证明材料附件</a>
             </div>
             <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
                 <div class="sp1">入党介绍人2姓名：</div><input type="text" style="width:200px;" class="easyui-textbox" id="Person_IntroducerB4" name="newYBDY" readonly="readonly" /></br>
-                <div class="sp1">党委意见：</div><a href="##" id="Person_DWOpi4" style="width:200px;" name="newJJFZ">党委意见附件</a>
+                <div class="sp1">党委意见：</div><a href="##" target="_blank"id="Person_DWOpi4" style="width:200px;" name="newJJFZ">党委意见附件</a>
                 <div class="sp1">所在支部：</div><select class="easyui-combobox" name="newYBDY" style="width:200px;" id="Person_Dept4" readonly="readonly" data-options="panelHeight:150,editable:false">
                     <option value="室内检定党支部">室内检定党支部</option>
                     <option value="现场检验党支部">现场检验党支部</option>
@@ -333,17 +333,17 @@
         <div style="height: 150px;width: 759px;">
             <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
                 <div class="sp1">积极分子姓名：</div><input type="text" style="width:200px;" class="easyui-textbox" id="Person_Name5" name="newYBDY" readonly="readonly" />
-                <div class="sp1">入党志愿书：</div><a href="##" id="Person_Willing5" style="width:200px;" name="newJJFZ">入党志愿书附件</a>
-                <div class="sp1">政审结论：</div><a href="##" id="Person_ZSJL5" style="width:200px;" name="newJJFZ">政审结论附件</a>
+                <div class="sp1">入党志愿书：</div><a href="##" target="_blank"id="Person_Willing5" style="width:200px;" name="newJJFZ">入党志愿书附件</a>
+                <div class="sp1">政审结论：</div><a href="##" target="_blank"id="Person_ZSJL5" style="width:200px;" name="newJJFZ">政审结论附件</a>
             </div>
             <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
                 <div class="sp1">入党介绍人1姓名：</div><input type="text" style="width:200px;" class="easyui-textbox" id="Person_IntroducerA5" name="newYBDY" readonly="readonly" /></br>
-                <div class="sp1">支部意见：</div><a href="##" id="Person_DeptOpi5" style="width:200px;" name="newJJFZ">支部意见附件</a>
-                <div class="sp1">集中培训证明材料：</div><a href="##" id="Person_Train5" style="width:200px;" name="newJJFZ">集中培训证明材料附件</a>
+                <div class="sp1">支部意见：</div><a href="##" target="_blank"id="Person_DeptOpi5" style="width:200px;" name="newJJFZ">支部意见附件</a>
+                <div class="sp1">集中培训证明材料：</div><a href="##" target="_blank"id="Person_Train5" style="width:200px;" name="newJJFZ">集中培训证明材料附件</a>
             </div>
             <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
                 <div class="sp1">入党介绍人2姓名：</div><input type="text" style="width:200px;" class="easyui-textbox" id="Person_IntroducerB5" name="newYBDY" readonly="readonly" /></br>
-                <div class="sp1">党委意见：</div><a href="##" id="Person_DWOpi5" style="width:200px;" name="newJJFZ">党委意见附件</a>
+                <div class="sp1">党委意见：</div><a href="##" target="_blank"id="Person_DWOpi5" style="width:200px;" name="newJJFZ">党委意见附件</a>
                 <div class="sp1">所在支部：</div><select class="easyui-combobox" name="newYBDY" style="width:200px;" id="Person_Dept5" readonly="readonly" data-options="panelHeight:150,editable:false">
                     <option value="室内检定党支部">室内检定党支部</option>
                     <option value="现场检验党支部">现场检验党支部</option>
@@ -370,7 +370,7 @@
         <div>
             <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
                 <div class="sp1">党群部审核结论：</div><select class="easyui-combobox" style="width:200px;" id="Conclusion51" data-options="panelHeight:150,editable:false" readonly="readonly">
-                    <option value="通过">通过</option>
+                    <option value="通过" selected>通过</option>
                     <option value="不通过">不通过</option>
                 </select>
             </div>
@@ -412,6 +412,16 @@
                     alert("请求失败！");
                 }
             });
+            var p = $('#dg').datagrid('getPager');
+            if (p) {
+                $(p).pagination({ //设置分页功能栏
+                    //分页功能可以通过Pagination的事件调用后台分页功能来实现
+                    onRefresh: function () {
+                        searchflow();
+                    }
+
+                });
+            }
         });
         function searchflow() {
             $.ajax({
@@ -430,9 +440,10 @@
         }
         function operate_formatter(value, row, index) {
             row_ = row;
-            return "<a href='#' class='easyui-linkbutton' onclick='openpage(\"" + row.flow_type + "\",\"" + row.flow_order + "\")'>操作</a>";
+            return "<a href='#' class='easyui-linkbutton' onclick='openpage(\"" + row.flow_type + "\",\"" + row.flow_order + "\",\"" + row.flow_num + "\")'>操作</a>";
         }
-        function openpage(flow_type, flow_order) {
+        function openpage(flow_type, flow_order, flow_num) {
+            row_.flow_num = flow_num;
             alert("进入" + flow_type + "流程！");
             switch (flow_type) {
                 case "发展积极分子":
@@ -501,17 +512,18 @@
         {
             var Person_Name = $("#Person_Name").textbox('getValue');
             var Person_Dept = $("#Person_Dept").combobox('getValue');
-            var Person_Application = $("#Person_Application").filebox('getValue');
-            if (Person_Name == "") { alert("请输入人员姓名!"); return; }
+            if (Person_Name == "") { alert("请输入员工姓名!"); return; }
+            if (/[^\u4e00-\u9fa5]/.test(Person_Name)) { alert("员工姓名必须完全由汉字组成！"); return; }
             if (dept != Person_Dept) { alert("部门选择不正确！"); return; }
-
+            if ($("#Person_Application").val() == "") { alert("请上传入党申请书！"); return; }
+            ajaxFileUpload('/MyWork/FileUpload', { "Id": row_.flow_num }, "Person_Application");            
             $.ajax({
                 url: "/MyWork/newJJFZ_0",                                      //ZMX，MyWork控制器下的函数名为newJJFZ_0，类型为string
                 type: "get",
                 data: {
+                    "flow_num": row_.flow_num,
                     "Person_Name": Person_Name,
-                    "Person_Dept": Person_Dept,
-                    "Person_Application": Person_Application,                  //ZMX，将以上数据传输至后台存入flow_Devemem，其中最后一项是入党申请书路径
+                    "Person_Dept": Person_Dept                                //ZMX，将以上数据传输至后台存入flow_Devemem，其中最后一项是入党申请书路径
                 },
                 success: function (data) {
                     if (data) {
@@ -520,8 +532,7 @@
                         searchflow();
                         $("#Person_Name").textbox('setValue', "");
                         $("#Person_Dept").combobox('setValue', "室内检定党支部");
-                        $("#Person_Application0").filebox('setValue', "");
-
+                        $("#Person_Application").val("");
                     }
                     else
                         alert("操作失败！");
@@ -566,6 +577,8 @@
                 data: {
                     "Opinion": Opinion,                                         //ZMX，将审批意见传输至后台，存入一个长度为1000的nvarchar字段中
                     "Conclusion": Conclusion,                                   //ZMX，将审批结论传输至后台，如结果为“通过”则正常给流程所在部门的组织委员，如不通过则直接归档
+                    "flow_num": row_.flow_num
+
                 },
                 success: function (data) {
                     if (data) {
@@ -619,10 +632,13 @@
             var Person_Eduback = $("#Person_Eduback1").combobox('getValue');
             var Person_Degree = $("#Person_Degree1").combobox('getValue');
             var Person_Dept = $("#Person_Dept1").combobox('getValue');
-            if (Person_Phonenum == "") { alert("请输入电话号码"); return; }
-            if (Person_Email == "") { alert("请输入内网邮箱"); return; }
-            if (Person_Eduback == "") { alert("请输入员工学历"); return; }
+            if (Person_Phonenum == "") { alert("请输入手机号码"); return; }
+            if (Person_Email == "") { alert("请输入电子邮箱"); return; }
             if (Person_College == "") { alert("请输入毕业院校"); return; }
+            if (/[^\u4e00-\u9fa5]/.test(Person_College)) { alert("毕业院校必须完全由汉字组成！"); return; }
+            if (!(Person_Phonenum.length == 11 && /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(14[0-9]{1})|)+\d{8})$/.test(Person_Phonenum))) { alert("电话号码输入异常！"); return; }
+            if (/^\w+([-+.]\w+)*@@\w+([-.]\w+)*\.\w+([-.]\w+)*$/.test(Person_Email) == false) { alert("电子邮箱输入异常！"); return; }
+
             $.ajax({
                 url: "/MyWork/newJJFZ_20",
                 type: "get",
@@ -636,7 +652,9 @@
                     "Person_College": Person_College,
                     "Person_Phonenum": Person_Phonenum,
                     "Person_Email": Person_Email,
-                    "Person_Dept": Person_Dept
+                    "Person_Dept": Person_Dept,
+                    "flow_num": row_.flow_num,
+
                 },
                 success: function (data) {
                     if (data == 1) {
@@ -669,15 +687,27 @@
             var Person_IntroducerA = $("#Person_IntroducerA2").textbox('getValue');
             var Person_IntroducerB = $("#Person_IntroducerB2").textbox('getValue');
             var Person_Dept = $("#Person_Dept2").combobox('getValue');
-            var Person_Willing = $("#Person_Willing2").filebox('getValue');
-            var Person_ZSJL = $("#Person_ZSJL2").filebox('getValue');
-            var Person_DeptOpi = $("#Person_DeptOpi2").filebox('getValue');
-            var Person_DWOpi = $("#Person_DWOpi2").filebox('getValue');
-            var Person_Train = $("#Person_Train2").filebox('getValue');
-
-            if (Person_Id == "" || Person_IntroducerA == "" || Person_IntroducerB == "" || Person_Dept == "" || Person_ZSJL == "" || Person_Willing == "" ||
-                Person_DeptOpi == "" || Person_DWOpi == "" || Person_Train == "") { alert("信息填写不全，请补全！"); return; }
+            //var Person_Willing = $("#Person_Willing2").filebox('getValue');
+            //var Person_ZSJL = $("#Person_ZSJL2").filebox('getValue');
+            //var Person_DeptOpi = $("#Person_DeptOpi2").filebox('getValue');
+            //var Person_DWOpi = $("#Person_DWOpi2").filebox('getValue');
+            //var Person_Train = $("#Person_Train2").filebox('getValue');
+            if (/^\+?[1-9][0-9]*$/.test(Person_Id) == false) { alert("积极分子员工编号输入异常！"); return; }
+            if (/^\+?[1-9][0-9]*$/.test(Person_IntroducerA) == false) { alert("入党介绍人1员工编号输入异常！"); return; }
+            if (/^\+?[1-9][0-9]*$/.test(Person_IntroducerB) == false) { alert("入党介绍人2员工编号输入异常！"); return; }
+            if (Person_Id == "" || Person_IntroducerA == "" || Person_IntroducerB == "" || Person_Dept == "" ) { alert("信息填写不全，请补全！"); return; }
             if (dept != Person_Dept) { alert("部门选择不正确！"); return; }
+            if ($("#Person_Willing2").val() == "") { alert("请上传入党志愿书！"); return; }
+            if ($("#Person_ZSJL2").val() == "") { alert("请上传政审结论！"); return; }
+            if ($("#Person_DeptOpi2").val() == "") { alert("请上传支部意见！"); return; }
+            if ($("#Person_DWOpi2").val() == "") { alert("请上传党委意见！"); return; }
+            if ($("#Person_Train2").val() == "") { alert("请上传集中培训证明！"); return; }
+
+            //ajaxFileUpload('/MyWork/FileUpload', { "Id": row_.flow_num, "Type": "1"  }, "Person_Willing2");            
+            //ajaxFileUpload('/MyWork/FileUpload', { "Id": row_.flow_num, "Type": "2"  }, "Person_ZSJL2");            
+            //ajaxFileUpload('/MyWork/FileUpload', { "Id": row_.flow_num, "Type": "3"  }, "Person_DeptOpi2");            
+            //ajaxFileUpload('/MyWork/FileUpload', { "Id": row_.flow_num, "Type": "4"  }, "Person_DWOpi2");            
+            //ajaxFileUpload('/MyWork/FileUpload', { "Id": row_.flow_num, "Type": "5"  }, "Person_Train2");            
 
             $.ajax({
                 url: "/MyWork/newYBDY_0",                                      //ZMX，MyWork控制器下的函数名为newYBDY_0，类型为string
@@ -687,30 +717,37 @@
                     "Person_IntroducerA": Person_IntroducerA,                  //入党介绍人A的ID，但存的时候要存ID和姓名
                     "Person_IntroducerB": Person_IntroducerB,                  //入党介绍人B的ID，但存的时候要存ID和姓名
                     "Person_Dept": Person_Dept,                                //积极分子党支部
-                    "Person_Willing": Person_Willing,                          //入党志愿书扫描件
-                    "Person_ZSJL": Person_ZSJL,                                //政审结论扫描件
-                    "Person_DeptOpi": Person_DeptOpi,                          //部门意见扫描件
-                    "Person_DWOpi": Person_DWOpi,                              //党委意见扫描件
-                    "Person_Train": Person_Train,                              //培训证明扫描件
+                    //"Person_Willing": Person_Willing,                          //入党志愿书扫描件
+                    //"Person_ZSJL": Person_ZSJL,                                //政审结论扫描件
+                    //"Person_DeptOpi": Person_DeptOpi,                          //部门意见扫描件
+                    //"Person_DWOpi": Person_DWOpi,                              //党委意见扫描件
+                    //"Person_Train": Person_Train,                              //培训证明扫描件
+                    "flow_num": row_.flow_num
                 },
                 success: function (data) {
                     if (data) {
-                        if (data == "")                                             //ZMX，如积极分子编号或入党介绍人编号不存在，则返回空字符串
+                        if (data == "1")                                             //ZMX，如积极分子编号或入党介绍人编号不存在，则返回空字符串
                         {
-                            alert("积极分子或介绍人员工编号填写错误，请检查！"); break;
+                            alert("积极分子或介绍人员工编号填写错误，请检查！");
+                            return;
                         }
+                        ajaxFileUpload('/MyWork/FileUpload', { "Id": row_.flow_num, "Type": "1" }, "Person_Willing2");
+                        ajaxFileUpload('/MyWork/FileUpload', { "Id": row_.flow_num, "Type": "2" }, "Person_ZSJL2");
+                        ajaxFileUpload('/MyWork/FileUpload', { "Id": row_.flow_num, "Type": "3" }, "Person_DeptOpi2");
+                        ajaxFileUpload('/MyWork/FileUpload', { "Id": row_.flow_num, "Type": "4" }, "Person_DWOpi2");
+                        ajaxFileUpload('/MyWork/FileUpload', { "Id": row_.flow_num, "Type": "5" }, "Person_Train2");            
                         alert("操作成功！流程的下一步需要" + data + "处理！");     //ZMX，输入正常，则需要返回一个string给data，内容形如"配送党支部的支部书记王强"
-                        $('#dlg_newJJFZ_0').dialog('close');
+                        $('#dlg_newYBDY_0').dialog('close');
                         searchflow();
                         $("#Person_Id2").textbox('setValue', "");
                         $("#Person_IntroducerA2").textbox('setValue', "");
                         $("#Person_IntroducerB2").textbox('setValue', "");
                         $("#Person_Dept2").combobox('setValue', "室内检定党支部");
-                        $("#Person_Willing2").filebox('setValue', "");
-                        $("#Person_ZSJL2").filebox('setValue', "");
-                        $("#Person_DeptOpi2").filebox('setValue', "");
-                        $("#Person_DWOpi2").filebox('setValue', "");
-                        $("#Person_Train2").filebox('setValue', "");
+                        //$("#Person_Willing2").filebox('setValue', "");
+                        //$("#Person_ZSJL2").filebox('setValue', "");
+                        //$("#Person_DeptOpi2").filebox('setValue', "");
+                        //$("#Person_DWOpi2").filebox('setValue', "");
+                        //$("#Person_Train2").filebox('setValue', "");
                     }
                     else
                         alert("操作失败！");
@@ -761,6 +798,7 @@
                 data: {
                     "Opinion": Opinion,                                         //ZMX，将审批意见传输至后台，存入一个长度为1000的nvarchar字段中
                     "Conclusion": Conclusion,                                   //ZMX，将审批结论传输至后台，如结果为“通过”则正常给流程所在部门的组织委员，如不通过则直接归档
+                    "flow_num": row_.flow_num,
                 },
                 success: function (data) {
                     if (data) {
@@ -822,6 +860,7 @@
                 data: {
                     "Opinion": Opinion,                                         //ZMX，将审批意见传输至后台，存入一个长度为1000的nvarchar字段中
                     "Conclusion": Conclusion,                                   //ZMX，将审批结论传输至后台，如结果为“通过”则正常给流程所在部门的组织委员，如不通过则直接归档
+                    "flow_num": row_.flow_num,
                 },
                 success: function (data) {
                     if (data) {
@@ -885,6 +924,7 @@
                 data: {
                     "Opinion": Opinion,                                         //ZMX，将审批意见传输至后台，存入一个长度为1000的nvarchar字段中
                     "Conclusion": Conclusion,                                   //ZMX，将审批结论传输至后台，如结果为“通过”则正常给流程所在部门的组织委员，如不通过则直接归档
+                    "flow_num": row_.flow_num,
                 },
                 success: function (data) {
                     if (data) {
@@ -902,6 +942,29 @@
                     alert("请求失败！");
                 }
             });
+        }
+        function ajaxFileUpload(requrl, params, fileid) {
+            var result = "";
+            $.ajaxFileUpload({
+                url: requrl, //用于文件上传的服务器端请求地址
+                type: 'post',
+                data: params, //此参数非常严谨，写错一个引号都不行
+                secureuri: false, //一般设置为false
+                fileElementId: fileid, //文件上传空间的id属性  <input type="file" id="file" name="file" />
+                dataType: 'json', //返回值类型 一般设置为json
+                async: false,
+                success: function (data, status)  //服务器成功响应处理函数
+                {
+                    result = data["name"];
+                    //由于ajaxFileUpload把原来的file元素替换成新的file元素，所以之前绑定的change事件就失效了，需要重新绑定一下
+                    //bindFileChange();
+                },
+                error: function (data, status, e)//服务器响应失败处理函数
+                {
+                    alert(e);
+                }
+            });
+            return result;
         }
     </script>
 </body>
