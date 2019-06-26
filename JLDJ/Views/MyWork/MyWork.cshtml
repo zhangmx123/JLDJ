@@ -53,7 +53,7 @@
         </div>
         <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
             <div class="sp1">所在支部：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Person_Dept" data-options="panelHeight:150,editable:false">
-                <option value="室内检定党支部">室内检定党支部</option>
+                <option value="室内检定党支部" selected>室内检定党支部</option>
                 <option value="现场检验党支部">现场检验党支部</option>
                 <option value="标准量传党支部">标准量传党支部</option>
                 <option value="配送党支部">配送党支部</option>
@@ -101,7 +101,7 @@
             <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
 
                 <div class="sp1">审核结论：</div><select class="easyui-combobox" style="width:200px;" id="Conclusion0" data-options="panelHeight:150,editable:false">
-                    <option value="通过">通过</option>
+                    <option value="通过" selected>通过</option>
                     <option value="不通过">不通过</option>
                 </select>
             </div>
@@ -139,7 +139,7 @@
                 <option value="技术质检党支部">技术质检党支部</option>
             </select></br>
             <div class="sp1">员工学历：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Person_Eduback1" data-options="panelHeight:150" ,editable:false>
-                <option value="大学专科">大学专科</option>
+                <option value="大学专科" selected>大学专科</option>
                 <option value="大学本科">大学本科</option>
                 <option value="硕士研究生">硕士研究生</option>
                 <option value="博士研究生">博士研究生</option>
@@ -151,12 +151,12 @@
             <div class="sp1">手机号码：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Phonenum1" /></br>
             <div class="sp1">电子邮箱：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Email1" /></br>
             <div class="sp1">员工性别：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Person_Sex1" data-options="panelHeight:150,editable:false">
-                <option value="男">男</option>
+                <option value="男" selected>男</option>
                 <option value="女">女</option>
 
             </select></br>
             <div class="sp1">员工学位：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Person_Degree1" data-options="panelHeight:150,editable:false">
-                <option value="学士学位">学士学位</option>
+                <option value="学士学位" selected>学士学位</option>
                 <option value="硕士学位">硕士学位</option>
                 <option value="博士学位">博士学位</option>
                 <option value="无">无</option>
@@ -170,6 +170,7 @@
                 <div class="sp1">转正日期：</div><input type="text" id="Person_ZGDYdate1" class="easyui-datebox" data-options="value:'Today',editable:false" /></br>*@
         </div>
     </div>
+
     <div id="dlg_newYBDY_0" class="easyui-dialog" title="发展预备党员流程_第一步_填写申请提报审批" style="width:800px;height:350px;padding:10px"
          data-options="modal:true,closed:true,
 
@@ -195,17 +196,17 @@
             <div class="sp1">入党介绍人2员工编号：</div><input type="text" style="width:200px;" class="easyui-textbox" id="Person_IntroducerB2" name="newYBDY" /></br>
             <div class="sp1">党委意见：</div><input type="file" id="Person_DWOpi2" style="width:200px;" name="Person_DWOpi2" data-options="prompt:'请上传党委意见',buttonText:'上传'"></br>
             <div class="sp1">所在支部：</div><select class="easyui-combobox" name="newYBDY" style="width:200px;" id="Person_Dept2" data-options="panelHeight:150,editable:false">
-                <option value="室内检定党支部">室内检定党支部</option>
+                <option value="室内检定党支部" selected>室内检定党支部</option>
                 <option value="现场检验党支部">现场检验党支部</option>
                 <option value="标准量传党支部">标准量传党支部</option>
                 <option value="配送党支部">配送党支部</option>
                 <option value="运营管理党支部">运营管理党支部</option>
                 <option value="综合党支部">综合党支部</option>
                 <option value="技术质检党支部">技术质检党支部</option>
-            </select></br>
+            </select>
         </div>
     </div>
-    <div id="dlg_newYBDY_1" class="easyui-dialog" title="发展预备党员流程_第二步_支部书记审核" style="width:800px;height:350px;padding:10px"
+    <div id="dlg_newYBDY_1" class="easyui-dialog" title="发展预备党员流程_第二步_党支部审核" style="width:800px;height:350px;padding:10px"
          data-options="modal:true,closed:true,
 
 				buttons: [{
@@ -309,7 +310,7 @@
         <div>
             <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
                 <div class="sp1">审核结论：</div><select class="easyui-combobox" style="width:200px;" id="Conclusion4" data-options="panelHeight:150,editable:false">
-                    <option value="通过">通过</option>
+                    <option value="通过" selected>通过</option>
                     <option value="不通过">不通过</option>
                 </select>
             </div>
@@ -370,7 +371,7 @@
         <div>
             <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
                 <div class="sp1">党群部审核结论：</div><select class="easyui-combobox" style="width:200px;" id="Conclusion51" data-options="panelHeight:150,editable:false" readonly="readonly">
-                    <option value="通过" selected>通过</option>
+                    <option value="通过">通过</option>
                     <option value="不通过">不通过</option>
                 </select>
             </div>
@@ -382,7 +383,7 @@
         <div>
             <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
                 <div class="sp1">审批结论：</div><select class="easyui-combobox" style="width:200px;" id="Conclusion5" data-options="panelHeight:150,editable:false">
-                    <option value="通过">通过</option>
+                    <option value="通过" selected>通过</option>
                     <option value="不通过">不通过</option>
                 </select>
             </div>
@@ -392,6 +393,7 @@
             </div>
         </div>
     </div>
+
     <div id="dlg_newZGDY_0" class="easyui-dialog" title="预备党员转正流程_第一步_申请转正提报审批" style="width:800px;height:350px;padding:10px"
          data-options="modal:true,closed:true,
 
@@ -413,7 +415,7 @@
             <div class="sp1">支部大会讨论材料：</div><input type="file" id="Person_ZBDHTL6" style="width:200px;" name="Person_ZBDHTL6" data-options="prompt:'请上传支部大会讨论讨论材料',buttonText:'上传'"></br>
         </div>
     </div>
-    <div id="dlg_newZGDY_1" class="easyui-dialog" title="预备党员转正流程_第二步_支部书记审核" style="width:800px;height:350px;padding:10px"
+    <div id="dlg_newZGDY_1" class="easyui-dialog" title="预备党员转正流程_第二步_党支部审核" style="width:800px;height:350px;padding:10px"
          data-options="modal:true,closed:true,
 
 				buttons: [{
@@ -429,10 +431,10 @@
                 <div class="sp1">预备党员姓名：</div><input type="text" style="width:200px;" class="easyui-textbox" id="Person_Name7" readonly="readonly" />
             </div>
             <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
-                <div class="sp1">转正申请：</div><a href="##" target="_blank" id="Person_ZZSQ7" style="width:200px;">入党志愿书附件</a>
+                <div class="sp1">转正申请：</div><a href="##" target="_blank" id="Person_ZZSQ7" style="width:200px;">转正申请</a>
             </div>
             <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
-                <div class="sp1">支部大会讨论材料：</div><a href="##" target="_blank" id="Person_ZBDHTL7" style="width:200px;">政审结论附件</a>
+                <div class="sp1">支部大会讨论材料：</div><a href="##" target="_blank" id="Person_ZBDHTL7" style="width:200px;">支部大会讨论材料</a>
             </div>
         </div>
         <div>
@@ -451,7 +453,7 @@
 
         </div>
     </div>
-    <div id="dlg_newZGDY_2" class="easyui-dialog" title="预备党员转正流程_第二步_党委书记审批" style="width:800px;height:350px;padding:10px"
+    <div id="dlg_newZGDY_2" class="easyui-dialog" title="预备党员转正流程_第二步_党委审批" style="width:800px;height:350px;padding:10px"
          data-options="modal:true,closed:true,
 
 				buttons: [{
@@ -467,10 +469,10 @@
                 <div class="sp1">预备党员姓名：</div><input type="text" style="width:200px;" class="easyui-textbox" id="Person_Name8" readonly="readonly" />
             </div>
             <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
-                <div class="sp1">转正申请：</div><a href="##" target="_blank" id="Person_ZZSQ8" style="width:200px;">入党志愿书附件</a>
+                <div class="sp1">转正申请：</div><a href="##" target="_blank" id="Person_ZZSQ8" style="width:200px;">转正申请</a>
             </div>
             <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
-                <div class="sp1">支部大会讨论材料：</div><a href="##" target="_blank" id="Person_ZBDHTL8" style="width:200px;">政审结论附件</a>
+                <div class="sp1">支部大会讨论材料：</div><a href="##" target="_blank" id="Person_ZBDHTL8" style="width:200px;">支部大会讨论材料</a>
             </div>
         </div>
         <div>
@@ -501,6 +503,441 @@
                 <input type="text" style="width:400px;" data-options="multiline:true,height:50" class="easyui-textbox" id="Opinion8" /></br>
             </div>
 
+        </div>
+    </div>
+
+    <div id="dlg_PMchoose_0" class="easyui-dialog" title="优秀党员评选流程_第一步_填写优秀党员信息" style="width:800px;height:350px;padding:10px"
+         data-options="modal:true,closed:true,
+
+				buttons: [{
+					text:'提交',
+					iconCls:'icon-ok',
+					handler:function(){
+                        operate_PMchoose_00();
+                }
+				}]
+			">
+        <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+            <div class="sp1">优秀党员员工编号：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Id9" /></br>
+        </div>
+        <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+            <div class="sp1">所在支部：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Person_Dept9" data-options="panelHeight:150,editable:false">
+                <option value="室内检定党支部" selected>室内检定党支部</option>
+                <option value="现场检验党支部">现场检验党支部</option>
+                <option value="标准量传党支部">标准量传党支部</option>
+                <option value="配送党支部">配送党支部</option>
+                <option value="运营管理党支部">运营管理党支部</option>
+                <option value="综合党支部">综合党支部</option>
+                <option value="技术质检党支部">技术质检党支部</option>
+            </select></br>
+        </div>
+        <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+            <div class="sp1">民主评议党员意见：</div><input type="file" id="Person_Opi9" style="width:200px;" name="Person_Opi9" data-options="prompt:'请上传民主评议党员意见',buttonText:'上传'">
+        </div>
+    </div>
+    <div id="dlg_PMchoose_1" class="easyui-dialog" title="优秀党员评选流程_第二步_党支部审核" style="width:800px;height:350px;padding:10px"
+         data-options="modal:true,closed:true,
+
+				buttons: [{
+					text:'提交',
+					iconCls:'icon-ok',
+					handler:function(){
+                        operate_PMchoose_10();
+                }
+				}]
+			">
+        <div style="height: 150px;width: 759px;">
+
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">优秀党员员工编号：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Id10" /></br>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">所在支部：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Person_Dept10" data-options="panelHeight:150,editable:false">
+                    <option value="室内检定党支部">室内检定党支部</option>
+                    <option value="现场检验党支部">现场检验党支部</option>
+                    <option value="标准量传党支部">标准量传党支部</option>
+                    <option value="配送党支部">配送党支部</option>
+                    <option value="运营管理党支部">运营管理党支部</option>
+                    <option value="综合党支部">综合党支部</option>
+                    <option value="技术质检党支部">技术质检党支部</option>
+                </select></br>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">民主评议党员意见：</div><a href="##" target="_blank" id="Person_Opi10" style="width:200px;">民主评议党员意见</a>
+            </div>
+        </div>
+        <div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+
+                <div class="sp1">审核结论：</div><select class="easyui-combobox" style="width:200px;" id="Conclusion10" data-options="panelHeight:150,editable:false">
+                    <option value="通过" selected>通过</option>
+                    <option value="不通过">不通过</option>
+                </select>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+
+                <div class="sp1">审核意见：</div>
+                <input type="text" style="width:400px;" data-options="multiline:true,height:50" class="easyui-textbox" id="Opinion10" /></br>
+            </div>
+        </div>
+    </div>
+    <div id="dlg_PMchoose_2" class="easyui-dialog" title="优秀党员评选流程_第三步_党群部审核" style="width:800px;height:350px;padding:10px"
+         data-options="modal:true,closed:true,
+
+				buttons: [{
+					text:'提交',
+					iconCls:'icon-ok',
+					handler:function(){
+                        operate_PMchoose_20();
+                }
+				}]
+			">
+        <div style="height: 150px;width: 759px;">
+
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">优秀党员员工编号：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Id11" /></br>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">所在支部：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Person_Dept11" data-options="panelHeight:150,editable:false">
+                    <option value="室内检定党支部">室内检定党支部</option>
+                    <option value="现场检验党支部">现场检验党支部</option>
+                    <option value="标准量传党支部">标准量传党支部</option>
+                    <option value="配送党支部">配送党支部</option>
+                    <option value="运营管理党支部">运营管理党支部</option>
+                    <option value="综合党支部">综合党支部</option>
+                    <option value="技术质检党支部">技术质检党支部</option>
+                </select></br>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">民主评议党员意见：</div><a href="##" target="_blank" id="Person_Opi11" style="width:200px;">民主评议党员意见</a>
+            </div>
+        </div>
+        <div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+
+                <div class="sp1">党支部审核结论：</div><select class="easyui-combobox" style="width:200px;" id="Conclusion110" data-options="panelHeight:150,editable:false" readonly="readonly">
+                    <option value="通过">通过</option>
+                    <option value="不通过">不通过</option>
+                </select>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">党支部审核意见：</div>
+                <input type="text" style="width:400px;" data-options="multiline:true,height:50" class="easyui-textbox" id="Opinion110" readonly="readonly" /></br>
+            </div>
+        </div>
+        <div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+
+                <div class="sp1">审核结论：</div><select class="easyui-combobox" style="width:200px;" id="Conclusion11" data-options="panelHeight:150,editable:false">
+                    <option value="通过" selected>通过</option>
+                    <option value="不通过">不通过</option>
+                </select>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+
+                <div class="sp1">审核意见：</div>
+                <input type="text" style="width:400px;" data-options="multiline:true,height:50" class="easyui-textbox" id="Opinion11" /></br>
+            </div>
+        </div>
+    </div>
+    <div id="dlg_PMchoose_3" class="easyui-dialog" title="优秀党员评选流程_第四步_党委审批" style="width:800px;height:350px;padding:10px"
+         data-options="modal:true,closed:true,
+
+				buttons: [{
+					text:'提交',
+					iconCls:'icon-ok',
+					handler:function(){
+                        operate_PMchoose_30();
+                }
+				}]
+			">
+        <div style="height: 150px;width: 759px;">
+
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">优秀党员员工编号：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Id12" /></br>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">所在支部：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Person_Dept12" data-options="panelHeight:150,editable:false">
+                    <option value="室内检定党支部">室内检定党支部</option>
+                    <option value="现场检验党支部">现场检验党支部</option>
+                    <option value="标准量传党支部">标准量传党支部</option>
+                    <option value="配送党支部">配送党支部</option>
+                    <option value="运营管理党支部">运营管理党支部</option>
+                    <option value="综合党支部">综合党支部</option>
+                    <option value="技术质检党支部">技术质检党支部</option>
+                </select></br>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">民主评议党员意见：</div><a href="##" target="_blank" id="Person_Opi12" style="width:200px;">民主评议党员意见</a>
+            </div>
+        </div>
+        <div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+
+                <div class="sp1">党支部审核结论：</div><select class="easyui-combobox" style="width:200px;" id="Conclusion120" data-options="panelHeight:150,editable:false" readonly="readonly">
+                    <option value="通过">通过</option>
+                    <option value="不通过">不通过</option>
+                </select>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">党支部审核意见：</div>
+                <input type="text" style="width:400px;" data-options="multiline:true,height:50" class="easyui-textbox" id="Opinion120" readonly="readonly" /></br>
+            </div>
+        </div>
+        <div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">党群部审核结论：</div><select class="easyui-combobox" style="width:200px;" id="Conclusion121" data-options="panelHeight:150,editable:false" readonly="readonly">
+                    <option value="通过">通过</option>
+                    <option value="不通过">不通过</option>
+                </select>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">党群部审核意见：</div>
+                <input type="text" style="width:400px;" data-options="multiline:true,height:50" class="easyui-textbox" id="Opinion121" readonly="readonly" /></br>
+            </div>
+        </div>
+        <div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+
+                <div class="sp1">审核结论：</div><select class="easyui-combobox" style="width:200px;" id="Conclusion12" data-options="panelHeight:150,editable:false">
+                    <option value="通过" selected>通过</option>
+                    <option value="不通过">不通过</option>
+                </select>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+
+                <div class="sp1">审核意见：</div>
+                <input type="text" style="width:400px;" data-options="multiline:true,height:50" class="easyui-textbox" id="Opinion12" /></br>
+            </div>
+        </div>
+    </div>
+
+    <div id="dlg_PMtest_0" class="easyui-dialog" title="优秀党员核查流程_第一步_党群部选择是否核查该名优秀党员" style="width:800px;height:350px;padding:10px"
+         data-options="modal:true,closed:true,
+
+				buttons: [{
+					text:'提交',
+					iconCls:'icon-ok',
+					handler:function(){
+                        operate_PMtest_00();
+                }
+				}]
+			">
+        <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+            <div class="sp1">人员姓名：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Name13" readonly="readonly" />
+        </div>
+        <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+            <div class="sp1">所在支部：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Person_Dept13" readonly="readonly" data-options="panelHeight:150,editable:false">
+                <option value="室内检定党支部" selected>室内检定党支部</option>
+                <option value="现场检验党支部">现场检验党支部</option>
+                <option value="标准量传党支部">标准量传党支部</option>
+                <option value="配送党支部">配送党支部</option>
+                <option value="运营管理党支部">运营管理党支部</option>
+                <option value="综合党支部">综合党支部</option>
+                <option value="技术质检党支部">技术质检党支部</option>
+            </select>
+        </div>
+        <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+            <div class="sp1">是否核查：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Iftest13" data-options="panelHeight:150,editable:false">
+                <option value="是" selected>是</option>
+                <option value="否">否</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="dlg_PMtest_1" class="easyui-dialog" title="优秀党员核查流程_第二步_提交优秀党员相关信息" style="width:800px;height:350px;padding:10px"
+         data-options="modal:true,closed:true,
+
+				buttons: [{
+					text:'提交',
+					iconCls:'icon-ok',
+					handler:function(){
+                        operate_PMtest_10();
+                }
+				}]
+			">
+        <div style="height: 150px;width: 759px;">
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">人员姓名：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Name14" readonly="readonly" />
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">所在支部：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Person_Dept14" readonly="readonly" data-options="panelHeight:150,editable:false">
+                    <option value="室内检定党支部" selected>室内检定党支部</option>
+                    <option value="现场检验党支部">现场检验党支部</option>
+                    <option value="标准量传党支部">标准量传党支部</option>
+                    <option value="配送党支部">配送党支部</option>
+                    <option value="运营管理党支部">运营管理党支部</option>
+                    <option value="综合党支部">综合党支部</option>
+                    <option value="技术质检党支部">技术质检党支部</option>
+                </select>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">支部意见：</div><input type="file" id="Person_DeptOpi14" style="width:200px;" name="Person_DeptOpi14" data-options="prompt:'请上传支部意见',buttonText:'上传'"></br>
+
+            </div>
+        </div>
+        <div style="height: 150px;width: 759px;">
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">政治信仰是否达标：</div><select class="easyui-combobox" name="state" style="width:150px;" id="IfZZXY14" data-options="panelHeight:150,editable:false">
+                    <option value="是" selected>是</option>
+                    <option value="否">否</option>
+                </select>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">工作业绩是否达标：</div><select class="easyui-combobox" name="state" style="width:150px;" id="IfGZYJ14" data-options="panelHeight:150,editable:false">
+                    <option value="是" selected>是</option>
+                    <option value="否">否</option>
+                </select>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">模范作用是否达标：</div><select class="easyui-combobox" name="state" style="width:150px;" id="IfMFZY14" data-options="panelHeight:150,editable:false">
+                    <option value="是" selected>是</option>
+                    <option value="否">否</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div id="dlg_PMtest_2" class="easyui-dialog" title="优秀党员核查流程_第三步_党支部审核" style="width:800px;height:350px;padding:10px"
+         data-options="modal:true,closed:true,
+
+				buttons: [{
+					text:'提交',
+					iconCls:'icon-ok',
+					handler:function(){
+                        operate_PMtest_20();
+                }
+				}]
+			">
+        <div style="height: 150px;width: 759px;">
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">人员姓名：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Name15" readonly="readonly" />
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">所在支部：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Person_Dept15" readonly="readonly" data-options="panelHeight:150,editable:false">
+                    <option value="室内检定党支部">室内检定党支部</option>
+                    <option value="现场检验党支部">现场检验党支部</option>
+                    <option value="标准量传党支部">标准量传党支部</option>
+                    <option value="配送党支部">配送党支部</option>
+                    <option value="运营管理党支部">运营管理党支部</option>
+                    <option value="综合党支部">综合党支部</option>
+                    <option value="技术质检党支部">技术质检党支部</option>
+                </select>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">支部意见：</div><a href="##" target="_blank" id="Person_DeptOpi15" style="width:200px;">支部意见</a>
+            </div>
+        </div>
+        <div style="height: 150px;width: 759px;">
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">政治信仰是否达标：</div><select class="easyui-combobox"  name="state" style="width:150px;" id="IfZZXY15" readonly="readonly" data-options="panelHeight:150,editable:false">
+                    <option value="是">是</option>
+                    <option value="否">否</option>
+                </select>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">工作业绩是否达标：</div><select class="easyui-combobox" name="state" style="width:150px;" id="IfGZYJ15" readonly="readonly" data-options="panelHeight:150,editable:false">
+                    <option value="是">是</option>
+                    <option value="否">否</option>
+                </select>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">模范作用是否达标：</div><select class="easyui-combobox" name="state" style="width:150px;" id="IfMFZY15" readonly="readonly" data-options="panelHeight:150,editable:false">
+                    <option value="是">是</option>
+                    <option value="否">否</option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+
+                <div class="sp1">审核结论：</div><select class="easyui-combobox" style="width:200px;" id="Conclusion15" data-options="panelHeight:150,editable:false">
+                    <option value="合格" selected>合格</option>
+                    <option value="不合格">不合格</option>
+                </select>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+
+                <div class="sp1">审核意见：</div>
+                <input type="text" style="width:400px;" data-options="multiline:true,height:50" class="easyui-textbox" id="Opinion15" /></br>
+            </div>
+        </div>
+    </div>
+    <div id="dlg_PMtest_3" class="easyui-dialog" title="优秀党员核查流程_第四步_党群部审核" style="width:800px;height:350px;padding:10px"
+         data-options="modal:true,closed:true,
+
+				buttons: [{
+					text:'提交',
+					iconCls:'icon-ok',
+					handler:function(){
+                        operate_PMtest_30();
+                }
+				}]
+			">
+        <div style="height: 150px;width: 759px;">
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">人员姓名：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Name16" readonly="readonly" />
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">所在支部：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Person_Dept16" readonly="readonly" data-options="panelHeight:150,editable:false">
+                    <option value="室内检定党支部">室内检定党支部</option>
+                    <option value="现场检验党支部">现场检验党支部</option>
+                    <option value="标准量传党支部">标准量传党支部</option>
+                    <option value="配送党支部">配送党支部</option>
+                    <option value="运营管理党支部">运营管理党支部</option>
+                    <option value="综合党支部">综合党支部</option>
+                    <option value="技术质检党支部">技术质检党支部</option>
+                </select>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">支部意见：</div><a href="##" target="_blank" id="Person_DeptOpi16" style="width:200px;">支部意见</a>
+            </div>
+        </div>
+        <div style="height: 150px;width: 759px;">
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">政治信仰是否达标：</div><select class="easyui-combobox" name="state" style="width:150px;" id="IfZZXY16" readonly="readonly" data-options="panelHeight:150,editable:false">
+                    <option value="是">是</option>
+                    <option value="否">否</option>
+                </select>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">工作业绩是否达标：</div><select class="easyui-combobox" name="state" style="width:150px;" id="IfGZYJ16" readonly="readonly" data-options="panelHeight:150,editable:false">
+                    <option value="是">是</option>
+                    <option value="否">否</option>
+                </select>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">模范作用是否达标：</div><select class="easyui-combobox" name="state" style="width:150px;" id="IfMFZY16" readonly="readonly" data-options="panelHeight:150,editable:false">
+                    <option value="是">是</option>
+                    <option value="否">否</option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+
+                <div class="sp1">党支部审核结论：</div><select class="easyui-combobox" style="width:200px;" id="Conclusion160" data-options="panelHeight:150,editable:false" readonly="readonly">
+                    <option value="通过">通过</option>
+                    <option value="不通过">不通过</option>
+                </select>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">党支部审核意见：</div>
+                <input type="text" style="width:400px;" data-options="multiline:true,height:50" class="easyui-textbox" id="Opinion160" readonly="readonly" /></br>
+            </div>
+        </div>
+        <div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+
+                <div class="sp1">审核结论：</div><select class="easyui-combobox" style="width:200px;" id="Conclusion16" data-options="panelHeight:150,editable:false">
+                    <option value="通过" selected>通过</option>
+                    <option value="不通过">不通过</option>
+                </select>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+
+                <div class="sp1">审核意见：</div>
+                <input type="text" style="width:400px;" data-options="multiline:true,height:50" class="easyui-textbox" id="Opinion16" /></br>
+            </div>
         </div>
     </div>
     @***************************************************************************************************************@
@@ -563,9 +1000,6 @@
                             case "0": { operate_newJJFZ_0(); break; }
                             case "1": { operate_newJJFZ_1(); break; }
                             case "2": { operate_newJJFZ_2(); }
-                            //case "3": { operate_newJJFZ_3(); break; }
-                            //case "4": { operate_newJJFZ_4(); break; }
-                            //case "5": { operate_newJJFZ_5(); }
                             default: break;
                         }
                         break;
@@ -576,8 +1010,7 @@
                             case "0": { operate_newYBDY_0(); break; }
                             case "1": { operate_newYBDY_1(); break; }
                             case "2": { operate_newYBDY_2(); break; }
-                            case "3": { operate_newYBDY_3(); break; }
-                            case "4": { operate_newYBDY_4(); }
+                            case "3": { operate_newYBDY_3(); }
                             default: break;
                         }
                         break;
@@ -592,16 +1025,29 @@
                         }
                         break;
                     }
-                case "党员评优核查":
+                case "优秀党员评选":
                     {
                         switch (flow_order) {
-                            case "0": { operate_PMtest_0(); break; }
-                            case "1": { operate_PMtest_1(); break; }
-                            case "2": { operate_PMtest_2(); }
+                            case "0": { operate_PMchoose_0(); break; }
+                            case "1": { operate_PMchoose_1(); break; }
+                            case "2": { operate_PMchoose_2(); break; }
+                            case "3": { operate_PMchoose_3(); }
                             default: break;
                         }
                         break;
                     }
+                case "优秀党员评价":
+                    {
+                        switch (flow_order) {
+                            case "0": { operate_PMtest_0(); break; }
+                            case "1": { operate_PMtest_1(); break; }
+                            case "2": { operate_PMtest_2(); break; }
+                            case "3": { operate_PMtest_3(); }
+                            default: break;
+                        }
+                        break;
+                    }
+
                 case "支部换届":
                     {
                         switch (flow_order) {
@@ -720,8 +1166,8 @@
                         else alert("操作成功！流程的下一步需要" + data + "处理！");     //ZMX，需要返回一个string给data，内容形如"配送党支部的支部书记王强"
                         $('#dlg_newJJFZ_1').dialog('close');
                         searchflow();
-                        $("#Opinion0").textbox('setValue', "通过");
-                        $("#Conclusion0").combobox('setValue', "");
+                        $("#Opinion0").textbox('setValue', "");
+                        $("#Conclusion0").combobox('setValue', "通过");
                     }
                     else
                         alert("操作失败！");
@@ -812,6 +1258,7 @@
                 }
             });
         }
+
         function operate_newYBDY_0() {                                 //ZMX，该函数表示：发展预备党员的第一步
             $('#dlg_newYBDY_0').dialog('open');
         }
@@ -821,11 +1268,6 @@
             var Person_IntroducerA = $("#Person_IntroducerA2").textbox('getValue');
             var Person_IntroducerB = $("#Person_IntroducerB2").textbox('getValue');
             var Person_Dept = $("#Person_Dept2").combobox('getValue');
-            //var Person_Willing = $("#Person_Willing2").filebox('getValue');
-            //var Person_ZSJL = $("#Person_ZSJL2").filebox('getValue');
-            //var Person_DeptOpi = $("#Person_DeptOpi2").filebox('getValue');
-            //var Person_DWOpi = $("#Person_DWOpi2").filebox('getValue');
-            //var Person_Train = $("#Person_Train2").filebox('getValue');
             if (/^\+?[1-9][0-9]*$/.test(Person_Id) == false) { alert("积极分子员工编号输入异常！"); return; }
             if (/^\+?[1-9][0-9]*$/.test(Person_IntroducerA) == false) { alert("入党介绍人1员工编号输入异常！"); return; }
             if (/^\+?[1-9][0-9]*$/.test(Person_IntroducerB) == false) { alert("入党介绍人2员工编号输入异常！"); return; }
@@ -940,8 +1382,8 @@
                         else alert("操作成功！流程的下一步需要" + data + "处理！");     //ZMX，需要返回一个string给data，内容形如"配送党支部的支部书记王强"
                         $('#dlg_newYBDY_1').dialog('close');
                         searchflow();
-                        $("#Opinion3").textbox('setValue', "通过");
-                        $("#Conclusion3").combobox('setValue', "");
+                        $("#Opinion3").textbox('setValue', "");
+                        $("#Conclusion3").combobox('setValue', "通过");
                     }
                     else
                         alert("操作失败！");
@@ -1002,8 +1444,8 @@
                         else alert("操作成功！流程的下一步需要" + data + "处理！");     //ZMX，需要返回一个string给data，内容形如"配送党支部的支部书记王强"
                         $('#dlg_newYBDY_2').dialog('close');
                         searchflow();
-                        $("#Opinion4").textbox('setValue', "通过");
-                        $("#Conclusion4").combobox('setValue', "");
+                        $("#Opinion4").textbox('setValue', "");
+                        $("#Conclusion4").combobox('setValue', "通过");
                     }
                     else
                         alert("操作失败！");
@@ -1066,8 +1508,8 @@
                         else alert("审批通过！流程归档！");                            //ZMX，需要返回一个string给data，内容形如"配送党支部的支部书记王强"
                         $('#dlg_newYBDY_3').dialog('close');
                         searchflow();
-                        $("#Opinion5").textbox('setValue', "通过");
-                        $("#Conclusion5").combobox('setValue', "");
+                        $("#Opinion5").textbox('setValue', "");
+                        $("#Conclusion5").combobox('setValue', "通过");
                     }
                     else
                         alert("操作失败！");
@@ -1077,6 +1519,7 @@
                 }
             });
         }
+
         function operate_newZGDY_0() {                                   //ZMX，该函数表示：预备党员转正的第一步
             $('#dlg_newZGDY_0').dialog('open');
         }
@@ -1159,8 +1602,8 @@
                         else alert("操作成功！流程的下一步需要" + data + "处理！");     //ZMX，需要返回一个string给data，内容形如"配送党支部的支部书记王强"
                         $('#dlg_newZGDY_1').dialog('close');
                         searchflow();
-                        $("#Opinion7").textbox('setValue', "通过");
-                        $("#Conclusion7").combobox('setValue', "");
+                        $("#Opinion7").textbox('setValue', "");
+                        $("#Conclusion7").combobox('setValue', "通过");
                     }
                     else
                         alert("操作失败！");
@@ -1214,8 +1657,436 @@
                         else alert("审批结果：通过！流程归档");                         //ZMX，如审批结果为通过，则流程归档，政治面貌变为中共党员
                         $('#dlg_newZGDY_2').dialog('close');
                         searchflow();
-                        $("#Opinion8").textbox('setValue', "通过");
-                        $("#Conclusion8").combobox('setValue', "");
+                        $("#Opinion8").textbox('setValue', "");
+                        $("#Conclusion8").combobox('setValue', "通过");
+                    }
+                    else
+                        alert("操作失败！");
+                },
+                error: function () {
+                    alert("请求失败！");
+                }
+            });
+        }
+
+        function operate_PMchoose_0() {
+            $('#dlg_PMchoose_0').dialog('open');
+        }
+        function operate_PMchoose_00() {
+            var Person_Id = $("#Person_Id9").textbox('getValue');
+            var Person_Dept = $("#Person_Dept9").combobox('getValue');
+            if (Person_Id == "") { alert("信息填写不全，请补全！"); return; }
+            if (/^\+?[1-9][0-9]*$/.test(Person_Id) == false) { alert("优秀党员员工编号输入异常！"); return; }
+            if (dept != Person_Dept) { alert("部门选择不正确！"); return; }
+            $.ajax({
+                url: "/MyWork/PMchoose_0",                                     //ZMX，MyWork控制器下的函数名为PMchoose_0，类型为string
+                type: "get",
+                data: {                                                        //ZMX，将以上数据传输至后台存入flow_YXDY（数据库中新表）
+                    "Person_Id": Person_Id,                                    //优秀党员ID，但存的时候要存ID和姓名
+                    "Person_Dept": Person_Dept,                                //优秀党员党支部
+                    "flow_num": row_.flow_num
+                },
+                success: function (data) {
+                    if (data) {
+                        if (data == "1")                                             //ZMX，如优秀党员员工编号不存在，则“1”
+                        {
+                            alert("积极分子或介绍人员工编号填写错误，请检查！");
+                            return;
+                        }
+                        ajaxFileUpload('/MyWork/FileUpload', { "Id": row_.flow_num, "Type": "8" }, "Person_Opi9");   //上传附件，序号为8，后台FileUpload方法需调整
+                        alert("操作成功！流程的下一步需要" + data + "处理！");     //ZMX，输入正常，则需要返回一个string给data，内容形如"配送党支部的支部书记王强"
+                        $('#dlg_PMchoose_0').dialog('close');
+                        searchflow();
+                        $("#Person_Id9").textbox('setValue', "");
+                        $("#Person_Dept9").combobox('setValue', "室内检定党支部");
+                    }
+                    else
+                        alert("操作失败！");
+                },
+                error: function () {
+                    alert("请求失败！");
+                }
+            });
+        }
+        function operate_PMchoose_1() {                                      //ZMX，该函数表示：优秀党员评选的第二步中的调取流程前的信息
+            $('#dlg_PMchoose_1').dialog('open');
+            var flow_type = row_.flow_type;
+            var flow_order = row_.flow_order;
+            var flow_num = row_.flow_num;
+            $.ajax({
+                url: "/MyWork/PMchoose_1",                                      //ZMX，MyWork控制器下的函数名为PMchoose_1，类型为JsonResult，返回键值对，用法见Menu控制器
+                type: "get",
+                data: {
+                    "flow_num": flow_num,                                      //ZMX，将流程编号传输至后台查询第一步中上传的信息，以键值对形式返回
+                },
+                success: function (data) {                                     //返回上一步中填写的基本信息，其中
+                    if (data) {
+                        $("#Person_Name10").textbox('setValue', data["Person_Name10"]);
+                        $("#Person_Dept10").combobox('setValue', data["Person_Dept10"]);
+                        $("#Person_Opi10").attr("href", data["Person_Opi10"]);
+                    }
+                    else
+                        alert("流程数据调取失败！");
+                },
+                error: function () {
+                    alert("请求失败！");
+                }
+            });
+        }
+        function operate_PMchoose_10() {                                         //ZMX，该函数表示：优秀党员评选的第二步中的提交支部审核意见
+            var Opinion = $("#Opinion10").textbox('getValue');
+            var Conclusion = $("#Conclusion10").combobox('getValue');
+            $.ajax({
+                url: "/MyWork/PMchoose_10",                                      //ZMX，MyWork控制器下的函数名为PMchoose_10，类型为string
+                type: "get",
+                data: {
+                    "Opinion": Opinion,                                         //ZMX，将审批意见传输至后台，存入一个长度为1000的nvarchar字段中
+                    "Conclusion": Conclusion,                                   //ZMX，将审批结论传输至后台
+                    "flow_num": row_.flow_num,
+                },
+                success: function (data) {
+                    if (data) {
+                        if (Conclusion == "不通过") alert("审核未通过，流程归档！");   //ZMX，如审批结果为不通过，则流程归档，否则继续流转
+                        else alert("操作成功！流程的下一步需要" + data + "处理！");     //ZMX，需要返回一个string给data，内容形如"配送党支部的支部书记王强"
+                        $('#dlg_PMchoose_1').dialog('close');
+                        searchflow();
+                        $("#Opinion10").textbox('setValue', "");
+                        $("#Conclusion10").combobox('setValue', "通过");
+                    }
+                    else
+                        alert("操作失败！");
+                },
+                error: function () {
+                    alert("请求失败！");
+                }
+            });
+        }
+        function operate_PMchoose_2() {                                     //ZMX，该函数表示：优秀党员评选的第三步中的调取流程前的信息
+            $('#dlg_PMchoose_2').dialog('open');
+            var flow_type = row_.flow_type;
+            var flow_order = row_.flow_order;
+            var flow_num = row_.flow_num;
+            $.ajax({
+                url: "/MyWork/PMchoose_2",                                      //ZMX，MyWork控制器下的函数名为PMchoose_2，类型为JsonResult，返回键值对，用法见Menu控制器
+                type: "get",
+                data: {
+                    "flow_num": flow_num,                                      //ZMX，将流程编号传输至后台查询第一步中上传的信息，以键值对形式返回
+                },
+                success: function (data) {                                     //返回上一步中填写的基本信息，其中
+                    if (data) {
+                        $("#Person_Name11").textbox('setValue', data["Person_Name11"]);
+                        $("#Person_Dept11").combobox('setValue', data["Person_Dept11"]);
+                        $("#Person_Opi11").attr("href", data["Person_Opi11"]);
+                        $("#Conclusion110").combobox('setValue', data["Conclusion110"]);      //党支部结论
+                        $("#Opinion110").textbox('setValue', data["Opinion110"]);             //党支部意见
+                    }
+                    else
+                        alert("流程数据调取失败！");
+                },
+                error: function () {
+                    alert("请求失败！");
+                }
+            });
+        }
+        function operate_PMchoose_20() {                                        //ZMX，该函数表示：优秀党员评选的第三步中的提交党群部审核意见
+            var Opinion = $("#Opinion11").textbox('getValue');
+            var Conclusion = $("#Conclusion11").combobox('getValue');
+            $.ajax({
+                url: "/MyWork/PMchoose_20",                                      //ZMX，MyWork控制器下的函数名为PMchoose_20，类型为string
+                type: "get",
+                data: {
+                    "Opinion": Opinion,                                         //ZMX，将审批意见传输至后台，存入一个长度为1000的nvarchar字段中
+                    "Conclusion": Conclusion,                                   //ZMX，将审批结论传输至后台，如结果为“通过”则正常给流程所在部门的组织委员，如不通过则直接归档
+                    "flow_num": row_.flow_num,
+                },
+                success: function (data) {
+                    if (data) {
+                        if (Conclusion == "不通过") alert("审核未通过，流程归档！");   //ZMX，如审批结果为不通过，则流程归档，否则继续流转
+                        else alert("操作成功！流程的下一步需要" + data + "处理！");     //ZMX，需要返回一个string给data，内容形如"配送党支部的支部书记王强"
+                        $('#dlg_PMchoose_2').dialog('close');
+                        searchflow();
+                        $("#Opinion11").textbox('setValue', "");
+                        $("#Conclusion11").combobox('setValue', "通过");
+                    }
+                    else
+                        alert("操作失败！");
+                },
+                error: function () {
+                    alert("请求失败！");
+                }
+            });
+        }
+        function operate_PMchoose_3() {                                        //ZMX，该函数表示：优秀党员评选的第四步中的调取流程前的信息
+            $('#dlg_PMchoose_3').dialog('open');
+            var flow_type = row_.flow_type;
+            var flow_order = row_.flow_order;
+            var flow_num = row_.flow_num;
+            $.ajax({
+                url: "/MyWork/PMchoose_3",                                      //ZMX，MyWork控制器下的函数名为newYBDY_3，类型为JsonResult，返回键值对，用法见Menu控制器
+                type: "get",
+                data: {
+                    "flow_num": flow_num,                                      //ZMX，将流程编号传输至后台查询第一步中上传的信息，以键值对形式返回
+                },
+                success: function (data) {                                     //返回上一步中填写的基本信息，其中
+                    if (data) {
+                        $("#Person_Name12").textbox('setValue', data["Person_Name12"]);
+                        $("#Person_Dept12").combobox('setValue', data["Person_Dept12"]);
+                        $("#Person_Opi12").attr("href", data["Person_Opi12"]);
+                        $("#Conclusion120").combobox('setValue', data["Conclusion120"]);        //党支部结论
+                        $("#Opinion120").textbox('setValue', data["Opinion120"]);               //党支部意见
+                        $("#Conclusion121").combobox('setValue', data["Conclusion121"]);        //党群部结论
+                        $("#Opinion121").textbox('setValue', data["Opinion121"]);               //党群部意见
+                    }
+                    else
+                        alert("流程数据调取失败！");
+                },
+                error: function () {
+                    alert("请求失败！");
+                }
+            });
+        }
+        function operate_PMchoose_30() {                                     //ZMX，该函数表示：优秀党员评选的第四步中的党委审核意见
+            var Opinion = $("#Opinion12").textbox('getValue');
+            var Conclusion = $("#Conclusion12").combobox('getValue');
+            $.ajax({
+                url: "/MyWork/PMchoose_30",                                      //ZMX，MyWork控制器下的函数名为PMchoose_30，类型为string
+                type: "get",
+                data: {
+                    "Opinion": Opinion,                                         //ZMX，将审批意见传输至后台，存入一个长度为1000的nvarchar字段中
+                    "Conclusion": Conclusion,                                   //ZMX，将审批结论传输至后台，如结果为“通过”则正常给流程所在部门的组织委员，如不通过则直接归档
+                    "flow_num": row_.flow_num,
+                },
+                success: function (data) {
+                    if (data) {
+                        if (Conclusion == "不通过") alert("审批未通过，流程归档！");   //ZMX，如审批结果为不通过，则流程归档，否则继续流转
+                        else alert("审批通过！流程归档！");                            //ZMX，审批通过，将该人员信息存入优秀党员数据表中，数据字段除人员信息外，还应有成为优秀党员的时间
+                        $('#dlg_PMchoose_3').dialog('close');
+                        searchflow();
+                        $("#Opinion12").textbox('setValue', "");
+                        $("#Conclusion12").combobox('setValue', "通过");
+                    }
+                    else
+                        alert("操作失败！");
+                },
+                error: function () {
+                    alert("请求失败！");
+                }
+            });
+        }
+
+        function operate_PMtest_0() {                //ZMX，该函数表示，优秀党员核查流程第一步中的调取人员信息
+            $('#dlg_PMtest_0').dialog('open');
+            var flow_type = row_.flow_type;
+            var flow_order = row_.flow_order;
+            var flow_num = row_.flow_num;
+            $.ajax({
+                url: "/MyWork/PMtest_0",                                      //ZMX，MyWork控制器下的函数名为PMtest_0，类型为JsonResult，返回键值对，用法见Menu控制器
+                type: "get",
+                data: {
+                    "flow_num": flow_num,                                      //ZMX，将流程编号传输至后台查询第一步中上传的信息，以键值对形式返回
+                },
+                success: function (data) {                                     //返回上一步中填写的基本信息，其中
+                    if (data) {
+                        $("#Person_Name13").textbox('setValue', data["Person_Name13"]);
+                        $("#Person_Dept13").combobox('setValue', data["Person_Name13"]);
+                    }
+                    else
+                        alert("流程数据调取失败！");
+                },
+                error: function () {
+                    alert("请求失败！");
+                }
+            });
+        }
+        function operate_PMtest_00() {                                         //ZMX，该函数表示党群部选择是否核查
+            var Iftest13 = $("#Iftest13").combobox('getValue');
+            $.ajax({
+                url: "/MyWork/PMtest_00",                                      //ZMX，MyWork控制器下的函数名为PMtest_00，类型为string
+                type: "get",
+                data: {                                                        //ZMX，将数据传输至后台存入flow_****（数据库中新表），
+                    "Iftest13": Iftest13,                                      //是否核查
+                    "flow_num": row_.flow_num
+                },
+                success: function (data) {
+                    if (data) {
+                        if (Iftest13 == "否")                                  //ZMX，如党群部选择否，即不核查，流程直接归档
+                        {
+                            alert("不核查，流程归档！");
+                            return;
+                        }
+                        alert("操作成功！流程的下一步需要" + data + "处理！");     //ZMX，党群部选择是，则需要返回一个string给data，内容形如"配送党支部的支部书记王强"
+                        $('#dlg_PMtest_0').dialog('close');
+                        searchflow();
+                        $("#Iftest13").combobox('setValue', "是");
+                    }
+                    else
+                        alert("操作失败！");
+                },
+                error: function () {
+                    alert("请求失败！");
+                }
+            });
+        }
+        function operate_PMtest_1() {                                             //ZMX，该函数表示将被核查人员信息展示
+            $('#dlg_PMtest_1').dialog('open');
+            var flow_type = row_.flow_type;
+            var flow_order = row_.flow_order;
+            var flow_num = row_.flow_num;
+            $.ajax({
+                url: "/MyWork/PMtest_1",                                      //ZMX，MyWork控制器下的函数名为PMtest_1，类型为JsonResult，返回键值对，用法见Menu控制器
+                type: "get",
+                data: {
+                    "flow_num": flow_num,                                      //ZMX，将流程编号传输至后台查询第一步中上传的信息，以键值对形式返回
+                },
+                success: function (data) {                                     //返回上一步中填写的基本信息，其中
+                    if (data) {
+                        $("#Person_Name14").textbox('setValue', data["Person_Name14"]);
+                        $("#Person_Dept14").combobox('setValue', data["Person_Name14"]);
+                    }
+                    else
+                        alert("流程数据调取失败！");
+                },
+                error: function () {
+                    alert("请求失败！");
+                }
+            });
+        }
+        function operate_PMtest_10() {                                         //ZMX，该函数表示将支部意见及达标情况上传
+            var IfZZXY14 = $("#IfZZXY14").combobox('getValue');
+            var IfGZYJ14 = $("#IfGZYJ14").combobox('getValue');
+            var IfMFZY14 = $("#IfMFZY14").combobox('getValue');
+
+            $.ajax({
+                url: "/MyWork/PMtest_10",                                     //ZMX，MyWork控制器下的函数名为PMtest_10，类型为string
+                type: "get",
+                data: {                                                        //ZMX，将以上数据传输至后台存入flow_XXXX（数据库中新表）
+                    "IfZZXY14": IfZZXY14,                                    //政治信仰是否合格：“是”或“否”
+                    "IfGZYJ14": IfGZYJ14,                                    //工作业绩是否合格：“是”或“否”
+                    "IfMFZY14": IfMFZY14,                                    //模范作用是否合格：“是”或“否”
+                    "flow_num": row_.flow_num
+                },
+                success: function (data) {
+                    if (data) {
+                        ajaxFileUpload('/MyWork/FileUpload', { "Id": row_.flow_num, "Type": "9" }, "Person_DeptOpi14");   //上传附件，序号为9，后台FileUpload方法需调整
+                        alert("操作成功！流程的下一步需要" + data + "处理！");     //ZMX，输入正常，则需要返回一个string给data，内容形如"配送党支部的支部书记王强"
+                        $('#dlg_PMtest_1').dialog('close');
+                        searchflow();
+                        $("#IfZZXY14").combobox('setValue', "是");
+                        $("#IfZZXY14").combobox('setValue', "是");
+                        $("#IfZZXY14").combobox('setValue', "是");
+                    }
+                    else
+                        alert("操作失败！");
+                },
+                error: function () {
+                    alert("请求失败！");
+                }
+            });
+        }
+        function operate_PMtest_2() {                                         //该函数表示将组织委员填写的信息展示给支部书记
+            $('#dlg_PMtest_2').dialog('open');
+            var flow_type = row_.flow_type;
+            var flow_order = row_.flow_order;
+            var flow_num = row_.flow_num;
+            $.ajax({
+                url: "/MyWork/PMtest_2",                                      //ZMX，MyWork控制器下的函数名为PMchoose_2，类型为JsonResult，返回键值对，用法见Menu控制器
+                type: "get",
+                data: {
+                    "flow_num": flow_num,                                      //ZMX，将流程编号传输至后台查询第一步中上传的信息，以键值对形式返回
+                },
+                success: function (data) {                                     //返回上一步中填写的基本信息，其中
+                    if (data) {
+                        $("#Person_Name15").textbox('setValue', data["Person_Name15"]);     //姓名
+                        $("#Person_Dept15").combobox('setValue', data["Person_Dept15"]);    //部门
+                        $("#Person_DeptOpi15").attr("href", data["Person_DeptOpi15"]);      //支部意见扫描件
+                        $("#IfZZXY15").combobox('setValue', data["IfZZXY15"]);              //政治信仰是否达标
+                        $("#IfGZYJ15").combobox('setValue', data["IfGZYJ15"]);              //工作业绩是否达标
+                        $("#IfMFZY15").combobox('setValue', data["IfMFZY15"]);              //模范作用是否达标
+                    }
+                    else
+                        alert("流程数据调取失败！");
+                },
+                error: function () {
+                    alert("请求失败！");
+                }
+            });
+        }
+        function operate_PMtest_20() {                                         //该函数表示党支部进行审核
+            var Opinion = $("#Opinion15").textbox('getValue');
+            var Conclusion = $("#Conclusion15").combobox('getValue');
+            $.ajax({
+                url: "/MyWork/PMtest_20",                                      //ZMX，MyWork控制器下的函数名为PMtest_20，类型为string
+                type: "get",
+                data: {
+                    "Opinion": Opinion,                                         //ZMX，将审批意见传输至后台，存入一个长度为1000的nvarchar字段中
+                    "Conclusion": Conclusion,                                   //ZMX，将审批结论传输至后台
+                    "flow_num": row_.flow_num,
+                },
+                success: function (data) {
+                    if (data) {                                                  //无论审核结论是合格还是不合格，均并存并将流程推给党群部
+                        alert("操作成功！流程的下一步需要" + data + "处理！");     //ZMX，需要返回一个string给data，内容形如"配送党支部的支部书记王强"
+                        $('#dlg_PMtest_2').dialog('close');
+                        searchflow();
+                        $("#Opinion15").textbox('setValue', "");
+                        $("#Conclusion15").combobox('setValue', "通过");
+                    }
+                    else
+                        alert("操作失败！");
+                },
+                error: function () {
+                    alert("请求失败！");
+                }
+            });
+        }
+        function operate_PMtest_3() {                                         //该函数表示将组织委员填写的信息和支部审核信息展示给党群部
+            $('#dlg_PMtest_3').dialog('open');
+            var flow_type = row_.flow_type;
+            var flow_order = row_.flow_order;
+            var flow_num = row_.flow_num;
+            $.ajax({
+                url: "/MyWork/PMtest_3",                                      //ZMX，MyWork控制器下的函数名为PMchoose_3，类型为JsonResult，返回键值对，用法见Menu控制器
+                type: "get",
+                data: {
+                    "flow_num": flow_num,                                      //ZMX，将流程编号传输至后台查询上传的信息，以键值对形式返回
+                },
+                success: function (data) {                                     //返回上一步中填写的基本信息，其中
+                    if (data) {
+                        $("#Person_Name16").textbox('setValue', data["Person_Name16"]);     //姓名
+                        $("#Person_Dept16").combobox('setValue', data["Person_Dept16"]);    //部门
+                        $("#Person_DeptOpi16").attr("href", data["Person_DeptOpi16"]);      //支部意见扫描件
+                        $("#IfZZXY16").combobox('setValue', data["IfZZXY16"]);              //政治信仰是否达标
+                        $("#IfGZYJ16").combobox('setValue', data["IfGZYJ16"]);              //工作业绩是否达标
+                        $("#IfMFZY16").combobox('setValue', data["IfMFZY16"]);              //模范作用是否达标
+                        $("#Conclusion160").combobox('setValue', data["Conclusion160"]);        //党支部结论
+                        $("#Opinion160").textbox('setValue', data["Opinion160"]);               //党支部意见
+                    }
+                    else
+                        alert("流程数据调取失败！");
+                },
+                error: function () {
+                    alert("请求失败！");
+                }
+            });
+        }
+        function operate_PMtest_30() {                                         //该函数表示党群部进行审核
+            var Opinion = $("#Opinion16").textbox('getValue');
+            var Conclusion = $("#Conclusion16").combobox('getValue');
+            $.ajax({
+                url: "/MyWork/PMtest_30",                                      //ZMX，MyWork控制器下的函数名为PMtest_30，类型为string
+                type: "get",
+                data: {
+                    "Opinion": Opinion,                                         //ZMX，将审批意见传输至后台，存入一个长度为1000的nvarchar字段中
+                    "Conclusion": Conclusion,                                   //ZMX，将审批结论传输至后台
+                    "flow_num": row_.flow_num,
+                },
+                success: function (data) {
+                    if (data) {
+                        if (Conclusion == "不通过") alert("审批未通过，流程归档！");   //ZMX，审批不通过，流程归档，优秀党员表中更新该党员的取消标志为“1”
+                        else alert("审批通过！流程归档！");                            //ZMX，审批通过，流程归档
+                        $('#dlg_PMtest_3').dialog('close');
+                        searchflow();
+                        $("#Opinion16").textbox('setValue', "");
+                        $("#Conclusion16").combobox('setValue', "通过");
                     }
                     else
                         alert("操作失败！");
