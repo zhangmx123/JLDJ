@@ -55,6 +55,41 @@
           <Property Name="DevYB_DWOptxt" Type="nvarchar" MaxLength="50" />
           <Property Name="DevYB_Trprtxt" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="flow_NewYXDY">
+          <Key>
+            <PropertyRef Name="NewYXDY_flowid" />
+          </Key>
+          <Property Name="NewYXDY_flowid" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NewYXDY_personid" Type="int" />
+          <Property Name="NewYXDY_pname" Type="nvarchar" MaxLength="50" />
+          <Property Name="NewYXDY_pdept" Type="nvarchar" MaxLength="50" />
+          <Property Name="NewYXDY_PYopitxt" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="flow_NewZGDY">
+          <Key>
+            <PropertyRef Name="NewZGDY_flowid" />
+          </Key>
+          <Property Name="NewZGDY_flowid" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="NewZGDY_personid" Type="int" />
+          <Property Name="NewZGDY_pname" Type="nvarchar" MaxLength="50" />
+          <Property Name="NewZGDY_pdept" Type="nvarchar" MaxLength="50" />
+          <Property Name="NewZGDY_ZZSQtxt" Type="nvarchar" MaxLength="50" />
+          <Property Name="NewZGDY_ZBDHTLtxt" Type="nvarchar" MaxLength="50" />
+          <Property Name="NewZGDY_Delay" Type="int" />
+        </EntityType>
+        <EntityType Name="flow_QJHC">
+          <Key>
+            <PropertyRef Name="QJHC_flowid" />
+          </Key>
+          <Property Name="QJHC_flowid" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="QJHC_personid" Type="int" />
+          <Property Name="QJHC_pname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="QJHC_pdept" Type="nvarchar" MaxLength="50" />
+          <Property Name="QJHC_IfZZXY" Type="nvarchar" MaxLength="50" />
+          <Property Name="QJHC_IfGZYJ" Type="nvarchar" MaxLength="50" />
+          <Property Name="QJHC_IfMFZY" Type="nvarchar" MaxLength="50" />
+          <Property Name="QJHC_DeptOpitxt" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="person">
           <Key>
             <PropertyRef Name="person_id" />
@@ -75,6 +110,15 @@
           <Property Name="person_dept" Type="nvarchar" MaxLength="50" />
           <Property Name="person_plstatus" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="person_YXDY">
+          <Key>
+            <PropertyRef Name="YXDY_personid" />
+          </Key>
+          <Property Name="YXDY_personid" Type="int" Nullable="false" />
+          <Property Name="YXDY_date" Type="nvarchar" MaxLength="50" />
+          <Property Name="YXDY_iftest" Type="int" />
+          <Property Name="YXDY_ltdate" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="user">
           <Key>
             <PropertyRef Name="user_name" />
@@ -89,7 +133,11 @@
           <EntitySet Name="flow" EntityType="Self.flow" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="flow_Devmem" EntityType="Self.flow_Devmem" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="flow_DevYB" EntityType="Self.flow_DevYB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="flow_NewYXDY" EntityType="Self.flow_NewYXDY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="flow_NewZGDY" EntityType="Self.flow_NewZGDY" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="flow_QJHC" EntityType="Self.flow_QJHC" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="person" EntityType="Self.person" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="person_YXDY" EntityType="Self.person_YXDY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -102,6 +150,10 @@
           <EntitySet Name="flow_DevYB" EntityType="DJXTModel.flow_DevYB" />
           <EntitySet Name="person" EntityType="DJXTModel.person" />
           <EntitySet Name="user" EntityType="DJXTModel.user" />
+          <EntitySet Name="flow_NewYXDY" EntityType="DJXTModel.flow_NewYXDY" />
+          <EntitySet Name="flow_NewZGDY" EntityType="DJXTModel.flow_NewZGDY" />
+          <EntitySet Name="flow_QJHC" EntityType="DJXTModel.flow_QJHC" />
+          <EntitySet Name="person_YXDY" EntityType="DJXTModel.person_YXDY" />
         </EntityContainer>
         <EntityType Name="flow">
           <Key>
@@ -182,6 +234,50 @@
           <Property Name="user_role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="user_dept" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="user_rname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="flow_NewYXDY">
+          <Key>
+            <PropertyRef Name="NewYXDY_flowid" />
+          </Key>
+          <Property Name="NewYXDY_flowid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NewYXDY_personid" Type="Int32" />
+          <Property Name="NewYXDY_pname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NewYXDY_pdept" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NewYXDY_PYopitxt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="flow_NewZGDY">
+          <Key>
+            <PropertyRef Name="NewZGDY_flowid" />
+          </Key>
+          <Property Name="NewZGDY_flowid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NewZGDY_personid" Type="Int32" />
+          <Property Name="NewZGDY_pname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NewZGDY_pdept" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NewZGDY_ZZSQtxt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NewZGDY_ZBDHTLtxt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NewZGDY_Delay" Type="Int32" />
+        </EntityType>
+        <EntityType Name="flow_QJHC">
+          <Key>
+            <PropertyRef Name="QJHC_flowid" />
+          </Key>
+          <Property Name="QJHC_flowid" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="QJHC_personid" Type="Int32" />
+          <Property Name="QJHC_pname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="QJHC_pdept" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="QJHC_IfZZXY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="QJHC_IfGZYJ" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="QJHC_IfMFZY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="QJHC_DeptOpitxt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="person_YXDY">
+          <Key>
+            <PropertyRef Name="YXDY_personid" />
+          </Key>
+          <Property Name="YXDY_personid" Type="Int32" Nullable="false" />
+          <Property Name="YXDY_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="YXDY_iftest" Type="Int32" />
+          <Property Name="YXDY_ltdate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -271,6 +367,54 @@
                 <ScalarProperty Name="user_role" ColumnName="user_role" />
                 <ScalarProperty Name="user_pwd" ColumnName="user_pwd" />
                 <ScalarProperty Name="user_name" ColumnName="user_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="flow_NewYXDY">
+            <EntityTypeMapping TypeName="DJXTModel.flow_NewYXDY">
+              <MappingFragment StoreEntitySet="flow_NewYXDY">
+                <ScalarProperty Name="NewYXDY_PYopitxt" ColumnName="NewYXDY_PYopitxt" />
+                <ScalarProperty Name="NewYXDY_pdept" ColumnName="NewYXDY_pdept" />
+                <ScalarProperty Name="NewYXDY_pname" ColumnName="NewYXDY_pname" />
+                <ScalarProperty Name="NewYXDY_personid" ColumnName="NewYXDY_personid" />
+                <ScalarProperty Name="NewYXDY_flowid" ColumnName="NewYXDY_flowid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="flow_NewZGDY">
+            <EntityTypeMapping TypeName="DJXTModel.flow_NewZGDY">
+              <MappingFragment StoreEntitySet="flow_NewZGDY">
+                <ScalarProperty Name="NewZGDY_Delay" ColumnName="NewZGDY_Delay" />
+                <ScalarProperty Name="NewZGDY_ZBDHTLtxt" ColumnName="NewZGDY_ZBDHTLtxt" />
+                <ScalarProperty Name="NewZGDY_ZZSQtxt" ColumnName="NewZGDY_ZZSQtxt" />
+                <ScalarProperty Name="NewZGDY_pdept" ColumnName="NewZGDY_pdept" />
+                <ScalarProperty Name="NewZGDY_pname" ColumnName="NewZGDY_pname" />
+                <ScalarProperty Name="NewZGDY_personid" ColumnName="NewZGDY_personid" />
+                <ScalarProperty Name="NewZGDY_flowid" ColumnName="NewZGDY_flowid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="flow_QJHC">
+            <EntityTypeMapping TypeName="DJXTModel.flow_QJHC">
+              <MappingFragment StoreEntitySet="flow_QJHC">
+                <ScalarProperty Name="QJHC_DeptOpitxt" ColumnName="QJHC_DeptOpitxt" />
+                <ScalarProperty Name="QJHC_IfMFZY" ColumnName="QJHC_IfMFZY" />
+                <ScalarProperty Name="QJHC_IfGZYJ" ColumnName="QJHC_IfGZYJ" />
+                <ScalarProperty Name="QJHC_IfZZXY" ColumnName="QJHC_IfZZXY" />
+                <ScalarProperty Name="QJHC_pdept" ColumnName="QJHC_pdept" />
+                <ScalarProperty Name="QJHC_pname" ColumnName="QJHC_pname" />
+                <ScalarProperty Name="QJHC_personid" ColumnName="QJHC_personid" />
+                <ScalarProperty Name="QJHC_flowid" ColumnName="QJHC_flowid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="person_YXDY">
+            <EntityTypeMapping TypeName="DJXTModel.person_YXDY">
+              <MappingFragment StoreEntitySet="person_YXDY">
+                <ScalarProperty Name="YXDY_ltdate" ColumnName="YXDY_ltdate" />
+                <ScalarProperty Name="YXDY_iftest" ColumnName="YXDY_iftest" />
+                <ScalarProperty Name="YXDY_date" ColumnName="YXDY_date" />
+                <ScalarProperty Name="YXDY_personid" ColumnName="YXDY_personid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

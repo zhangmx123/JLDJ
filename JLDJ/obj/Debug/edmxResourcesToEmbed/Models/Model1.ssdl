@@ -50,6 +50,41 @@
     <Property Name="DevYB_DWOptxt" Type="nvarchar" MaxLength="50" />
     <Property Name="DevYB_Trprtxt" Type="nvarchar" MaxLength="50" />
   </EntityType>
+  <EntityType Name="flow_NewYXDY">
+    <Key>
+      <PropertyRef Name="NewYXDY_flowid" />
+    </Key>
+    <Property Name="NewYXDY_flowid" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NewYXDY_personid" Type="int" />
+    <Property Name="NewYXDY_pname" Type="nvarchar" MaxLength="50" />
+    <Property Name="NewYXDY_pdept" Type="nvarchar" MaxLength="50" />
+    <Property Name="NewYXDY_PYopitxt" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="flow_NewZGDY">
+    <Key>
+      <PropertyRef Name="NewZGDY_flowid" />
+    </Key>
+    <Property Name="NewZGDY_flowid" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NewZGDY_personid" Type="int" />
+    <Property Name="NewZGDY_pname" Type="nvarchar" MaxLength="50" />
+    <Property Name="NewZGDY_pdept" Type="nvarchar" MaxLength="50" />
+    <Property Name="NewZGDY_ZZSQtxt" Type="nvarchar" MaxLength="50" />
+    <Property Name="NewZGDY_ZBDHTLtxt" Type="nvarchar" MaxLength="50" />
+    <Property Name="NewZGDY_Delay" Type="int" />
+  </EntityType>
+  <EntityType Name="flow_QJHC">
+    <Key>
+      <PropertyRef Name="QJHC_flowid" />
+    </Key>
+    <Property Name="QJHC_flowid" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="QJHC_personid" Type="int" />
+    <Property Name="QJHC_pname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="QJHC_pdept" Type="nvarchar" MaxLength="50" />
+    <Property Name="QJHC_IfZZXY" Type="nvarchar" MaxLength="50" />
+    <Property Name="QJHC_IfGZYJ" Type="nvarchar" MaxLength="50" />
+    <Property Name="QJHC_IfMFZY" Type="nvarchar" MaxLength="50" />
+    <Property Name="QJHC_DeptOpitxt" Type="nvarchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="person">
     <Key>
       <PropertyRef Name="person_id" />
@@ -70,6 +105,15 @@
     <Property Name="person_dept" Type="nvarchar" MaxLength="50" />
     <Property Name="person_plstatus" Type="nvarchar" MaxLength="50" />
   </EntityType>
+  <EntityType Name="person_YXDY">
+    <Key>
+      <PropertyRef Name="YXDY_personid" />
+    </Key>
+    <Property Name="YXDY_personid" Type="int" Nullable="false" />
+    <Property Name="YXDY_date" Type="nvarchar" MaxLength="50" />
+    <Property Name="YXDY_iftest" Type="int" />
+    <Property Name="YXDY_ltdate" Type="nvarchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="user">
     <Key>
       <PropertyRef Name="user_name" />
@@ -84,7 +128,11 @@
     <EntitySet Name="flow" EntityType="Self.flow" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="flow_Devmem" EntityType="Self.flow_Devmem" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="flow_DevYB" EntityType="Self.flow_DevYB" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="flow_NewYXDY" EntityType="Self.flow_NewYXDY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="flow_NewZGDY" EntityType="Self.flow_NewZGDY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="flow_QJHC" EntityType="Self.flow_QJHC" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="person" EntityType="Self.person" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="person_YXDY" EntityType="Self.person_YXDY" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

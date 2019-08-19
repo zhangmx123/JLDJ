@@ -30,5 +30,9 @@ namespace JLDJ.Models
         public virtual DbSet<flow_DevYB> flow_DevYB { get; set; }
         public virtual DbSet<person> person { get; set; }
         public virtual DbSet<user> user { get; set; }
+        public virtual DbSet<flow_NewYXDY> flow_NewYXDY { get; set; }
+        public virtual DbSet<flow_NewZGDY> flow_NewZGDY { get; set; }
+        public virtual DbSet<flow_QJHC> flow_QJHC { get; set; }
+        public virtual DbSet<person_YXDY> person_YXDY { get; set; }
     }
 }

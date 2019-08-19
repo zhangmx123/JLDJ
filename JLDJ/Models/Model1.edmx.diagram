@@ -10,6 +10,10 @@
         <EntityTypeShape EntityType="DJXTModel.flow_DevYB" Width="1.5" PointX="4.5" PointY="0.5" />
         <EntityTypeShape EntityType="DJXTModel.person" Width="1.5" PointX="6.5" PointY="0.5" />
         <EntityTypeShape EntityType="DJXTModel.user" Width="1.5" PointX="8.375" PointY="0.5" />
+        <EntityTypeShape EntityType="DJXTModel.flow_NewYXDY" Width="1.5" PointX="3.75" PointY="4.75" />
+        <EntityTypeShape EntityType="DJXTModel.flow_NewZGDY" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="DJXTModel.flow_QJHC" Width="1.5" PointX="5.75" PointY="5.75" />
+        <EntityTypeShape EntityType="DJXTModel.person_YXDY" Width="1.5" PointX="2.75" PointY="7.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

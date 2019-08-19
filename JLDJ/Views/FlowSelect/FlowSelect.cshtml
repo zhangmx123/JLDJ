@@ -32,13 +32,14 @@
                 <th data-options="field:'flow_founder',align:'right'" align="center">流程所在人</th>
                 <th data-options="field:'flow_stime',align:'right'" align="center">流程开始时间</th>
                 <th data-options="field:'flow_etime',align:'right'" align="center">流程结束时间</th>
+                <th data-options="field:'flow_oper',align:'right',formatter:operate_formatter" align="center">查看详情</th>
             </tr>
         </thead>
     </table>
     <div id="tb" style="padding:5px;height:auto">
 
         <div>
-            <a href="#" class="easyui-linkbutton" iconCls="icon-add"  onclick="$('#dlg').dialog('open')">发起流程</a>
+            <a href="#" class="easyui-linkbutton" iconCls="icon-add" onclick="$('#dlg').dialog('open')">发起流程</a>
             <span class="sp1">流程编号：</span><input id="Flow_Num" class="easyui-textbox" value="" data-options="prompt:'请输入流程编号'" />
             <span class="sp1">请选择党支部：</span><select class="easyui-combobox" value="" name="state" style="width:150px;" id="Flow_Dept" data-options="panelHeight:150,editable:false">
                 <option value="">请选择</option>
@@ -57,14 +58,19 @@
                 <option value="发展党员">发展党员</option>
                 <option value="党员转正">党员转正</option>
                 <option value="优秀党员评选">优秀党员评选</option>
-                <option value="优秀党员评价">优秀党员评价</option>
-                <option value="支部换届">支部换届</option>
+                <option value="党员评优核查">党员评优核查</option>
+                <option value="召开支部党员大会">召开支部党员大会</option>
+                <option value="召开支部委员会">召开支部委员会</option>
+                <option value="召开党小组会">召开党小组会</option>
+                <option value="组织党课">组织党课</option>
+                <option value="召开专题组织生活会">召开专题组织生活会</option>
             </select>
             <a href="#" class="easyui-linkbutton" iconCls="icon-search" onclick="searchflow()">查询</a>
         </div>
     </div>
     <div style="margin:20px 0;">
     </div>
+
     <div id="dlg" class="easyui-dialog" title="发起流程" style="width:600px;height:200px;padding:10px"
          data-options="modal:true,closed:true,
 
@@ -81,8 +87,12 @@
                 <option value="发展积极分子">发展积极分子</option>
                 <option value="发展党员">发展党员</option>
                 <option value="党员转正">党员转正</option>
-                <option value="党员评优核查">党员评优核查</option>
-                <option value="支部换届">支部换届</option>
+                <option value="优秀党员评选">优秀党员评选</option>
+                <option value="召开支部党员大会">召开支部党员大会</option>
+                <option value="召开支部委员会">召开支部委员会</option>
+                <option value="召开党小组会">召开党小组会</option>
+                <option value="组织党课">组织党课</option>
+                <option value="召开专题组织生活会">召开专题组织生活会</option>
             </select>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <span class="sp1">党支部：</span><select class="easyui-combobox" name="state" style="width:150px;" id="FlowDept" data-options="panelHeight:150">
@@ -97,10 +107,303 @@
             </select>
         </div>
     </div>
+    <div id="dlg_check_newJJFZ" class="easyui-dialog" title="发展积极分子流程" style="width:800px;height:350px;padding:10px"
+         data-options="modal:true,closed:true,
+			">
+        <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+            <div class="sp1">员工姓名：</div><input type="text" style="width:150px;" class="easyui-textbox" readonly="readonly" id="Person_Name1" /></br>
+            <div class="sp1">毕业院校：</div><input type="text" style="width:150px;" class="easyui-textbox" readonly="readonly" id="Person_College1" /></br>
+            <div class="sp1">所在支部：</div><select class="easyui-combobox" readonly="readonly" name="state" style="width:150px;" id="Person_Dept1" data-options="panelHeight:150,editable:false">
+                <option value="室内检定党支部">室内检定党支部</option>
+                <option value="现场检验党支部">现场检验党支部</option>
+                <option value="标准量传党支部">标准量传党支部</option>
+                <option value="配送党支部">配送党支部</option>
+                <option value="运营管理党支部">运营管理党支部</option>
+                <option value="综合党支部">综合党支部</option>
+                <option value="技术质检党支部">技术质检党支部</option>
+            </select></br>
+            <div class="sp1">员工学历：</div><select class="easyui-combobox" name="state" style="width:150px;" readonly="readonly" id="Person_Eduback1" data-options="panelHeight:150" ,editable:false>
+                <option value="大学专科">大学专科</option>
+                <option value="大学本科">大学本科</option>
+                <option value="硕士研究生">硕士研究生</option>
+                <option value="博士研究生">博士研究生</option>
+            </select></br>
+
+
+        </div>
+        <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+            <div class="sp1">手机号码：</div><input type="text" style="width:150px;" class="easyui-textbox" readonly="readonly" id="Person_Phonenum1" /></br>
+            <div class="sp1">电子邮箱：</div><input type="text" style="width:150px;" class="easyui-textbox" readonly="readonly" id="Person_Email1" /></br>
+            <div class="sp1">员工性别：</div><select class="easyui-combobox" name="state" style="width:150px;" readonly="readonly" id="Person_Sex1" data-options="panelHeight:150,editable:false">
+                <option value="男">男</option>
+                <option value="女">女</option>
+
+            </select></br>
+            <div class="sp1">员工学位：</div><select class="easyui-combobox" name="state" style="width:150px;" readonly="readonly" id="Person_Degree1" data-options="panelHeight:150,editable:false">
+                <option value="学士学位">学士学位</option>
+                <option value="硕士学位">硕士学位</option>
+                <option value="博士学位">博士学位</option>
+                <option value="无">无</option>
+            </select></br>
+
+        </div>
+        <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+            <div class="sp1">出生日期：</div><input type="text" id="Person_Birth1" class="easyui-datebox" readonly="readonly" data-options="value:'Today',editable:false" /></br>
+            <div class="sp1">工作日期：</div><input type="text" id="Person_CJGZdate1" class="easyui-datebox" readonly="readonly" data-options="value:'Today',editable:false" /></br>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">入党申请书：</div><a href="##" id="Person_Application1" target="_blank" style="width:200px;" name="newJJFZ">入党申请书附件</a>
+            </div>
+        </div>
+    </div>
+    <div id="dlg_check_newYBDY" class="easyui-dialog" title="发展预备党员流程" style="width:800px;height:350px;padding:10px"
+         data-options="modal:true,closed:true,
+			">
+        <div style="height: 150px;width: 759px;">
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">积极分子姓名：</div><input type="text" style="width:200px;" class="easyui-textbox" id="Person_Name2" name="newYBDY" readonly="readonly" />
+                <div class="sp1">入党志愿书：</div><a href="##" target="_blank" id="Person_Willing2" style="width:200px;" name="newJJFZ">入党志愿书附件</a>
+                <div class="sp1">政审结论：</div><a href="##" target="_blank" id="Person_ZSJL2" style="width:200px;" name="newJJFZ">政审结论附件</a>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">入党介绍人1姓名：</div><input type="text" style="width:200px;" class="easyui-textbox" id="Person_IntroducerA2" name="newYBDY" readonly="readonly" /></br>
+                <div class="sp1">支部意见：</div><a href="##" target="_blank" id="Person_DeptOpi2" style="width:200px;" name="newJJFZ">支部意见附件</a>
+                <div class="sp1">集中培训证明材料：</div><a href="##" target="_blank" id="Person_Train2" style="width:200px;" name="newJJFZ">集中培训证明材料附件</a>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">入党介绍人2姓名：</div><input type="text" style="width:200px;" class="easyui-textbox" id="Person_IntroducerB2" name="newYBDY" readonly="readonly" /></br>
+                <div class="sp1">党委意见：</div><a href="##" target="_blank" id="Person_DWOpi2" style="width:200px;" name="newJJFZ">党委意见附件</a>
+                <div class="sp1">所在支部：</div><select class="easyui-combobox" name="newYBDY" style="width:200px;" id="Person_Dept2" readonly="readonly" data-options="panelHeight:150,editable:false">
+                    <option value="室内检定党支部">室内检定党支部</option>
+                    <option value="现场检验党支部">现场检验党支部</option>
+                    <option value="标准量传党支部">标准量传党支部</option>
+                    <option value="配送党支部">配送党支部</option>
+                    <option value="运营管理党支部">运营管理党支部</option>
+                    <option value="综合党支部">综合党支部</option>
+                    <option value="技术质检党支部">技术质检党支部</option>
+                </select></br>
+            </div>
+        </div>
+        <div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">党支部审核结论：</div><select class="easyui-combobox" style="width:200px;" id="Conclusion20" data-options="panelHeight:150,editable:false" readonly="readonly">
+                    <option value="通过">通过</option>
+                    <option value="不通过">不通过</option>
+                </select>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">党支部审核意见：</div>
+                <input type="text" style="width:400px;" data-options="multiline:true,height:50" class="easyui-textbox" id="Opinion20" readonly="readonly" /></br>
+            </div>
+        </div>
+        <div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">党群部审核结论：</div><select class="easyui-combobox" style="width:200px;" id="Conclusion21" data-options="panelHeight:150,editable:false" readonly="readonly">
+                    <option value="通过">通过</option>
+                    <option value="不通过">不通过</option>
+                </select>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">党群部审核意见：</div>
+                <input type="text" style="width:400px;" data-options="multiline:true,height:50" class="easyui-textbox" id="Opinion21" readonly="readonly" /></br>
+            </div>
+        </div>
+        <div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">党委审批结论：</div><select class="easyui-combobox" style="width:200px;" id="Conclusion22" readonly="readonly" data-options="panelHeight:150,editable:false">
+                    <option value="通过">通过</option>
+                    <option value="不通过">不通过</option>
+                </select>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">党委审批意见：</div>
+                <input type="text" style="width:400px;" data-options="multiline:true,height:50" class="easyui-textbox" readonly="readonly" id="Opinion22" /></br>
+            </div>
+        </div>
+    </div>
+    <div id="dlg_check_newZGDY" class="easyui-dialog" title="预备党员转正流程" style="width:800px;height:350px;padding:10px"
+         data-options="modal:true,closed:true,
+			">
+        <div style="height: 150px;width: 759px;">
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">预备党员姓名：</div><input type="text" style="width:200px;" class="easyui-textbox" id="Person_Name3" readonly="readonly" />
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">转正申请：</div><a href="##" target="_blank" id="Person_ZZSQ3" style="width:200px;">转正申请</a>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">支部大会讨论材料：</div><a href="##" target="_blank" id="Person_ZBDHTL3" style="width:200px;">支部大会讨论材料</a>
+            </div>
+        </div>
+        <div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+
+                <div class="sp1">党支部审核结论：</div><select class="easyui-combobox" style="width:200px;" id="Conclusion30" data-options="panelHeight:150,editable:false" readonly="readonly">
+                    <option value="通过">通过</option>
+                    <option value="不通过">不通过</option>
+                </select>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">党支部审核意见：</div>
+                <input type="text" style="width:400px;" data-options="multiline:true,height:50" class="easyui-textbox" id="Opinion30" readonly="readonly" /></br>
+            </div>
+        </div>
+        <div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+
+                <div class="sp1">党委审批结论：</div><select class="easyui-combobox" style="width:200px;" id="Conclusion31" readonly="readonly" data-options="panelHeight:150,editable:false">
+                    <option value="通过">通过</option>
+                    <option value="延期">延期</option>
+                    <option value="不通过">不通过</option>
+                </select>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+
+                <div class="sp1">党委审批意见：</div>
+                <input type="text" style="width:400px;" data-options="multiline:true,height:50" class="easyui-textbox" readonly="readonly" id="Opinion31" /></br>
+            </div>
+
+        </div>
+    </div>
+    <div id="dlg_check_PMchoose" class="easyui-dialog" title="优秀党员评选流程" style="width:800px;height:350px;padding:10px"
+         data-options="modal:true,closed:true,
+			">
+        <div style="height: 150px;width: 759px;">
+
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">优秀党员员工编号：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Id4" /></br>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">所在支部：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Person_Dept4" data-options="panelHeight:150,editable:false">
+                    <option value="室内检定党支部">室内检定党支部</option>
+                    <option value="现场检验党支部">现场检验党支部</option>
+                    <option value="标准量传党支部">标准量传党支部</option>
+                    <option value="配送党支部">配送党支部</option>
+                    <option value="运营管理党支部">运营管理党支部</option>
+                    <option value="综合党支部">综合党支部</option>
+                    <option value="技术质检党支部">技术质检党支部</option>
+                </select></br>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">民主评议党员意见：</div><a href="##" target="_blank" id="Person_Opi4" style="width:200px;">民主评议党员意见</a>
+            </div>
+        </div>
+        <div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+
+                <div class="sp1">党支部审核结论：</div><select class="easyui-combobox" style="width:200px;" id="Conclusion40" data-options="panelHeight:150,editable:false" readonly="readonly">
+                    <option value="通过">通过</option>
+                    <option value="不通过">不通过</option>
+                </select>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">党支部审核意见：</div>
+                <input type="text" style="width:400px;" data-options="multiline:true,height:50" class="easyui-textbox" id="Opinion40" readonly="readonly" /></br>
+            </div>
+        </div>
+        <div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">党群部审核结论：</div><select class="easyui-combobox" style="width:200px;" id="Conclusion41" data-options="panelHeight:150,editable:false" readonly="readonly">
+                    <option value="通过">通过</option>
+                    <option value="不通过">不通过</option>
+                </select>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">党群部审核意见：</div>
+                <input type="text" style="width:400px;" data-options="multiline:true,height:50" class="easyui-textbox" id="Opinion41" readonly="readonly" /></br>
+            </div>
+        </div>
+        <div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+
+                <div class="sp1">党委审批结论：</div><select class="easyui-combobox" style="width:200px;" id="Conclusion42" readonly="readonly" data-options="panelHeight:150,editable:false">
+                    <option value="通过" selected>通过</option>
+                    <option value="不通过">不通过</option>
+                </select>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+
+                <div class="sp1">党委审批意见：</div>
+                <input type="text" style="width:400px;" data-options="multiline:true,height:50" class="easyui-textbox" id="Opinion42" readonly="readonly" /></br>
+            </div>
+        </div>
+    </div>
+    <div id="dlg_check_PMtest" class="easyui-dialog" title="优秀党员核查流程" style="width:800px;height:350px;padding:10px"
+         data-options="modal:true,closed:true,
+			">
+        <div style="height: 150px;width: 759px;">
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">人员姓名：</div><input type="text" style="width:150px;" class="easyui-textbox" id="Person_Name5" readonly="readonly" />
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">所在支部：</div><select class="easyui-combobox" name="state" style="width:150px;" id="Person_Dept5" readonly="readonly" data-options="panelHeight:150,editable:false">
+                    <option value="室内检定党支部">室内检定党支部</option>
+                    <option value="现场检验党支部">现场检验党支部</option>
+                    <option value="标准量传党支部">标准量传党支部</option>
+                    <option value="配送党支部">配送党支部</option>
+                    <option value="运营管理党支部">运营管理党支部</option>
+                    <option value="综合党支部">综合党支部</option>
+                    <option value="技术质检党支部">技术质检党支部</option>
+                </select>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">支部意见：</div><a href="##" target="_blank" id="Person_DeptOpi5" style="width:200px;">支部意见</a>
+            </div>
+        </div>
+        <div style="height: 150px;width: 759px;">
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">政治信仰是否达标：</div><select class="easyui-combobox" name="state" style="width:150px;" id="IfZZXY5" readonly="readonly" data-options="panelHeight:150,editable:false">
+                    <option value="是">是</option>
+                    <option value="否">否</option>
+                </select>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">工作业绩是否达标：</div><select class="easyui-combobox" name="state" style="width:150px;" id="IfGZYJ5" readonly="readonly" data-options="panelHeight:150,editable:false">
+                    <option value="是">是</option>
+                    <option value="否">否</option>
+                </select>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">模范作用是否达标：</div><select class="easyui-combobox" name="state" style="width:150px;" id="IfMFZY5" readonly="readonly" data-options="panelHeight:150,editable:false">
+                    <option value="是">是</option>
+                    <option value="否">否</option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+
+                <div class="sp1">党支部审核结论：</div><select class="easyui-combobox" style="width:200px;" id="Conclusion50" data-options="panelHeight:150,editable:false" readonly="readonly">
+                    <option value="通过">通过</option>
+                    <option value="不通过">不通过</option>
+                </select>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+                <div class="sp1">党支部审核意见：</div>
+                <input type="text" style="width:400px;" data-options="multiline:true,height:50" class="easyui-textbox" id="Opinion50" readonly="readonly" /></br>
+            </div>
+        </div>
+        <div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+
+                <div class="sp1">党群部审核结论：</div><select class="easyui-combobox" style="width:200px;" id="Conclusion51" readonly="readonly" data-options="panelHeight:150,editable:false">
+                    <option value="通过" selected>通过</option>
+                    <option value="不通过">不通过</option>
+                </select>
+            </div>
+            <div style="width:250px;height:100px;padding:10px;margin:auto;float:left">
+
+                <div class="sp1">党群部审核意见：</div>
+                <input type="text" style="width:400px;" data-options="multiline:true,height:50" class="easyui-textbox" id="Opinion51" readonly="readonly" /></br>
+            </div>
+        </div>
+    </div>
+
     <script type="text/javascript">
+        //var row_;
         var username = "";
         var dept = "";
         var role = "";
+        var row_;
         $(function () {
             searchflow();
             $.ajax({
@@ -116,14 +419,38 @@
                 }
             });
         });
-
-        var flow_num = "";
-        var flow_dept = "";
-        var flow_type = "";
+        function operate_formatter(value, row, index) {
+            row_ = row;
+            return "<a href='#' class='easyui-linkbutton' onclick='openpage(\"" + row.flow_type + "\",\"" + row.flow_order + "\",\"" + row.flow_num + "\",\"" + row.flow_state + "\")'>查看详情</a>";
+        }
+        function openpage(flow_type, flow_order, flow_num, flow_state) {
+            if (flow_state != "已归档") {
+            alert("流程未归档，无法查看！");
+                return;
+            }
+            alert("查看" + flow_type + "流程！");
+            row_.flow_num = flow_num;
+            switch (flow_type) {
+                case "发展积极分子": { check_newJJFZ(); break; }
+                case "发展党员": { check_newYBDY(); break; }
+                case "党员转正": { check_newZGDY(); break; }
+                case "优秀党员评选": { check_PMchoose(); break; }
+                case "党员评优核查": { check_PMtest(); break; }
+                case "召开支部党员大会": { check_PBupdate(); break; }
+                case "召开支部委员会": { check_PBupdate(); break; }
+                case "召开党小组会": { check_PBupdate(); break; }
+                case "组织党课": { check_PBupdate(); break; }
+                case "召开专题组织生活会": { check_PBupdate(); break; }
+                default: break;
+            }
+        }
         function searchflow() {
+            var flow_num = "";
+            var flow_dept = "";
+            var flow_type = "";
             flow_num = $("#Flow_Num").textbox('getValue');
             flow_dept = $("#Flow_Dept").combobox('getValue');
-            flow_type = $("#Flow_Type").combobox('getValue');    
+            flow_type = $("#Flow_Type").combobox('getValue');
             $.ajax({
                 url: "/FlowSelect/GetFlow",
                 type: "get",
@@ -144,7 +471,7 @@
         function flowstart() {
             var FlowType = $("#FlowType").combobox('getValue');
             var FlowDept = $("#FlowDept").combobox('getValue');
-            if (dept != FlowDept) { alert("部门选择不正确！"); return;}
+            if (dept != FlowDept) { alert("部门选择不正确！"); return; }
             $.ajax({
                 url: "/FlowSelect/addflow",
                 type: "get",
@@ -166,6 +493,170 @@
                 }
             });
         }
+
+        function check_newJJFZ() {                                             //查看发展积极分子流程信息
+            $('#dlg_check_newJJFZ').dialog('open');
+            var flow_type = row_.flow_type;
+            var flow_order = row_.flow_order;
+            var flow_num = row_.flow_num;
+            $.ajax({
+                url: "/FlowSelect/check_newJJFZ",                              //ZMX，FlowSelect控制器下的函数名为check_newJJFZ，类型为JsonResult，返回键值对，用法见Menu控制器
+                type: "get",
+                data: {
+                    "flow_num": flow_num,                                      //ZMX，判断编号对应的流程是否与方法一致
+                },
+                success: function (data) {
+                    if (data) {
+                        $("#Person_Name1").textbox('setValue', data["Person_Name1"]);
+                        $("#Person_Dept1").combobox('setValue', data["Person_Dept1"]);
+                        $("#Person_Application0").attr("href", data["Person_Application1"]);
+                        $("#Person_College1").textbox('setValue', data["Person_College1"]);
+                        $("#Person_Phonenum1").textbox('setValue', data["Person_Phonenum1"]);
+                        $("#Person_Email1").textbox('setValue', data["Person_Email1"]);
+                        $("#Person_Eduback1").combobox('setValue', data["Person_Eduback1"]);
+                        $("#Person_Sex1").combobox('setValue', data["Person_Sex1"]);
+                        $("#Person_Degree1").combobox('setValue', data["Person_Degree1"]);
+                        $("#Person_Birth1").datebox('setValue', data["Person_Birth1"]);
+                        $("#Person_CJGZdate1").datebox('setValue', data["Person_CJGZdate1"]);
+                    }
+                    else
+                        alert("流程数据调取失败！");
+                },
+                error: function () {
+                    alert("请求失败！");
+                }
+            });
+        }
+        function check_newYBDY() {                                             //查看发展预备党员流程信息
+            $('#dlg_check_newYBDY').dialog('open');
+            var flow_type = row_.flow_type;
+            var flow_order = row_.flow_order;
+            var flow_num = row_.flow_num;
+            $.ajax({
+                url: "/FlowSelect/check_newYBDY",                              //ZMX，FlowSelect控制器下的函数名为check_newYBDY，类型为JsonResult，返回键值对，用法见Menu控制器
+                type: "get",
+                data: {
+                    "flow_num": flow_num,                                      //ZMX，判断编号对应的流程是否与方法一致
+                },
+                success: function (data) {
+                    if (data) {
+                        $("#Person_Name2").textbox('setValue', data["Person_Name2"]);
+                        $("#Person_IntroducerA2").textbox('setValue', data["Person_IntroducerA2"]);
+                        $("#Person_IntroducerB2").textbox('setValue', data["Person_IntroducerB2"]);
+                        $("#Person_Dept2").combobox('setValue', data["Person_Dept2"]);
+                        $("#Person_Willing2").attr("href", data["Person_Willing2"]);
+                        $("#Person_ZSJL2").attr("href", data["Person_ZSJL2"]);
+                        $("#Person_DeptOpi2").attr("href", data["Person_DeptOpi2"]);
+                        $("#Person_DWOpi2").attr("href", data["Person_DWOpi2"]);
+                        $("#Person_Train2").attr("href", data["Person_Train2"]);
+                        $("#Conclusion20").combobox('setValue', data["Conclusion20"]);
+                        $("#Opinion20").textbox('setValue', data["Opinion20"]);
+                        $("#Conclusion21").combobox('setValue', data["Conclusion21"]);
+                        $("#Opinion21").textbox('setValue', data["Opinion21"]);
+                        $("#Conclusion22").combobox('setValue', data["Conclusion22"]);
+                        $("#Opinion22").textbox('setValue', data["Opinion22"]);
+                    }
+                    else
+                        alert("流程数据调取失败！");
+                },
+                error: function () {
+                    alert("请求失败！");
+                }
+            });
+        }
+        function check_newZGDY() {                                             //查看党员转正流程信息
+            $('#dlg_check_newZGDY').dialog('open');
+            var flow_type = row_.flow_type;
+            var flow_order = row_.flow_order;
+            var flow_num = row_.flow_num;
+            $.ajax({
+                url: "/FlowSelect/check_newZGDY",                              //ZMX，FlowSelect控制器下的函数名为check_newZGDY，类型为JsonResult，返回键值对，用法见Menu控制器
+                type: "get",
+                data: {
+                    "flow_num": flow_num,                                      //ZMX，判断编号对应的流程是否与方法一致
+                },
+                success: function (data) {
+                    if (data) {
+                        $("#Person_Name3").textbox('setValue', data["Person_Name3"]);
+                        $("#Person_ZZSQ3").attr("href", data["Person_ZZSQ3"]);
+                        $("#Person_ZBDHTL3").attr("href", data["Person_ZBDHTL3"]);
+                        $("#Conclusion30").combobox('setValue', data["Conclusion30"]);
+                        $("#Opinion30").textbox('setValue', data["Opinion30"]);
+                        $("#Conclusion31").combobox('setValue', data["Conclusion31"]);
+                        $("#Opinion31").textbox('setValue', data["Opinion31"]);
+                    }
+                    else
+                        alert("流程数据调取失败！");
+                },
+                error: function () {
+                    alert("请求失败！");
+                }
+            });
+        }
+        function check_PMchoose() {                                             //查看优秀党员评选流程信息
+            $('#dlg_PMchoose').dialog('open');
+            var flow_type = row_.flow_type;
+            var flow_order = row_.flow_order;
+            var flow_num = row_.flow_num;
+            $.ajax({
+                url: "/FlowSelect/check_PMchoose",                              //ZMX，FlowSelect控制器下的函数名为check_PMchoose，类型为JsonResult，返回键值对，用法见Menu控制器
+                type: "get",
+                data: {
+                    "flow_num": flow_num,                                      //ZMX，判断编号对应的流程是否与方法一致
+                },
+                success: function (data) {
+                    if (data) {
+                        $("#Person_Name4").textbox('setValue', data["Person_Name4"]);
+                        $("#Person_Dept4").combobox('setValue', data["Person_Dept4"]);
+                        $("#Person_Opi4").attr("href", data["Person_Opi4"]);
+                        $("#Conclusion40").combobox('setValue', data["Conclusion40"]);        //党支部结论
+                        $("#Opinion40").textbox('setValue', data["Opinion40"]);               //党支部意见
+                        $("#Conclusion41").combobox('setValue', data["Conclusion41"]);        //党群部结论
+                        $("#Opinion41").textbox('setValue', data["Opinion41"]);               //党群部意见
+                        $("#Conclusion42").combobox('setValue', data["Conclusion42"]);
+                        $("#Opinion42").textbox('setValue', data["Opinion42"]);
+                    }
+                    else
+                        alert("流程数据调取失败！");
+                },
+                error: function () {
+                    alert("请求失败！");
+                }
+            });
+        }
+        function check_PMtest() {                                             //查看优秀党员核查流程信息
+            $('#dlg_PMtest').dialog('open');
+            var flow_type = row_.flow_type;
+            var flow_order = row_.flow_order;
+            var flow_num = row_.flow_num;
+            $.ajax({
+                url: "/FlowSelect/check_PMtest",                              //ZMX，FlowSelect控制器下的函数名为check_PMtest，类型为JsonResult，返回键值对，用法见Menu控制器
+                type: "get",
+                data: {
+                    "flow_num": flow_num,                                      //ZMX，判断编号对应的流程是否与方法一致
+                },
+                success: function (data) {
+                    if (data) {
+                        $("#Person_Name5").textbox('setValue', data["Person_Name5"]);     //姓名
+                        $("#Person_Dept5").combobox('setValue', data["Person_Dept5"]);    //部门
+                        $("#Person_DeptOpi5").attr("href", data["Person_DeptOpi5"]);      //支部意见扫描件
+                        $("#IfZZXY5").combobox('setValue', data["IfZZXY5"]);              //政治信仰是否达标
+                        $("#IfGZYJ5").combobox('setValue', data["IfGZYJ5"]);              //工作业绩是否达标
+                        $("#IfMFZY5").combobox('setValue', data["IfMFZY5"]);              //模范作用是否达标
+                        $("#Conclusion50").combobox('setValue', data["Conclusion50"]);        //党支部结论
+                        $("#Opinion50").textbox('setValue', data["Opinion50"]);               //党支部意见
+                        $("#Conclusion51").combobox('setValue', data["Conclusion51"]);
+                        $("#Opinion51").textbox('setValue', data["Opinion51"]);
+                    }
+                    else
+                        alert("流程数据调取失败！");
+                },
+                error: function () {
+                    alert("请求失败！");
+                }
+            });
+        }
+        function check_PBupdate() { }
     </script>
 </body>
 

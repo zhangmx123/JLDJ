@@ -37,19 +37,19 @@
 
         <div data-options="region:'west',split:true" title="收起导航" style="width:100px;height:auto;">
             <div class="easyui-accordion" data-options="fit:true,border:false" id="aa">
-                <div title="系统管理" style="padding:10px;">
-                    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="addtab(this,'../UserManage/UserManage')">用户管理</a>
+                   <div title="系统管理" style="padding:10px;">
+                         <a href="javascript:void(0)" class="easyui-linkbutton" onclick="addtab(this,'../UserManage/UserManage')">用户管理</a>
+                   </div>
+                   <div title="信息管理" style="padding:10px;">
+                         <div style="margin-bottom:7px"><a href="javascript:void(0)" class="easyui-linkbutton" onclick="addtab(this,'../PersonManage/PersonManage')">人员管理</a></div>
+                         <div style="margin-bottom:7px"><a href="javascript:void(0)" class="easyui-linkbutton" onclick="addtab(this,'../ExcellentPM/ExcellentPM')">优秀党员</a></div>
+                   </div>
+                   <div title="业务管理" data-options="selected:true" style="padding:10px">
+                       <div style="margin-bottom:7px"><a id="db" href="javascript:void(0)" class="easyui-linkbutton" onclick="addtab(this,'../Main1/Main1')">系统主页</a></div>
+                       <div style="margin-bottom:7px"><a href="javascript:void(0)" class="easyui-linkbutton" onclick="addtab(this,'../MyWork/MyWork')">我的待办</a></div>
+                       <div style="margin-bottom:7px"><a href="javascript:void(0)" class="easyui-linkbutton" onclick="addtab(this,'../FlowSelect/FlowSelect')">流程管理</a></div>
+                   </div>
                 </div>
-                <div title="信息管理" style="padding:10px;">
-                    <a href="javascript:void(0)" class="easyui-linkbutton" onclick="addtab(this,'../PersonManage/PersonManage')">人员管理</a>
-                </div>
-                <div title="业务管理" data-options="selected:true" style="padding:10px">
-                    <div style="margin-bottom:7px"><a id="db" href="javascript:void(0)" class="easyui-linkbutton" onclick="addtab(this,'../MyWork/MyWork')">我的待办</a></div>
-                    <div style="margin-bottom:7px"><a href="javascript:void(0)" class="easyui-linkbutton" onclick="addtab(this,'../FlowSelect/FlowSelect')">流程管理</a></div>
-                    @*<div style="margin-bottom:7px"><a href="javascript:void(0)" class="easyui-linkbutton" onclick="addtab(this,'../FlowStart/FlowStart')">流程发起</a></div>*@
-
-                </div>
-            </div>
         </div>
         <div data-options="region:'center'" style="height:100%;">
             <div class="easyui-tabs" id="tt" data-options="fit:true,border:false,plain:true" style="overflow:auto;height:99.5%;">
@@ -59,7 +59,7 @@
         <script type="text/javascript">
 
             $(function () {
-                addtab($("#db"), '../MyWork/MyWork');
+                addtab($("#db"), '../Main1/Main1');
                 var username = "";
                 var dept = "";
                 var role = "";
@@ -74,8 +74,6 @@
                         $('#welcome').html("欢迎您，" + username + "，您当前的权限为：" + dept + role);
                         if (role == "组织委员" || role == "宣传委员") {
                             $('#aa').accordion("remove", "系统管理");
-                            //$('#aa').accordion("remove", "信息管理");
-
                         }
                         if (role == "支部书记") {
                             $('#aa').accordion("remove", "系统管理");

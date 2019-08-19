@@ -86,5 +86,53 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="flow_NewYXDY">
+      <EntityTypeMapping TypeName="DJXTModel.flow_NewYXDY">
+        <MappingFragment StoreEntitySet="flow_NewYXDY">
+          <ScalarProperty Name="NewYXDY_PYopitxt" ColumnName="NewYXDY_PYopitxt" />
+          <ScalarProperty Name="NewYXDY_pdept" ColumnName="NewYXDY_pdept" />
+          <ScalarProperty Name="NewYXDY_pname" ColumnName="NewYXDY_pname" />
+          <ScalarProperty Name="NewYXDY_personid" ColumnName="NewYXDY_personid" />
+          <ScalarProperty Name="NewYXDY_flowid" ColumnName="NewYXDY_flowid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="flow_NewZGDY">
+      <EntityTypeMapping TypeName="DJXTModel.flow_NewZGDY">
+        <MappingFragment StoreEntitySet="flow_NewZGDY">
+          <ScalarProperty Name="NewZGDY_Delay" ColumnName="NewZGDY_Delay" />
+          <ScalarProperty Name="NewZGDY_ZBDHTLtxt" ColumnName="NewZGDY_ZBDHTLtxt" />
+          <ScalarProperty Name="NewZGDY_ZZSQtxt" ColumnName="NewZGDY_ZZSQtxt" />
+          <ScalarProperty Name="NewZGDY_pdept" ColumnName="NewZGDY_pdept" />
+          <ScalarProperty Name="NewZGDY_pname" ColumnName="NewZGDY_pname" />
+          <ScalarProperty Name="NewZGDY_personid" ColumnName="NewZGDY_personid" />
+          <ScalarProperty Name="NewZGDY_flowid" ColumnName="NewZGDY_flowid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="flow_QJHC">
+      <EntityTypeMapping TypeName="DJXTModel.flow_QJHC">
+        <MappingFragment StoreEntitySet="flow_QJHC">
+          <ScalarProperty Name="QJHC_DeptOpitxt" ColumnName="QJHC_DeptOpitxt" />
+          <ScalarProperty Name="QJHC_IfMFZY" ColumnName="QJHC_IfMFZY" />
+          <ScalarProperty Name="QJHC_IfGZYJ" ColumnName="QJHC_IfGZYJ" />
+          <ScalarProperty Name="QJHC_IfZZXY" ColumnName="QJHC_IfZZXY" />
+          <ScalarProperty Name="QJHC_pdept" ColumnName="QJHC_pdept" />
+          <ScalarProperty Name="QJHC_pname" ColumnName="QJHC_pname" />
+          <ScalarProperty Name="QJHC_personid" ColumnName="QJHC_personid" />
+          <ScalarProperty Name="QJHC_flowid" ColumnName="QJHC_flowid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="person_YXDY">
+      <EntityTypeMapping TypeName="DJXTModel.person_YXDY">
+        <MappingFragment StoreEntitySet="person_YXDY">
+          <ScalarProperty Name="YXDY_ltdate" ColumnName="YXDY_ltdate" />
+          <ScalarProperty Name="YXDY_iftest" ColumnName="YXDY_iftest" />
+          <ScalarProperty Name="YXDY_date" ColumnName="YXDY_date" />
+          <ScalarProperty Name="YXDY_personid" ColumnName="YXDY_personid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

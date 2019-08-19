@@ -1,0 +1,92 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    <title>国网辽宁计量中心党建系统</title>
+    <link rel="stylesheet" type="text/css" href="~/JS/jquery-easyui-1.7.0/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="~/JS/jquery-easyui-1.7.0/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="~/JS/jquery-easyui-1.7.0/demo/demo.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/Common.css">
+    <script type="text/javascript" src="~/JS/jquery-easyui-1.7.0/jquery.min.js"></script>
+    <script type="text/javascript" src="~/JS/jquery-easyui-1.7.0/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="~/JS/jquery-easyui-1.7.0/locale/easyui-lang-zh_CN.js"></script>
+    <script type="text/javascript" src="~/JS/Common.js"></script>
+    @*<script type="text/javascript" src="~/JS/JS1.js"></script>*@
+
+</head>
+<body>
+
+
+    <table id="dg" class="easyui-datagrid" style="width:auto;height:350px;padding:10px"
+           data-options="rownumbers:true,toolbar:'#tb',singleSelect:true ,pagination:true">
+        <thead>
+            <tr>
+                <th data-options="field:'person_id'" align="center">员工编号</th>
+                <th data-options="field:'person_name',align:'right'" align="center">姓名</th>
+                <th data-options="field:'person_EPMyear',align:'right'" align="center">评优年度</th>                @*对比PersonManage新增一列*@
+                <th data-options="field:'person_dept',align:'right'" align="center">部门</th>
+                <th data-options="field:'person_plstatus',align:'right'" align="center">政治面貌</th>
+                <th data-options="field:'person_sex',align:'right'" align="center">性别</th>
+                <th data-options="field:'person_phonenum',align:'right'" align="center">电话号码</th>
+                <th data-options="field:'person_email',align:'right'" align="center">电子邮箱</th>
+                <th data-options="field:'person_eduback',align:'right'" align="center">学历</th>
+                <th data-options="field:'person_degree',align:'right'" align="center">学位</th>
+                <th data-options="field:'person_college',align:'right'" align="center">毕业院校</th>
+                <th data-options="field:'person_birth',align:'right'" align="center">生日</th>
+                <th data-options="field:'person_ZGDYdate',align:'right'" align="center">转正日期</th>
+                <th data-options="field:'person_CJGZdate',align:'right'" align="center">工作日期</th>
+                <th data-options="field:'person_YBDYdate',align:'right'" align="center">入党日期</th>
+            </tr>
+                </thead>
+            </table>
+            <div id="tb" style="padding:5px;height:auto">
+                <div style="margin-bottom:5px">
+                    <input id="person_name" class="easyui-textbox" data-options="prompt:'请输入姓名'" />
+                    <a href="#" class="easyui-linkbutton" iconCls="icon-search" onclick="searchperson()">查询</a>
+                </div>
+            </div>
+            <div style="margin:20px 0;">
+            </div>
+            <script type="text/javascript">
+                var Person_Id;
+                var Person_Name;
+                var Person_Sex;
+                var Person_Birth;
+                var Person_CJGZdate;
+                var Person_ZGDYdate;
+                var Person_YBDYdate;
+                var Person_Eduback;
+                var Person_Degree;
+                var Person_College;
+                var Person_Phonenum;
+                var Person_Email;
+                var Person_Dept;
+                $(function () {
+                    searchperson();
+                });
+                function searchperson() {
+                    var personname = $("#person_name").textbox('getValue');
+                    $.ajax({
+                        url: "/ExcellentPM/GetPerson",
+                        type: "get",
+                        data: {
+                            "person_name": personname
+                        },
+                        success: function (data) {
+                            $('#dg').datagrid({ loadFilter: pagerFilter }).datagrid('loadData', data);
+                        },
+                        error: function () {
+                            alert("请求失败！");
+                        }
+                    });
+                }
+
+            </script>
+        </body>
+        </html>

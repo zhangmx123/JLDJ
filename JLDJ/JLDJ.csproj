@@ -134,10 +134,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Controllers\DefaultController.cs" />
+    <Compile Include="Controllers\ExcellentPMController.cs" />
     <Compile Include="Controllers\FlowSelectController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\Main1Controller.cs" />
     <Compile Include="Controllers\MenuController.cs" />
     <Compile Include="Controllers\MyWorkController.cs" />
     <Compile Include="Controllers\PersonManageController.cs" />
@@ -152,6 +153,15 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\flow_DevYB.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\flow_NewYXDY.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\flow_NewZGDY.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\flow_QJHC.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model1.Context.cs">
@@ -170,6 +180,9 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\person.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\person_YXDY.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\user.cs">
@@ -1133,10 +1146,13 @@
     <Content Include="Views\PersonManage\PersonManage.cshtml" />
     <Content Include="Views\FlowSelect\FlowSelect.cshtml" />
     <Content Include="Views\MyWork\MyWork.cshtml" />
+    <Content Include="Views\ExcellentPM\ExcellentPM.cshtml" />
+    <Content Include="Views\Main1\Main1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Default\" />
+    <Folder Include="Views\Main\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
